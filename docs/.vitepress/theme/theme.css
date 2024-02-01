@@ -1,0 +1,21 @@
+.VPHome h1 {
+  white-space: nowrap !important;
+}
+
+.flex-wrap {
+  display:flex;
+  flex-direction: row;
+  border: 1px dashed #dedede;
+  overflow: hidden;
+  padding: 10px;
+}
+.flex-wrap .img-wrap {
+  margin-right: 10px;
+  width: 85px;
+}
+.flex-wrap .img-wrap img {
+  max-width: 100%;
+}
+.flex-wrap .content {
+  flex: 1;
+}
