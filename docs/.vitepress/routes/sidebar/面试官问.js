@@ -23,9 +23,7 @@ export default [
     text: 'JavaScript',
     collapsed: true,
     items: [
-      { text: '作用域', link: '/直击概念/index' },
-      { text: '闭包', link: '/直击概念/index' },
-      { text: '事件循环', link: '/直击概念/index' },
+      { text: '什么是事件循环', link: '/面试官问/02js/1-事件循环' },
     ],    
   },
   {

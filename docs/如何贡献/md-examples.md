@@ -2,12 +2,6 @@
 
 这个页面演示了VitePress提供的一些内置的Markdown扩展。
 
-## 目录表 (TOC)
-
-```md
-[[toc]]
-```
-
 ## 语法高亮
 
 VitePress使用 [Shikiji](https://github.com/antfu/shikiji) 提供的语法高亮功能，还拥有额外的行高亮等功能。

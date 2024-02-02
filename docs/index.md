@@ -14,8 +14,8 @@ hero:
       text: 面试官问
       link: /面试官问/index
     - theme: alt
-      text: 手写代码
-      link: /手写代码/index
+      text: 编写代码
+      link: /编写代码/index
     - theme: alt
       text: 简历模版
       link: /准备简历/index

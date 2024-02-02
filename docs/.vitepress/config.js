@@ -7,7 +7,7 @@ import { fileURLToPath, URL } from 'node:url'
 // menu route
 import straight from './routes/sidebar/直击概念'
 import question from './routes/sidebar/面试官问'
-import coding from './routes/sidebar/手写代码'
+import coding from './routes/sidebar/编写代码'
 
 export default defineConfig({
   base: '/FE-prepare-interview/',
@@ -16,20 +16,22 @@ export default defineConfig({
   head: [['link', { rel: 'shortcut icon', href: '/favicon.ico' }]],
   lastUpdated: true,
   themeConfig: {
-    appearance: false,
+    outline: 'deep',
+    sidebarDepth: 2,
+    appearance: true,
     logo: '/me.jpg',
     // https://vitepress.dev/reference/default-theme-config
     nav: [
       { text: '直击概念', link: '/直击概念/index' },
       { text: '面试官问', link: '/面试官问/index' },
-      { text: '手写代码', link: '/手写代码/index' },
+      { text: '编写代码', link: '/编写代码/index' },
       { text: '准备简历', link: '/准备简历/index' },
       { text: '如何贡献', link: '/如何贡献/index' },
     ],
-    sidebar: {      
+    sidebar: {
       '/直击概念/': straight,
       '/面试官问/': question,
-      '/手写代码/': coding,
+      '/编写代码/': coding,
       '/准备简历/': [
         {
           text: '如何利用该版块',
@@ -39,10 +41,11 @@ export default defineConfig({
       '/如何贡献/': [
         {
           text: '如何贡献',
-          items: [{ text: '参与贡献', link: '/如何贡献/index', }]          
+          items: [{ text: '参与贡献', link: '/如何贡献/index' }],
         },
         {
-          text: 'Markdown扩展示例', link: '/如何贡献/md-examples'
+          text: 'Markdown扩展示例',
+          link: '/如何贡献/md-examples',
         },
       ],
     },
@@ -58,7 +61,14 @@ export default defineConfig({
     },
     search: {
       provider: 'local',
-    },    
+      options: {
+        _render(src, env, md) {
+          const html = md.render(src, env)
+          if (env.frontmatter?.title) return md.render(`# ${env.frontmatter.title}`) + html
+          return html
+        },
+      },
+    },
     docFooter: {
       prev: '上一节',
       next: '下一节',
@@ -67,8 +77,8 @@ export default defineConfig({
       text: '最后更新于',
       formatOptions: {
         dateStyle: 'short',
-        timeStyle: 'short'
-      }
+        timeStyle: 'short',
+      },
     },
     returnToTopLabel: '返回顶部',
     externalLinkIcon: true,
@@ -96,12 +106,15 @@ export default defineConfig({
     },
   },
   markdown: {
+    image: {
+      lazyLoading: true,
+    },
     container: {
       tipLabel: '提示',
       warningLabel: '警告',
       dangerLabel: '注意',
       infoLabel: '信息',
-      detailsLabel: '详细信息'
+      detailsLabel: '详细信息',
     },
     config(md) {
       md.use(containerPreview)
@@ -109,6 +122,6 @@ export default defineConfig({
     },
   },
   sitemap: {
-    hostname: 'https://github.com/Fridolph/FE-prepare-interview'
-  }
+    hostname: 'https://github.com/Fridolph/FE-prepare-interview',
+  },
 })

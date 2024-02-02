@@ -1,18 +1,10 @@
 export default [
   {
-    text: '笔试 & 手写代码',
-    items: [{ text: '如何利用该版块', link: '/手写代码/index' }],
-  },
+    text: '编写代码',
+    items: [{ text: '如何利用该版块', link: '/编写代码/index' }],
+  },  
   {
-    text: 'HTML',
-    collapsed: true,
-    items: [
-      { text: 'websocket', link: '/直击概念/index' },
-      { text: 'Video', link: '/直击概念/index' },
-    ],
-  },
-  {
-    text: 'CSS',
+    text: 'HTML & CSS',
     collapsed: true,
     items: [
       { text: 'flex', link: '/直击概念/index' },
