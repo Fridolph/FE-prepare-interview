@@ -28,12 +28,15 @@ devDependencies:
   pagefind:
     specifier: ^0.12.0
     version: 0.12.0
+  postcss:
+    specifier: ^8.4.33
+    version: 8.4.33
   vite:
     specifier: ^5.0.12
     version: 5.0.12
   vitepress:
     specifier: 1.0.0-rc.40
-    version: 1.0.0-rc.40(@algolia/client-search@4.22.1)(search-insights@2.13.0)(typescript@5.3.3)
+    version: 1.0.0-rc.40(@algolia/client-search@4.22.1)(postcss@8.4.33)(search-insights@2.13.0)(typescript@5.3.3)
   vitepress-plugin-pagefind:
     specifier: ^0.2.10
     version: 0.2.10(typescript@5.3.3)
@@ -708,7 +711,7 @@ packages:
       vitepress: '*'
       vue: ^3.2.0
     dependencies:
-      vitepress: 1.0.0-rc.40(@algolia/client-search@4.22.1)(search-insights@2.13.0)(typescript@5.3.3)
+      vitepress: 1.0.0-rc.40(@algolia/client-search@4.22.1)(postcss@8.4.33)(search-insights@2.13.0)(typescript@5.3.3)
       vue: 3.4.15(typescript@5.3.3)
     dev: true
 
@@ -722,7 +725,7 @@ packages:
       '@flypeng/tool': 5.5.2
       markdown-it: 13.0.2
       markdown-it-container: 3.0.0
-      vitepress: 1.0.0-rc.40(@algolia/client-search@4.22.1)(search-insights@2.13.0)(typescript@5.3.3)
+      vitepress: 1.0.0-rc.40(@algolia/client-search@4.22.1)(postcss@8.4.33)(search-insights@2.13.0)(typescript@5.3.3)
       vue: 3.4.15(typescript@5.3.3)
     dev: true
 
@@ -2013,7 +2016,7 @@ packages:
       - typescript
     dev: true
 
-  /vitepress@1.0.0-rc.40(@algolia/client-search@4.22.1)(search-insights@2.13.0)(typescript@5.3.3):
+  /vitepress@1.0.0-rc.40(@algolia/client-search@4.22.1)(postcss@8.4.33)(search-insights@2.13.0)(typescript@5.3.3):
     resolution: {integrity: sha512-1x9PCrcsJwqhpccyTR93uD6jpiPDeRC98CBCAQLLBb44a3VSXYBPzhCahi+2kwAYylu49p0XhseMPVM4IVcWcw==}
     hasBin: true
     peerDependencies:
@@ -2035,6 +2038,7 @@ packages:
       focus-trap: 7.5.4
       mark.js: 8.11.1
       minisearch: 6.3.0
+      postcss: 8.4.33
       shikiji: 0.10.2
       shikiji-core: 0.10.2
       shikiji-transformers: 0.10.2
