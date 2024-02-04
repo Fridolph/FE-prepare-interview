@@ -1,4 +1,4 @@
-import { useStraightItem } from '../usePath'
+import { useStraightIntro, useStraightItem } from '../usePath'
 
 export default [
   {
@@ -9,6 +9,7 @@ export default [
   {
     text: 'HTML & CSS',
     collapsed: true,
+    link: useStraightIntro('html'),
     items: [
       // useStraightItem('了解flex布局吗', 'css', 1, 'flex'),
       // useStraightItem('了解grid布局吗', 'css', 1, 'grid'),
@@ -16,6 +17,7 @@ export default [
   },
   {
     text: 'JavaScript',
+    link: useStraightIntro('js'),
     collapsed: true,
     items: [
       useStraightItem('事件循环 Event Loop', 'js', 1, '事件循环'),
@@ -27,6 +29,7 @@ export default [
   },
   {
     text: '算法相关',
+    link: useStraightIntro('algo'),
     collapsed: true,
     items: [
       // useStraightItem('堆栈', 'algo', 1, '堆栈'),
@@ -36,6 +39,7 @@ export default [
   },
   {
     text: 'http 相关',
+    link: useStraightIntro('http'),
     collapsed: true,
     items: [
       // useStraightItem('网络七层协议', 'http', 1, '网络七层协议'),
@@ -46,6 +50,7 @@ export default [
   },
   {
     text: 'Node.js',
+    link: useStraightIntro('nodejs'),
     collapsed: true,
     items: [
       // useStraightItem('网络七层协议', 'http', 1, '网络七层协议'),
@@ -53,6 +58,7 @@ export default [
   },
   {
     text: '前端工程化',
+    link: useStraightIntro('webpack'),
     collapsed: true,
     items: [
       // useStraightItem('webpack', 'webpack', 1, 'webpack'),
@@ -64,6 +70,7 @@ export default [
   // 记得看typeMap，别搞错目录了
   {
     text: '性能优化',
+    link: useStraightIntro('opt'),
     collapsed: true,
     items: [
       // useStraightItem('图片懒加载', 'opt', 1, '图片懒加载'),
@@ -72,6 +79,7 @@ export default [
   },
   {
     text: '前端安全',
+    link: useStraightIntro('safe'),
     collapsed: true,
     items: [
       // useStraightItem('XSS', 'opt', 1, 'XSS'),
@@ -80,6 +88,7 @@ export default [
   },
   {
     text: 'Vue',
+    link: useStraightIntro('vue'),
     collapsed: true,
     items: [
       // useStraightItem('MVC和MVVM', 'vue', 1, 'MVC和MVVM'),
@@ -88,6 +97,7 @@ export default [
   },
   {
     text: 'React',
+    link: useStraightIntro('react'),
     collapsed: true,
     items: [
       // useStraightItem('MVC和MVVM', 'react', 1, 'MVC和MVVM'),

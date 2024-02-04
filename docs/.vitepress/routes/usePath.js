@@ -14,8 +14,6 @@ const typeMap = {
   request: '04http',
   node: '05node',
   nodejs: '05node',
-  webpack: '06opt',
-  vite: '06opt',
   opt: '06opt',
   performance: '06opt',
   optimization: '06opt',
@@ -24,6 +22,22 @@ const typeMap = {
   react: '08react',
   redux: '08react',
   mobx: '08react',
+  webpack: '09build',
+  vite: '09build',
+  build: '09build',
+  safe: '10safe',
+}
+
+export function useStraightIntro(type) {
+  return `/直击概念/${typeMap[type]}/intro`
+}
+
+export function useQuestionIntro(type) {
+  return `/面试官问/${typeMap[type]}/intro`
+}
+
+export function useCodingIntro(type) {
+  return `/编写代码/${typeMap[type]}/intro`
 }
 
 export function useStraightItem(title, type, index = 0, fileName, options = {}) {
