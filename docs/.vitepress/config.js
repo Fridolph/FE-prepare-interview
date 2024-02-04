@@ -3,6 +3,7 @@ import { defineConfig } from 'vitepress'
 import { pagefindPlugin, chineseSearchOptimize } from 'vitepress-plugin-pagefind'
 import { containerPreview, componentPreview } from '@vitepress-demo-preview/plugin'
 import { fileURLToPath, URL } from 'node:url'
+import { transformerTwoslash } from '@shikijs/vitepress-twoslash' 
 // https://vitepress.dev/reference/site-config
 // menu route
 import straight from './routes/sidebar/直击概念'
@@ -104,6 +105,9 @@ export default defineConfig({
     image: {
       lazyLoading: true,
     },
+    codeTransformers: [
+      transformerTwoslash() 
+    ],
     container: {
       tipLabel: '提示',
       warningLabel: '警告',

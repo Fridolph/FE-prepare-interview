@@ -1,4 +1,4 @@
-import { useStraightItem } from '../usePath'
+import { useQuestionItem } from '../usePath'
 
 export default [
   {
@@ -9,50 +9,51 @@ export default [
     text: 'HTML & CSS',
     collapsed: true,
     items: [
-      // useStraightItem('了解flex布局吗', 'css', 1, 'flex'),
-      // useStraightItem('了解grid布局吗', 'css', 1, 'grid'),
+      // useQuestionItem('了解flex布局吗', 'css', 1, 'flex'),
+      // useQuestionItem('了解grid布局吗', 'css', 1, 'grid'),
     ],
   },
   {
     text: 'JavaScript',
     collapsed: true,
     items: [
-      useStraightItem('什么是事件循环', 'js', 1, '事件循环'),
-      // useStraightItem('什么是事件循环', 'js', 1, '事件循环'),
+      useQuestionItem('事件循环 Event Loop', 'js', 1, '事件循环'),
+      useQuestionItem('变量和类型相关', 'js', 2, '变量类型'),
+      useQuestionItem('浅拷贝与深拷贝', 'js', 3, '浅拷贝与深拷贝'),
     ],
   },
   {
     text: '算法相关',
     collapsed: true,
     items: [
-      // useStraightItem('堆栈', 'algo', 1, '堆栈'),
-      // useStraightItem('队列', 'algo', 2, '队列'),
-      // useStraightItem('链表', 'algo', 3, '链表'),
+      // useQuestionItem('堆栈', 'algo', 1, '堆栈'),
+      // useQuestionItem('队列', 'algo', 2, '队列'),
+      // useQuestionItem('链表', 'algo', 3, '链表'),
     ],
   },
   {
     text: 'http 相关',
     collapsed: true,
     items: [
-      // useStraightItem('网络七层协议', 'http', 1, '网络七层协议'),
-      // useStraightItem('http', 'http', 2, 'http'),
-      // useStraightItem('https', 'http', 3, 'https'),
-      // useStraightItem('websocket', 'http', 4, 'websocket'),
+      // useQuestionItem('网络七层协议', 'http', 1, '网络七层协议'),
+      // useQuestionItem('http', 'http', 2, 'http'),
+      // useQuestionItem('https', 'http', 3, 'https'),
+      // useQuestionItem('websocket', 'http', 4, 'websocket'),
     ],
   },
   {
     text: 'Node.js',
     collapsed: true,
     items: [
-      // useStraightItem('网络七层协议', 'http', 1, '网络七层协议'),
+      // useQuestionItem('网络七层协议', 'http', 1, '网络七层协议'),
     ],
   },
   {
     text: '前端工程化',
     collapsed: true,
     items: [
-      // useStraightItem('webpack', 'webpack', 1, 'webpack'),
-      // useStraightItem('Webpack优化实践', 'webpack', 1, 'Webpack优化实践'),
+      // useQuestionItem('webpack', 'webpack', 1, 'webpack'),
+      // useQuestionItem('Webpack优化实践', 'webpack', 1, 'Webpack优化实践'),
     ],
   },
   // 前端工程化 和 性能优化是两个大类，但性能相关很多是交杂在一起的
@@ -62,32 +63,32 @@ export default [
     text: '性能优化',
     collapsed: true,
     items: [
-      // useStraightItem('图片懒加载', 'opt', 1, '图片懒加载'),
-      // useStraightItem('白屏', 'opt', 2, '白屏'),
+      // useQuestionItem('图片懒加载', 'opt', 1, '图片懒加载'),
+      // useQuestionItem('白屏', 'opt', 2, '白屏'),
     ],
   },
   {
     text: '前端安全',
     collapsed: true,
     items: [
-      // useStraightItem('XSS', 'opt', 1, 'XSS'),
-      // useStraightItem('CSRF', 'opt', 1, 'CSRF'),
+      // useQuestionItem('XSS', 'opt', 1, 'XSS'),
+      // useQuestionItem('CSRF', 'opt', 1, 'CSRF'),
     ],
   },
   {
     text: 'Vue',
     collapsed: true,
     items: [
-      // useStraightItem('MVC和MVVM', 'vue', 1, 'MVC和MVVM'),
-      // useStraightItem('VirtualDOM和Diff算法', 'vue', 2, 'VirtualDOM和Diff算法'),
+      // useQuestionItem('MVC和MVVM', 'vue', 1, 'MVC和MVVM'),
+      // useQuestionItem('VirtualDOM和Diff算法', 'vue', 2, 'VirtualDOM和Diff算法'),
     ],
   },
   {
     text: 'React',
     collapsed: true,
     items: [
-      // useStraightItem('MVC和MVVM', 'react', 1, 'MVC和MVVM'),
-      // useStraightItem('VirtualDOM和Diff算法', 'vue', 2, 'VirtualDOM和Diff算法'),
+      // useQuestionItem('MVC和MVVM', 'react', 1, 'MVC和MVVM'),
+      // useQuestionItem('VirtualDOM和Diff算法', 'vue', 2, 'VirtualDOM和Diff算法'),
     ],
   },
 ]

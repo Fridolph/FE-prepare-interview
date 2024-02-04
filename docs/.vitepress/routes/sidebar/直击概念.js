@@ -20,6 +20,9 @@ export default [
     items: [
       useStraightItem('事件循环 Event Loop', 'js', 1, '事件循环'),
       useStraightItem('变量，声明、类型、判断等', 'js', 2, '变量'),
+      useStraightItem('闭包', 'js', 3, '闭包'),
+      useStraightItem('对象、原型、继承', 'js', 4, '对象、原型、继承'),
+      useStraightItem('this指向', 'js', 5, 'this指向'),
     ],
   },
   {

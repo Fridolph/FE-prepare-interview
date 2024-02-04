@@ -18,6 +18,7 @@ export default [
     collapsed: true,
     items: [
       useCodingItem('实现简易Promise', 'js', 1, 'promise'),
+      useCodingItem('写个deepCopy实现深拷贝', 'js', 2, 'deepcopy'),
     ],
   },
   {
