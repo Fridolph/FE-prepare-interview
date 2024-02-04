@@ -18,8 +18,8 @@ export default [
     text: 'JavaScript',
     collapsed: true,
     items: [
-      useStraightItem('什么是事件循环', 'js', 1, '事件循环'),
-      // useStraightItem('什么是事件循环', 'js', 1, '事件循环'),
+      useStraightItem('事件循环 Event Loop', 'js', 1, '事件循环'),
+      useStraightItem('变量，声明、类型、判断等', 'js', 2, '变量'),
     ],
   },
   {

@@ -45,7 +45,7 @@ export function useQuestionItem(title, type, index = 0, fileName, options = {}) 
 export function useCodingItem(title, type, index = 0, fileName, options = {}) {
   return {
     text: title,
-    link: `/${CODING}/${typeMap[type]}/c_${type}_${index}-${fileName}`,
+    link: `/${CODING}/${typeMap[type]}/c_${type}_${index}-${fileName}/c_${type}_${index}-${fileName}`,
     ...options,
   }
 }
