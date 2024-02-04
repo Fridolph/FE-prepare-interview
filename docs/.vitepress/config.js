@@ -8,6 +8,8 @@ import { fileURLToPath, URL } from 'node:url'
 import straight from './routes/sidebar/直击概念'
 import question from './routes/sidebar/面试官问'
 import coding from './routes/sidebar/编写代码'
+import contribution from './routes/sidebar/参与贡献'
+import interview from './routes/sidebar/网友面经'
 
 export default defineConfig({
   base: '/FE-prepare-interview/',
@@ -26,28 +28,21 @@ export default defineConfig({
       { text: '面试官问', link: '/面试官问/index' },
       { text: '编写代码', link: '/编写代码/index' },
       { text: '准备简历', link: '/准备简历/index' },
-      { text: '如何贡献', link: '/如何贡献/index' },
+      { text: '网友面经', link: '/网友面经/0intro' },
+      { text: '参与贡献', link: '/参与贡献/index' },
     ],
     sidebar: {
       '/直击概念/': straight,
       '/面试官问/': question,
       '/编写代码/': coding,
+      '/网友面经/': interview,
       '/准备简历/': [
         {
           text: '如何利用该版块',
           items: [{ text: '推荐工具', link: '/准备简历/index' }],
         },
       ],
-      '/如何贡献/': [
-        {
-          text: '如何贡献',
-          items: [{ text: '参与贡献', link: '/如何贡献/index' }],
-        },
-        {
-          text: 'Markdown扩展示例',
-          link: '/如何贡献/md-examples',
-        },
-      ],
+      '/参与贡献/': contribution,
     },
     socialLinks: [{ icon: 'github', link: 'https://github.com/Fridolph/FE-prepare-interview' }],
     footer: {

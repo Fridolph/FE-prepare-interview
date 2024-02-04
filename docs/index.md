@@ -16,6 +16,9 @@ hero:
     - theme: alt
       text: 编写代码
       link: /编写代码/index
+    - theme: brand
+      text: 网友面经
+      link: /网友面经/0intro.html
     - theme: alt
       text: 简历模版
       link: /准备简历/index
@@ -73,7 +76,7 @@ import {
 
 const members = [
   {
-    avatar: './public/me.jpg',
+    avatar: '/me.jpg',
     name: 'Yinsheng Fu',
     title: 'Creator. FE developer, in Chengdu.',
     links: [
@@ -89,17 +92,6 @@ const members = [
     ],
     
   },
-]
-const partners = [
-  // {
-  //   avatar: 'https://www.github.com/yyx990803.png',
-  //   name: 'Evan You',
-  //   title: 'Creator',
-  //   links: [
-  //     { icon: 'github', link: 'https://github.com/yyx990803' },
-  //     { icon: 'github', link: 'https://github.com/yyx990803' },
-  //   ]
-  // }
 ]
 </script>
 
