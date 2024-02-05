@@ -1,6 +1,6 @@
 export default [
   {
-    text: '如何参与',
+    text: '参与贡献',
     items: [{ text: '光荣榜', link: '/参与贡献/index' }],
   },
   { text: '如何参与', link: '/参与贡献/如何参与' },

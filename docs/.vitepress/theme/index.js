@@ -9,6 +9,6 @@ export default {
   ...DefaultTheme,
   enhanceApp({ app }) {
     app.use(TwoslashFloatingVue)
-    app.component('demo-preview', ElementPlusContainer)
+    app.component('demo-preview', ElementPlusContainer)    
   },
 }

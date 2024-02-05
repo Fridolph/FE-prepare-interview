@@ -46,27 +46,32 @@ Event Loop **解决了 JavaScript 作为单线程语言时的并发性问题**�
 
 指的是浏览器在执行代码的过程中会调度的任务，比如事件循环中的每一次迭代、setTimeout 和 setInterval 等。 宏任务会在浏览器完成当前同步任务之后执行。
 
-**这些都属于宏任务：**
+**宏任务（Macrotasks）是一些较大粒度的任务：**
 
-- script (待执行脚本)
-- setTimeout
-- setInterval
-- setImmediate
-- I/O
+- 所有同步任务
+- script `待执行脚本`
+- I/O，如文件读写，数据库数据读写等
+- setTimeout、setInterval
+- setImmediate `Node环境`
+- requestAnimationFrame
+- 事件监听，回调函数等
 - UI render
+- ...
 
 ### 微任务 microtask
 
 本质就是一个待调用的 function，当创建该微任务的函数执行之后，并且只有当 Javascript 调用栈为空，而控制权尚未返还给被用户代理用来驱动脚本执行环境的事件循环之前，该微任务才会被执行。
 
-**这些都属于微任务：**
+**微任务（Microtasks）是一些较小粒度、高优先级的任务**
 
 - Promise
 - async / await
-- process.nextTick (Node)
-- mutationObserver( html5 API)
+- Generator 函数
+- mutationObserver `html5 API`
+- process.nextTick `Node环境`
+- ...
 
-## 展开来说 - 事件循环过程
+## 展开来说
 
 事件循环是单线程的 JavaScript 在处理异步事件时进行的一种循环过程，具体来讲，对于异步事件它会先加入到事件队列中挂起，等主线程空闲时会去执行事件队列中的事件。
 
@@ -79,7 +84,30 @@ Event Loop **解决了 JavaScript 作为单线程语言时的并发性问题**�
 
 它不停检查 Call Stack 中是否有任务（也叫栈帧）需要执行，如果没有，就检查 Event Queue，从中弹出一个任务，放入 Call Stack 中，如此往复循环。
 
+### 梳理：事件循环流程
+
+1. 主线程读取JavaScript代码，形成相应的堆和执行栈。
+2. 当主线程遇到异步任务时，将其委托给对应的异步进程（如Web API）处理。
+3. 异步任务完成后，将相应的回调函数推入任务队列。
+4. 主线程执行完同步任务后，检查任务队列，如果有任务，则按照先进先出的原则将任务推入主线程执行。
+5. 重复执行以上步骤，形成事件循环。
+
 ![事件循环流程函数版](/02js/eventloop2.jpg)
+
+### 梳理：任务队列执行过程
+
+首先，必须要明确，在JavaScript中，所有任务都在主线程上执行。任务执行过程分为同步任务和异步任务两个阶段。异步任务的处理经历两个主要阶段：`Event Table（事件表）`和 `Event Queue（事件队列）`。
+
+Event Table存储了宏任务的相关信息，包括事件监听和相应的回调函数。当特定类型的事件发生时，对应的回调函数被添加到事件队列中，等待执行。例如，你可以通过addEventListener来将事件监听器注册到事件表上：
+
+任务队列的执行流程可概括为：
+
+1. 同步任务在主线程排队执行，异步任务在事件队列排队等待进入主线程执行。
+2. 遇到宏任务则推进宏任务队列，遇到微任务则推进微任务队列。
+3. 执行宏任务，执行完毕后检查当前层的微任务并执行。
+4. 继续执行下一个宏任务，执行对应层次的微任务，直至全部执行完毕。
+
+**这个流程确保了异步任务能够在适当的时机插入执行，保持程序的高效性和响应性。**
 
 ## 其他
 
@@ -122,3 +150,4 @@ Event Loop **解决了 JavaScript 作为单线程语言时的并发性问题**�
 
 - [关于 JavaScript 单线程的一些事](https://github.com/JChehe/blog/blob/master/posts/%E5%85%B3%E4%BA%8EJavaScript%E5%8D%95%E7%BA%BF%E7%A8%8B%E7%9A%84%E4%B8%80%E4%BA%9B%E4%BA%8B.md)
 - [一看就懂的事件循环机制(event loop)](https://juejin.cn/post/7002037475874963493)
+- [深入JS执行原理：一文搞定 EventLoop、宏任务、微任务](https://mp.weixin.qq.com/s/W0yDX9Nme3nbBOrzLRwPbQ)
