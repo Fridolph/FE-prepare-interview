@@ -51,6 +51,6 @@ this指向`实例化的对象`
 
 ## 参考资料
 
-- 彻底搞懂闭包，柯里化，手写代码，金九银十不再丢分！ <https://juejin.cn/post/6864378349512065038?searchId=20240204235859870CDC6B5601DC3E157B#heading-17>
+- 彻底搞懂闭包，柯里化，手写代码，金九银十不再丢分！ <https://juejin.cn/post/6864378349512065038>
 
-- 面试官问：JS的this指向 <https://juejin.cn/post/6844903746984476686?searchId=202402050057506A400D4297D5A144503E>
+- 面试官问：JS的this指向 <https://juejin.cn/post/6844903746984476686>

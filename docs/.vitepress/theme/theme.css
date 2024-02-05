@@ -3,15 +3,15 @@
 }
 
 .vp-doc h1 {
-  margin-top:40px !important;
-  margin-bottom:20px !important;
+  margin-top: 40px !important;
+  margin-bottom: 20px !important;
 }
 .vp-doc h1:first-child {
   margin-top: 0px !important;
 }
 
 .flex-wrap {
-  display:flex;
+  display: flex;
   flex-direction: row;
   border: 1px dashed #dedede;
   overflow: hidden;
@@ -26,4 +26,27 @@
 }
 .flex-wrap .content {
   flex: 1;
+}
+
+.demo-wrapper {
+  padding: 2px;
+  border: 1px dashed #dedede;
+  overflow: hidden;
+}
+
+.center-wrapper {
+  padding: 2px;
+  border: 1px dashed #dedede;
+  overflow: hidden;
+  .wp {
+    width: 100%;
+    height: 300px;
+  }
+  .box {
+    background: rgb(147, 233, 147);
+  }
+  .box.size {
+    width: 200px;
+    height: 120px;
+  }
 }

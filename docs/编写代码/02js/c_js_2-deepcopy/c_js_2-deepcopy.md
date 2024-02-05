@@ -37,4 +37,4 @@ function deepClone(target) {
 
 ## 参考
 
-浅拷贝与深拷贝 <https://juejin.cn/post/6844904197595332622?searchId=202402042313047067239A1F85E73E9131>
+浅拷贝与深拷贝 <https://juejin.cn/post/6844904197595332622>

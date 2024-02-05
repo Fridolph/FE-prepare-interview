@@ -9,8 +9,11 @@ export default [
     text: 'HTML & CSS',
     collapsed: true,
     items: [
-      // useCodingItem('了解flex布局吗', 'css', 1, 'flex'),
-      // useCodingItem('了解grid布局吗', 'css', 1, 'grid'),
+      useCodingItem('常见布局一览', 'css', 1, '常见布局'),
+      useCodingItem('水平垂直居中', 'css', 2, '水平垂直居中'),
+      useCodingItem('sticky 粘黏布局', 'css', 3, 'sticky'),
+      useCodingItem('flex布局之画骰子', 'css', 4, 'flex'),
+      useCodingItem('css新特性之grid', 'css', 5, 'grid'),
     ],
   },
   {

@@ -204,4 +204,4 @@ console.log(child);
 ## 参考文章
 
 - 「思维导图学前端」6k 字一文搞懂 Javascript 对象，原型，继承 <https://juejin.cn/post/6844904194097299463>
-- 面不面试的，你都得懂原型和原型链 <https://juejin.cn/post/6934498361475072014?searchId=202402050018150C6DAED4393F204268F9>
+- 面不面试的，你都得懂原型和原型链 <https://juejin.cn/post/6934498361475072014>
