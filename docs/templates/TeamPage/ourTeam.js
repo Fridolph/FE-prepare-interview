@@ -25,7 +25,7 @@ export default [
   {
     avatar: 'https://blog.fridolph.top/img/avatar.jpg',
     name: '屏幕前的你',
-    title: '广告位招租',
+    title: '参与开源，和我一起完善吧',
     links: [
       { icon: 'github', link: 'https://github.com/Fridolph' },
       {

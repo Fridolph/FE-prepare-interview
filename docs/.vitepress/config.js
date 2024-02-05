@@ -49,7 +49,7 @@ export default defineConfig({
     footer: {
       // message: '',
       copyright:
-        'Released under the <a href="https://creativecommons.org/licenses/by-nc-nd/4.0/deed.zh-hans" target="_blank">CC BY-NC-ND 4.0</a> License.  Copyright © 2024-present <a href="https://blog.fridolph.top" target="_blank">Yinsheng Fu</a>',
+        'Released <a href="https://creativecommons.org/licenses/by-nc-nd/4.0/deed.zh-hans" target="_blank">CC BY-NC-ND 4.0</a> License. <span style="margin: 0 30px;">Powered by <a href="https://vitepress.dev/zh/" target="_blank">VitePress</a>.</span> Copyright © 2024 <a href="https://blog.fridolph.top" target="_blank">Yinsheng Fu</a>',
     },
     editLink: {
       pattern: 'https://github.com/Fridolph/FE-prepare-interview/edit/dev/docs/:path',

@@ -32,9 +32,13 @@ export default [
     ],
   },
   {
-    text: 'http 相关',
+    text: 'HTTP',
     collapsed: true,
     items: [
+      useQuestionItem('http常考察点', 'http', 1, 'http'),
+      useQuestionItem('OSI七层模型', 'http', 2, 'osi'),
+      useQuestionItem('http缓存机制', 'http', 3, '缓存机制'),
+      useQuestionItem('为什么使用https', 'http', 4, 'https'),
       // useQuestionItem('网络七层协议', 'http', 1, '网络七层协议'),
       // useQuestionItem('http', 'http', 2, 'http'),
       // useQuestionItem('https', 'http', 3, 'https'),

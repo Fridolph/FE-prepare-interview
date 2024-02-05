@@ -8,7 +8,7 @@ export default [
     items: [{ text: '某某大厂二面', link: '/网友面经/1-举例[XX部]-202402' }],
   },
   {
-    text: '2023',
-    items: [{ text: '某某大厂二面', link: '/网友面经/1-举例[XX部]-202402' }],
+    text: '2021',
+    items: [{ text: 'shopee 一二面和HR面', link: '/网友面经/2-shopee-202108' }],
   },
 ]

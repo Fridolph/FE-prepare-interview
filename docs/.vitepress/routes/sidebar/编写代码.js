@@ -31,7 +31,7 @@ export default [
     ],
   },
   {
-    text: 'http 相关',
+    text: 'HTTP',
     collapsed: true,
     items: [
       // useCodingItem('网络七层协议', 'http', 1, '网络七层协议'),
