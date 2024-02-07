@@ -2,7 +2,7 @@
 
 三大重要概念：类、原型、实例
 
-![JavaScript Object](../../public/02js/object.jpg)
+![JavaScript Object](/02js/object.jpg)
 
 ## 对象
 
@@ -69,7 +69,7 @@ Object.create 用于创建一个对象，接受两个参数，使用如下：
 
 原型是实现继承的基础。那么如何去理解原型呢？
 
-![原型是实现继承的基础](../../public/02js/prototype.png)
+![原型是实现继承的基础](/02js/prototype.png)
 
 引用类型的四个规则：
 
@@ -80,7 +80,7 @@ Object.create 用于创建一个对象，接受两个参数，使用如下：
 
 ## 原型链
 
-![对象的查找过程](../../public/02js/prototype2.png)
+![对象的查找过程](/02js/prototype2.png)
 
 最后一个 null，设计上是为了避免死循环而设置的, **Object.prototype 的隐式原型指向 null**。
 
@@ -88,7 +88,7 @@ Object.create 用于创建一个对象，接受两个参数，使用如下：
 
 所谓继承，简单说就是能通过子类实例访问父类的属性和方法。而利用原型链可以达成这样的目的，所以只要父类原型、子类原型、子类实例形成原型链关系即可。
 
-![子类原型作为父类的实力，形成原型链关系](../../public/02js/prototype3.png)
+![子类原型作为父类的实力，形成原型链关系](/02js/prototype3.png)
 
 
 实现对象继承：

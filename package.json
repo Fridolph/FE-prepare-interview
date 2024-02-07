@@ -9,6 +9,7 @@
     "preview": "vitepress preview docs"
   },
   "dependencies": {
+    "@docsearch/js": "3",
     "vue": "^3.3.11"
   },
   "devDependencies": {

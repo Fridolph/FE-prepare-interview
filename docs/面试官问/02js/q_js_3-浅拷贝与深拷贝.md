@@ -21,8 +21,8 @@
 
 ## 赋值和深浅拷贝的区别
 
-![shadowCopy](../../public/02js/clone1.png)
-![deepCopy](../../public/02js/clone2.png)
+![shadowCopy](/02js/clone1.png)
+![deepCopy](/02js/clone2.png)
 
 ::: details 实现深拷贝的几种方式
 

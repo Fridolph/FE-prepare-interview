@@ -65,6 +65,17 @@ export default defineConfig({
         },
       },
     },
+    // 由于本地搜索对中文和 英文大小写判断稍差
+    // 试试algolia - - ORZ 还没申请下来
+    // search: {
+    //   provider: 'algolia',
+    //   options: {
+    //     appId: '...',
+    //     apiKey: '...',
+    //     indexName: '...'
+    //   }
+    // },
+    outlineTitle: '本页导航',
     docFooter: {
       prev: '上一节',
       next: '下一节',

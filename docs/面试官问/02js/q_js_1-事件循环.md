@@ -94,7 +94,7 @@ setTimeout(() => {
 ```
 
 :::details 流程图提示
-![图示](../../public/02js/micro_macro.png)
+![图示](/02js/micro_macro.png)
 :::
 
 :::details 答案

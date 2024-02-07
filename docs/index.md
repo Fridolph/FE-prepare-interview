@@ -5,7 +5,7 @@ layout: home
 hero:
   name: 'FE-prepare-interview'
   text: '前端必备的面试宝典'
-  tagline: 搜集于互联网, by Fridolph
+  tagline: 整理搜集自互联网 —— by 霪霖笙箫
   actions:
     - theme: brand
       text: 直击概念
@@ -18,7 +18,7 @@ hero:
       link: /编写代码/index
     - theme: brand
       text: 网友面经
-      link: /网友面经/0intro.html
+      link: /网友面经/后面再删
     - theme: alt
       text: 简历模版
       link: /准备简历/index

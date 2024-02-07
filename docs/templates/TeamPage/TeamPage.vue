@@ -9,8 +9,8 @@
       :members="members" />
 
     <VPTeamPageSection>
-      <template #title>感谢赞助商</template>
-      <template #lead>等待加盟</template>
+      <template #title>感谢赞助商大大</template>
+      <template #lead>感谢您对开源社区的贡献，前排黄金位，等待加盟</template>
       <VPTeamMembers
         size="medium"
         :members="partners" />
