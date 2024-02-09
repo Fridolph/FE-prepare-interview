@@ -78,8 +78,11 @@ export default [
     link: useStraightIntro('opt'),
     collapsed: true,
     items: [
-      // useStraightItem('图片懒加载', 'opt', 1, '图片懒加载'),
-      // useStraightItem('白屏', 'opt', 2, '白屏'),
+      useStraightItem('Web性能', 'opt', 1, 'Web性能'),
+      useStraightItem('多媒体', 'opt', 2, '多媒体'),
+      useStraightItem('JavaScript性能优化', 'opt', 3, 'JavaScript性能优化'),
+      useStraightItem('HTML性能优化', 'opt', 4, 'HTML性能优化'),
+      useStraightItem('CSS性能优化', 'opt', 5, 'CSS性能优化'),
     ],
   },
   {
@@ -87,7 +90,6 @@ export default [
     link: useStraightIntro('safe'),
     collapsed: true,
     items: [
-      // useStraightItem('XSS', 'opt', 1, 'XSS'),
       // useStraightItem('CSRF', 'opt', 1, 'CSRF'),
     ],
   },
