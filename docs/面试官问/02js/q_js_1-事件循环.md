@@ -53,7 +53,7 @@ setTimeout(() => {
   // a
   console.log('2')
   setTimeout(() => console.log('3'))
-  new Promise(resolve => {
+  new Promise((resolve) => {
     console.log('4')
     resolve()
   }).then(() => {
@@ -61,7 +61,7 @@ setTimeout(() => {
   })
 })
 
-new Promise(resolve => {
+new Promise((resolve) => {
   console.log('6')
   resolve()
 })
@@ -80,7 +80,7 @@ setTimeout(() => {
   // d
   console.log('10')
 
-  new Promise(resolve => {
+  new Promise((resolve) => {
     console.log('11')
     resolve()
   })
@@ -94,7 +94,7 @@ setTimeout(() => {
 ```
 
 :::details 流程图提示
-![图示](/02js/micro_macro.png)
+<vImageViewer src="/02js/micro_macro.png" alt="图示" :inline="false"/>
 :::
 
 :::details 答案

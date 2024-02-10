@@ -52,7 +52,7 @@ Cache-Control: no-store, no-cache, max-age=0, must-revalidate, proxy-revalidate
 
 托管缓存的特性因部署的产品而异。在大多数情况下，你可以通过 Cache-Control 标头和你自己的配置文件或仪表板来控制缓存的行为。
 
-![托管缓存](https://developer.mozilla.org/zh-CN/docs/Web/HTTP/Caching/type-of-cache.png)
+<vImageViewer src="https://developer.mozilla.org/zh-CN/docs/Web/HTTP/Caching/type-of-cache.png" alt="托管缓存" :inline="false"/>
 
 ```http
 Cache-Control: no-store
@@ -116,7 +116,7 @@ Expires: Tue, 28 Feb 2022 22:22:22 GMT
 
 区分响应的方式本质上是基于它们的 URL：
 
-![区分响应的方式本质上是基于它们的 URL](https://developer.mozilla.org/zh-CN/docs/Web/HTTP/Caching/keyed-with-url.png)
+<vImageViewer src="https://developer.mozilla.org/zh-CN/docs/Web/HTTP/Caching/keyed-with-url.png" alt="区分响应的方式本质上是基于它们的URL" :inline="false"/>
 
 但是响应的内容并不总是相同的，即使它们具有相同的 URL。特别是在执行内容协商时，来自服务器的响应可能取决于 Accept、Accept-Language 和 Accept-Encoding 请求标头的值。
 
@@ -130,7 +130,7 @@ Vary: Accept-Language
 
 此外，如果你基于用户代理提供内容优化（例如，响应式设计），你可能会想在 Vary 标头的值中包含“User-Agent”。但是，User-Agent 请求标头通常具有非常多的变体，这大大降低了缓存被重用的机会。因此，如果可能，请考虑一种基于特征检测而不是基于 User-Agent 请求标头来改变行为的方法。
 
-![这会导致缓存基于响应 URL 和 Accept-Language请求标头的组合进行键控](https://developer.mozilla.org/zh-CN/docs/Web/HTTP/Caching/keyed-with-url-and-language.png)
+<vImageViewer src="https://developer.mozilla.org/zh-CN/docs/Web/HTTP/Caching/keyed-with-url-and-language.png" alt="这会导致缓存基于响应 URL 和 Accept-Language请求标头的组合进行键控" :inline="false"/>
 
 对于使用 cookie 来防止其他人重复使用缓存的个性化内容的应用程序，你应该指定 Cache-Control: private 而不是为 Vary 指定 cookie。
 
@@ -312,7 +312,7 @@ Cache-Control: max-age=31536000
 
 如果响应是针对特定用户个性化的，并且你不希望它在折叠中共享，则应添加 private 指令：
 
-![请求折叠](https://developer.mozilla.org/zh-CN/docs/Web/HTTP/Caching/request-collapse.png)
+<vImageViewer src="https://developer.mozilla.org/zh-CN/docs/Web/HTTP/Caching/request-collapse.png" alt="请求折叠" :inline="false"/>
 
 ### 常见的缓存模式
 
@@ -329,6 +329,7 @@ Cache-Control 规范中有很多指令，可能很难全部理解。但是大多
 另外，如果服务实现了 cookie 或其他登录方式，并且内容是为每个用户个性化的，那么也必须提供 private，以防止与其他用户共享：`Cache-Control: no-cache, private`
 
 #### 缓存破坏
+
 最适合缓存的资源是静态不可变文件，其内容永远不会改变。而对于会变化的资源，通常的最佳实践是每次内容变化时都改变 URL，这样 URL 单元可以被缓存更长的时间。
 
 在现代 Web 开发中，JavaScript 和 CSS 资源会随着开发的进展而频繁更新。此外，如果客户端使用的 JavaScript 和 CSS 资源的版本不同步，则显示将中断。

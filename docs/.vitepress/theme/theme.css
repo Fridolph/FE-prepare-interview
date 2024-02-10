@@ -10,6 +10,20 @@
   margin-top: 0px !important;
 }
 
+.vp-doc .image-viewer img {
+  display: block !important;
+  cursor: pointer;
+}
+.vp-doc .image-viewer button {
+  /* display: none !important; */
+  background-color: #fff !important;
+  border: none !important;
+  color: #999 !important;
+  width: 100%;
+  text-align: center;
+  margin: 0 !important;
+}
+
 .flex-wrap {
   display: flex;
   flex-direction: row;

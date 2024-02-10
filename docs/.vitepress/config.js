@@ -1,9 +1,10 @@
 import { defineConfig } from 'vitepress'
+// todo:fix 由于npm run build 报错，暂时把该插件去掉，解决后加回来
 // import { postcssIsolateStyles } from 'vitepress'
-import { pagefindPlugin, chineseSearchOptimize } from 'vitepress-plugin-pagefind'
+// import { pagefindPlugin, chineseSearchOptimize } from 'vitepress-plugin-pagefind'
 import { containerPreview, componentPreview } from '@vitepress-demo-preview/plugin'
 import { fileURLToPath, URL } from 'node:url'
-import { transformerTwoslash } from '@shikijs/vitepress-twoslash' 
+import { transformerTwoslash } from '@shikijs/vitepress-twoslash'
 // https://vitepress.dev/reference/site-config
 // menu route
 import straight from './routes/sidebar/直击概念'
@@ -13,9 +14,11 @@ import contribution from './routes/sidebar/参与贡献'
 import interview from './routes/sidebar/网友面经'
 
 export default defineConfig({
-  base: '/FE-prepare-interview/',
+  // base: '/FE-prepare-interview/',
+  base: '/',
   title: 'Web前端必备面试宝典',
-  description: 'Web前端开发必备面试宝典，Fridolph著。内容搜集整理自互联网，遵循GPL开源协议。',
+  description:
+    'Web前端开发必备面试宝典，Fridolph著。内容搜集整理自互联网，遵循GPL开源协议。',
   head: [['link', { rel: 'shortcut icon', href: '/favicon.ico' }]],
   lastUpdated: true,
   themeConfig: {
@@ -49,7 +52,9 @@ export default defineConfig({
       ],
       '/参与贡献/': contribution,
     },
-    socialLinks: [{ icon: 'github', link: 'https://github.com/Fridolph/FE-prepare-interview' }],
+    socialLinks: [
+      { icon: 'github', link: 'https://github.com/Fridolph/FE-prepare-interview' },
+    ],
     footer: {
       // message: '',
       copyright:
@@ -64,21 +69,14 @@ export default defineConfig({
       options: {
         _render(src, env, md) {
           const html = md.render(src, env)
-          if (env.frontmatter?.title) return md.render(`# ${env.frontmatter.title}`) + html
+          if (env.frontmatter?.title)
+            return md.render(`# ${env.frontmatter.title}`) + html
           return html
         },
       },
     },
     // 由于本地搜索对中文和 英文大小写判断稍差
     // 试试algolia - - ORZ 还没申请下来
-    // search: {
-    //   provider: 'algolia',
-    //   options: {
-    //     appId: '...',
-    //     apiKey: '...',
-    //     indexName: '...'
-    //   }
-    // },
     outlineTitle: '本页导航',
     docFooter: {
       prev: '上一节',
@@ -97,18 +95,19 @@ export default defineConfig({
   lang: 'zh-cn',
   vite: {
     plugins: [
+      // todo:fix 由于npm run build 报错，暂时把该插件去掉，解决后加回来
       // postcssIsolateStyles(),
-      pagefindPlugin({
-        customSearchQuery: chineseSearchOptimize,
-        btnPlaceholder: '搜索',
-        placeholder: '搜索文档',
-        emptyText: '空空如也',
-        heading: '共: {{searchResult}} 条结果',
-        excludeSelector: ['img', 'a.header-anchor'],
-        forceLanguage: 'zh-cn',
-        indexingCommand:
-          'npx pagefind --source "docs/.vitepress/dist" --bundle-dir "pagefind" --exclude-selectors "div.aside, a.header-anchor"',
-      }),
+      // pagefindPlugin({
+      //   customSearchQuery: chineseSearchOptimize,
+      //   btnPlaceholder: '搜索',
+      //   placeholder: '搜索文档',
+      //   emptyText: '空空如也',
+      //   heading: '共: {{searchResult}} 条结果',
+      //   excludeSelector: ['img', 'a.header-anchor'],
+      //   forceLanguage: 'zh-cn',
+      //   indexingCommand:
+      //     'npx pagefind --source "docs/.vitepress/dist" --bundle-dir "pagefind" --exclude-selectors "div.aside, a.header-anchor"',
+      // }),
     ],
     resolve: {
       alias: {
@@ -120,9 +119,7 @@ export default defineConfig({
     image: {
       lazyLoading: true,
     },
-    codeTransformers: [
-      transformerTwoslash() 
-    ],
+    codeTransformers: [transformerTwoslash()],
     container: {
       tipLabel: '提示',
       warningLabel: '警告',

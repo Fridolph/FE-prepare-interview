@@ -29,7 +29,7 @@ Event Loop **解决了 JavaScript 作为单线程语言时的并发性问题**�
   - 只要有空闲就不断轮询查找
 - 重复以上步骤形成事件循环
 
-![Evnet Loop简单流程图](/02js/eventloop.jpg)
+<vImageViewer src="/02js/eventloop.jpg" alt="Loop简单流程图" :inline="false"/>
 
 这只是把事件循环这个概念说了，很多重点还没浮出水面。答到这，面试官肯定不会满意，所以你还需要了解以下概念，顶住下一轮深挖。
 
@@ -86,19 +86,19 @@ Event Loop **解决了 JavaScript 作为单线程语言时的并发性问题**�
 
 ### 梳理：事件循环流程
 
-1. 主线程读取JavaScript代码，形成相应的堆和执行栈。
-2. 当主线程遇到异步任务时，将其委托给对应的异步进程（如Web API）处理。
+1. 主线程读取 JavaScript 代码，形成相应的堆和执行栈。
+2. 当主线程遇到异步任务时，将其委托给对应的异步进程（如 Web API）处理。
 3. 异步任务完成后，将相应的回调函数推入任务队列。
 4. 主线程执行完同步任务后，检查任务队列，如果有任务，则按照先进先出的原则将任务推入主线程执行。
 5. 重复执行以上步骤，形成事件循环。
 
-![事件循环流程函数版](/02js/eventloop2.jpg)
+<vImageViewer src="/02js/eventloop2.jpg" alt="事件循环流程函数版" :inline="false"/>
 
 ### 梳理：任务队列执行过程
 
-首先，必须要明确，在JavaScript中，所有任务都在主线程上执行。任务执行过程分为同步任务和异步任务两个阶段。异步任务的处理经历两个主要阶段：`Event Table（事件表）`和 `Event Queue（事件队列）`。
+首先，必须要明确，在 JavaScript 中，所有任务都在主线程上执行。任务执行过程分为同步任务和异步任务两个阶段。异步任务的处理经历两个主要阶段：`Event Table（事件表）`和 `Event Queue（事件队列）`。
 
-Event Table存储了宏任务的相关信息，包括事件监听和相应的回调函数。当特定类型的事件发生时，对应的回调函数被添加到事件队列中，等待执行。例如，你可以通过addEventListener来将事件监听器注册到事件表上：
+Event Table 存储了宏任务的相关信息，包括事件监听和相应的回调函数。当特定类型的事件发生时，对应的回调函数被添加到事件队列中，等待执行。例如，你可以通过 addEventListener 来将事件监听器注册到事件表上：
 
 任务队列的执行流程可概括为：
 
@@ -136,18 +136,18 @@ Event Table存储了宏任务的相关信息，包括事件监听和相应的回
 
 4. 只要微任务队列中还有任务，宏任务队列就只会等待微任务队列执行完毕后再执行;
 
-5. 只有运行完await语句，才把await语句后面的全部代码加入到微任务行列;
+5. 只有运行完 await 语句，才把 await 语句后面的全部代码加入到微任务行列;
 
-6. 在遇到await promise时，必须等await promise 函数执行完毕才能对await语句后面的全部代码加入到微任务中;
+6. 在遇到 await promise 时，必须等 await promise 函数执行完毕才能对 await 语句后面的全部代码加入到微任务中;
 
-7. 在等待 await Promise.then微任务时:
-  - 运行其他同步代码;
-  - 等到同步代码运行完，开始运行 await promise.then 微任务;
-  - await promise.then微任务完成后，把await语句后面的全部代码加入到微任务行列;
+7. 在等待 await Promise.then 微任务时:
 
+- 运行其他同步代码;
+- 等到同步代码运行完，开始运行 await promise.then 微任务;
+- await promise.then 微任务完成后，把 await 语句后面的全部代码加入到微任务行列;
 
 ## 参考资料
 
 - [关于 JavaScript 单线程的一些事](https://github.com/JChehe/blog/blob/master/posts/%E5%85%B3%E4%BA%8EJavaScript%E5%8D%95%E7%BA%BF%E7%A8%8B%E7%9A%84%E4%B8%80%E4%BA%9B%E4%BA%8B.md)
 - [一看就懂的事件循环机制(event loop)](https://juejin.cn/post/7002037475874963493)
-- [深入JS执行原理：一文搞定 EventLoop、宏任务、微任务](https://mp.weixin.qq.com/s/W0yDX9Nme3nbBOrzLRwPbQ)
+- [深入 JS 执行原理：一文搞定 EventLoop、宏任务、微任务](https://mp.weixin.qq.com/s/W0yDX9Nme3nbBOrzLRwPbQ)

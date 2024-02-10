@@ -11,20 +11,20 @@ HTTP 遵循经典的`客户端—服务端`模型，客户端打开一个连接�
 
 HTTP 是一种用作获取诸如 HTML 文档这类资源的协议。它是 Web 上进行任何数据交换的基础，同时，也是一种客户端—服务器（client-server）协议
 
-![HTTP 客户端—服务器（client-server）协议](https://developer.mozilla.org/zh-CN/docs/Web/HTTP/Overview/fetching_a_page.png)
+<vImageViewer src="https://developer.mozilla.org/zh-CN/docs/Web/HTTP/Overview/fetching_a_page.png" alt="客户端—服务器（client-server）协议" :inline="false"/>
 
 客户端与服务端之间通过交换一个个独立的消息（而非数据流）进行通信。
 
 - 由客户端——通常是个浏览器——发出的消息被称作请求（`request`）
 - 由服务端发出的应答消息被称作响应（`response`）。
 
-![HTTP 客户端—服务器（client-server）协议](https://developer.mozilla.org/zh-CN/docs/Web/HTTP/Overview/http-layers.png)
+<vImageViewer src="https://developer.mozilla.org/zh-CN/docs/Web/HTTP/Overview/http-layers.png" alt="HTTP 客户端—服务器（client-server）协议" :inline="false"/>
 
 ### 基于 HTTP 的组件系统
 
 HTTP 是一个客户端—服务器协议：`请求由一个实体发出`，即`用户代理（user agent）`，或是一个可以代表它的`代理方（proxy）`
 
-![请求由一个实体发出](https://developer.mozilla.org/zh-CN/docs/Web/HTTP/Overview/client-server-chain.png)
+<vImageViewer src="https://developer.mozilla.org/zh-CN/docs/Web/HTTP/Overview/client-server-chain.png" alt="请求由一个实体发出" :inline="false"/>
 
 ### 客户端：用户代理
 
@@ -76,7 +76,7 @@ HTTP 被设计得简单且易读，尽管在 HTTP/2 中，HTTP 消息被封装�
 
 为了减轻这个缺陷，HTTP/1.1 引入了流水线（已被证明难以实现）和持久化连接：可以通过 Connection 标头来部分控制底层的 TCP 连接。HTTP/2 则更进一步，通过在一个连接中复合多个消息，让这个连接始终平缓并更加高效。
 
-## HTTP能控制什么
+## HTTP 能控制什么
 
 以下是可以被 HTTP 控制的常见特性：
 
@@ -122,7 +122,7 @@ Content-Type: text/html
 
 当启用 HTTP 流水线时，后续请求都可以直接发送，而不用等待第一个响应被全部接收。然而 HTTP 流水线已被证明很难在现有的网络中实现，因为现有网络中有老旧的软件与现代版本的软件同时存在。因此，HTTP 流水线已在 HTTP/2 中被更健壮、使用帧的多路复用请求所取代。
 
-## HTTP报文
+## HTTP 报文
 
 HTTP/1.1 以及更早的 HTTP `协议报文都是语义可读`的。在 HTTP/2 中，这些报文被嵌入到了一个新的二进制结构——帧。帧允许实现很多优化，比如`报文标头的压缩`以及`多路复用`。即使只有原始 HTTP 报文的一部分以 HTTP/2 发送出来，每条报文的语义依旧不变，客户端会重组原始 HTTP/1.1 请求。因此用 HTTP/1.1 格式来理解 HTTP/2 报文仍旧有效。
 
@@ -130,19 +130,19 @@ HTTP/1.1 以及更早的 HTTP `协议报文都是语义可读`的。在 HTTP/2 �
 
 ### 请求
 
-![一个http请求](https://developer.mozilla.org/zh-CN/docs/Web/HTTP/Overview/http_request.png)
+<vImageViewer src="https://developer.mozilla.org/zh-CN/docs/Web/HTTP/Overview/http_request.png" alt="一个http请求" :inline="false"/>
 
 请求由以下元素组成：
 
-- 一个 `HTTP 方法`，通常是由一个动词，像 GET、POST 等，或者一个名词，像 OPTIONS、HEAD 等，来定义客户端执行的动作。典型场景有：客户端意图抓取某个资源（使用GET）；发送 HTML 表单的参数值（使用POST）；以及其他情况下需要的那些其他操作。
-- 要获取的那个`资源路径`——去除了当前上下文中显而易见的信息之后的 URL，比如说，它不包括协议（http://）、域名（这里的域名是developer.mozilla.org），或是 TCP 的端口（这里的端口是 80）。
+- 一个 `HTTP 方法`，通常是由一个动词，像 GET、POST 等，或者一个名词，像 OPTIONS、HEAD 等，来定义客户端执行的动作。典型场景有：客户端意图抓取某个资源（使用 GET）；发送 HTML 表单的参数值（使用 POST）；以及其他情况下需要的那些其他操作。
+- 要获取的那个`资源路径`——去除了当前上下文中显而易见的信息之后的 URL，比如说，它不包括协议（http://）、域名（这里的域名是 developer.mozilla.org），或是 TCP 的端口（这里的端口是 80）。
 - `HTTP 协议版本号`。
 - 为服务端表达其他信息的`可选标头`。
 - `请求体（body）`，类似于响应中的请求体，一些像 POST 这样的方法，请求体内包含需要了发送的资源。
 
 ### 响应
 
-![一个http响应](https://developer.mozilla.org/zh-CN/docs/Web/HTTP/Overview/http_response.png)
+<vImageViewer src="https://developer.mozilla.org/zh-CN/docs/Web/HTTP/Overview/http_response.png" alt="一个http响应" :inline="false"/>
 
 响应报文包含了下面的元素：
 

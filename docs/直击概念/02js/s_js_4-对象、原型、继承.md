@@ -2,7 +2,7 @@
 
 三大重要概念：类、原型、实例
 
-![JavaScript Object](/02js/object.jpg)
+<vImageViewer src="/02js/object.jpg" alt="JavaScript Object" :inline="false"/>
 
 ## 对象
 
@@ -69,7 +69,7 @@ Object.create 用于创建一个对象，接受两个参数，使用如下：
 
 原型是实现继承的基础。那么如何去理解原型呢？
 
-![原型是实现继承的基础](/02js/prototype.png)
+<vImageViewer src="/02js/prototype.png" alt="原型是实现继承的基础" :inline="false"/>
 
 引用类型的四个规则：
 
@@ -80,7 +80,7 @@ Object.create 用于创建一个对象，接受两个参数，使用如下：
 
 ## 原型链
 
-![对象的查找过程](/02js/prototype2.png)
+<vImageViewer src="/02js/prototype2.png" alt="对象的查找过程" :inline="false"/>
 
 最后一个 null，设计上是为了避免死循环而设置的, **Object.prototype 的隐式原型指向 null**。
 
@@ -88,24 +88,23 @@ Object.create 用于创建一个对象，接受两个参数，使用如下：
 
 所谓继承，简单说就是能通过子类实例访问父类的属性和方法。而利用原型链可以达成这样的目的，所以只要父类原型、子类原型、子类实例形成原型链关系即可。
 
-![子类原型作为父类的实力，形成原型链关系](/02js/prototype3.png)
-
+<vImageViewer src="/02js/prototype3.png" alt="子类原型作为父类的实力，形成原型链关系" :inline="false"/>
 
 实现对象继承：
 
-### 1. 构造函数 直接改变prototype指向
+### 1. 构造函数 直接改变 prototype 指向
 
 ```js
 function Father() {
   this.nationality = 'Han'
 }
-Father.prototype.propA = '我是父类原型上的属性';
+Father.prototype.propA = '我是父类原型上的属性'
 function Child() {
-  Father.call(this);
-};
-Child.prototype.propB = '我是子类原型上的属性';
-var child = new Child();
-console.log(child.propA, child.propB, child.nationality);
+  Father.call(this)
+}
+Child.prototype.propB = '我是子类原型上的属性'
+var child = new Child()
+console.log(child.propA, child.propB, child.nationality)
 // undefined, '我是子类原型上的属性', 'Han'
 ```
 
@@ -116,17 +115,17 @@ console.log(child.propA, child.propB, child.nationality);
 
 ```js
 function Father() {
-  this.nationality = 'Han';
-};
-Father.prototype.propA = '我是父类原型上的属性';
+  this.nationality = 'Han'
+}
+Father.prototype.propA = '我是父类原型上的属性'
 function Child() {
-  Father.call(this);
-};
-Child.prototype = new Father();
-Child.prototype.constructor = Child; // 修正原型上的constructor属性
-Child.prototype.propB = '我是子类原型上的属性';
-var child = new Child();
-console.log(child.propA, child.propB, child.nationality); 
+  Father.call(this)
+}
+Child.prototype = new Father()
+Child.prototype.constructor = Child // 修正原型上的constructor属性
+Child.prototype.propB = '我是子类原型上的属性'
+var child = new Child()
+console.log(child.propA, child.propB, child.nationality)
 // '我是父类原型上的属性', '我是子类原型上的属性', 'Han'
 ```
 
@@ -137,17 +136,17 @@ console.log(child.propA, child.propB, child.nationality);
 
 ```js
 function Father() {
-  this.nationality = 'Han';
-};
-Father.prototype.propA = '我是父类原型上的属性';
-function Child() {};
-Child.prototype = Object.create(Father.prototype);
-Child.prototype.constructor = Child; // 修正原型上的constructor属性
-Child.prototype.propB = '我是子类原型上的属性';
-var child = new Child();
-child instanceof Father; // true
-console.log(child.propA, child.propB, child.nationality); // 都可以访问到
-// 
+  this.nationality = 'Han'
+}
+Father.prototype.propA = '我是父类原型上的属性'
+function Child() {}
+Child.prototype = Object.create(Father.prototype)
+Child.prototype.constructor = Child // 修正原型上的constructor属性
+Child.prototype.propB = '我是子类原型上的属性'
+var child = new Child()
+child instanceof Father // true
+console.log(child.propA, child.propB, child.nationality) // 都可以访问到
+//
 ```
 
 - 关键点：利用一个空对象过渡，解除子类原型和父类构造函数的强关联关系。这也意味着继承可以是纯对象之间的继承，无需构造函数介入。
@@ -157,16 +156,16 @@ console.log(child.propA, child.propB, child.nationality); // 都可以访问到
 
 ```js
 var obj = {
-  nationality: 'Han'
-};
-function inherit(proto) {
-  var o = Object.create(proto);
-  o.extendFunc = function(a, b) {
-    return a + b;
-  }
-  return o;
+  nationality: 'Han',
 }
-var inheritObj = inherit(obj);
+function inherit(proto) {
+  var o = Object.create(proto)
+  o.extendFunc = function (a, b) {
+    return a + b
+  }
+  return o
+}
+var inheritObj = inherit(obj)
 // inheritObj.nationality -> 'Han'
 ```
 
@@ -177,24 +176,24 @@ var inheritObj = inherit(obj);
 
 ```js
 function inherit(childType, fatherType) {
-  childType.prototype = Object.create(fatherType.prototype);
-  childType.prototype.constructor = childType;
+  childType.prototype = Object.create(fatherType.prototype)
+  childType.prototype.constructor = childType
 }
 
 function Father() {
-  this.nationality = 'Han';
+  this.nationality = 'Han'
 }
 
-Father.prototype.propA = '我是父类原型上的属性';
+Father.prototype.propA = '我是父类原型上的属性'
 
 function Child() {
   Father.call(this)
 }
 
-inherit(Child, Father); // 继承
-Child.prototype.propB = '我是子类原型上的属性';
-var child = new Child();
-console.log(child);
+inherit(Child, Father) // 继承
+Child.prototype.propB = '我是子类原型上的属性'
+var child = new Child()
+console.log(child)
 ```
 
 - 关键点：解决父类构造函数多次执行的问题，同时让子类原型变得更加纯粹。
