@@ -72,3 +72,89 @@
 ::: warning 注意
 虽然在响应式布局中很有用，但如果不包括宽度和高度信息，就会导致卡顿。如果在解析 `<img>` 元素时没有提供高度信息，则在图片加载之前，此 CSS 实际上将高度设置为 0。当页面在初始显示到屏幕后加载图片时，页面会重新布局和重绘，为新确定的高度创建空间，从而导致布局移动。
 :::
+
+浏览器在实际加载图像之前有一种调整图像大小的机制。当 `<img>`、`<video>` 或 `<input type="button">` 元素设置了 width 和 height 属性时，它的宽高比会在加载前计算出来，并使用提供的尺寸提供给浏览器。
+
+接着，根据宽高比计算出图片的高度，并将正确的尺寸赋给 `<img>` 元素。这样做的好处是，当图片加载时，就不会出现之前提到的卡顿，或者即使列出的尺寸不太精确，卡顿程度也会降到最低。
+
+宽高比仅在图片加载时用于保留空间。一旦图片加载完成，将使用加载的图片的实际宽高比，而不是属性中的宽高比。这确保即使属性尺寸不准确，图片也会以正确的宽高比显示。
+
+对于任何背景图片，很重要的是设置 background-color 值，以便在图片加载之前，任何叠加在上面的内容仍然可读。
+
+## 优化视频传输
+
+下面的小节描述了以下优化技术：
+
+### 压缩所有视频
+
+压缩视频并导出多种视频格式，包括 WebM、MPEG-4/H.264 和 Ogg/Theora。
+
+### 优化 source 顺序
+
+按从小到大的顺序排序视频源。例如，给定三种分别压缩为 10 MB、12 MB 和 13 MB 的不同格式的视频，先声明最小的，最后声明最大的：
+
+```html
+<video width="400" height="300" controls="controls">
+  <!-- WebM: 10 MB -->
+  <source src="video.webm" type="video/webm" />
+  <!-- MPEG-4/H.264: 12 MB -->
+  <source src="video.mp4" type="video/mp4" />
+  <!-- Ogg/Theora: 13 MB -->
+  <source src="video.ogv" type="video/ogv" />
+</video>
+```
+
+### 视频自动播放
+
+要确保背景视频自动循环播放，你必须在视频标签中添加几个属性：autoplay、muted 和 playsinline。
+
+```html
+<video autoplay="" loop="" muted="true" playsinline="" src="backgroundvideo.mp4"></video>
+```
+
+虽然 loop 和 autoplay 足以使视频循环和自动播放，但想要在移动浏览器中自动播放的话，muted 属性是必需的。
+
+Playsinline 对于移动 Safari 浏览器来说是必需的，它允许视频播放时不强制全屏模式。
+
+### 从静音的视频中移除音频
+
+对于 hero 视频或者其他没有音频的视频，移除音频是明智的选择。
+
+```html
+<video autoplay="" loop="" muted="true" playsinline="" id="hero-video">
+  <source src="banner_video.webm" type='video/webm; codecs="vp8, vorbis"' />
+  <source src="web_banner.mp4" type="video/mp4" />
+</video>
+```
+
+没有理由在永远静音的视频中提供音频。**删除音频可以节省 20% 的带宽。**
+
+根据你选择的软件，你可能可以在导出和压缩过程中移除音频。如果不能，一个名为 FFmpeg 的免费工具可以帮你做到。这是用 FFmpeg 移除音频的命令字符串：
+
+```bash
+ffmpeg -i original.mp4 -an -c:v copy audioFreeVersion.mp4
+```
+
+### 优化视频预加载
+
+预加载属性有三个可用选项：auto|metadata|none。`默认设置是 metadata`。这些设置控制了在页面加载时下载多少视频文件。你可以通过延迟下载较少受欢迎的视频来节省数据。
+
+**设置 preload="none" 的结果是在播放开始之前，视频不会被下载**。这会延迟启动，但对于播放概率较低的视频，可以节省大量数据。
+
+**为了更适度的带宽节省，可以设置 preload="metadata"**，这可能会在页面加载时下载视频的 3%。这对于一些小型或中等大小的文件来说是一个有用的选项。
+
+将设置改为 auto 告诉浏览器自动下载整个视频。只有当播放可能性非常高时才这样做。否则，这将浪费大量的带宽。
+
+### 考虑流媒体
+
+视频流媒体允许适当的视频大小和带宽（基于网络速度）被传送到最终用户。类似于响应式图像，正确大小的视频被传送到浏览器，确保视频快速启动、缓冲少以及播放优化。
+
+## 总结
+
+- 图片和视频占据了平均网站下载字节的 70% 以上。从下载性能的角度来看，消除媒体和减少文件大小是最容易解决的问题
+- 优化视频有可能显著提高网站性能。视频文件相比其他网站文件相对较大，因此始终值得关注。
+
+## 参考
+
+- <https://developer.mozilla.org/zh-CN/docs/Learn/Performance/video>
+- <https://developer.mozilla.org/zh-CN/docs/Learn/Performance/Multimedia>

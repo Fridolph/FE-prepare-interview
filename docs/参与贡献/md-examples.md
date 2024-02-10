@@ -1,10 +1,10 @@
-# Markdown扩展示例
+# Markdown 扩展示例
 
-这个页面演示了VitePress提供的一些内置的Markdown扩展。
+这个页面演示了 VitePress 提供的一些内置的 Markdown 扩展。
 
 ## 语法高亮
 
-VitePress使用 [Shikiji](https://github.com/antfu/shikiji) 提供的语法高亮功能，还拥有额外的行高亮等功能。
+VitePress 使用 [Shikiji](https://github.com/antfu/shikiji) 提供的语法高亮功能，还拥有额外的行高亮等功能。
 
 **Input**
 
@@ -34,17 +34,19 @@ export default {
 
 也可以使用 // [!code highlight] 注释实现行高亮。
 
-```md
+````md
 ```js
 export default {
-  data () {
+  data() {
     return {
-      msg: 'Highlighted!' // [!code highlight]
+      msg: 'Highlighted!', // [!code highlight]
     }
-  }
+  },
 }
 ```
-```
+````
+
+````
 
 ## 自定义容器
 
@@ -70,7 +72,7 @@ This is a dangerous warning.
 ::: details
 This is a details block.
 :::
-```
+````
 
 **Output**
 
@@ -119,9 +121,11 @@ This is a details block.
 :::
 
 ::: details 点我查看代码
+
 ```js
-  console.log('Hello, VitePress!')
+console.log('Hello, VitePress!')
 ```
+
 :::
 
 ## 代码块中聚焦
@@ -146,7 +150,7 @@ This is a details block.
 <<< @/filepath
 
 此语法同时支持行高亮：
-<<< @/filepath{highlightLines} 
+<<< @/filepath{highlightLines}
 
 如：
 <<< @/snippets/snippet.js{2}
@@ -181,7 +185,6 @@ export default config
 
 :::
 
-
 ## 包含 markdown 文件
 
 可以像这样在一个 markdown 文件中包含另一个 markdown 文件，甚至是内嵌的。
@@ -189,7 +192,6 @@ export default config
 ::: tip
 也可以使用 @，它的值对应于源代码根目录，默认情况下是 VitePress 项目根目录，除非配置了 srcDir。
 :::
-
 
 例如，可以这样用相对路径包含 Markdown 文件：
 
@@ -203,10 +205,10 @@ export default config
 
 ## 可能遇到的坑
 
-- SSR兼容性，在导入时访问浏览器 API 的库
+- SSR 兼容性，在导入时访问浏览器 API 的库
 
 <https://vitepress.dev/zh/guide/ssr-compat>
 
 ## 更多
 
-可参考官方文档，请查看Markdown扩展的完整列表的文档 [full list of markdown extensions](https://vitepress.dev/guide/markdown)
+可参考官方文档，请查看 Markdown 扩展的完整列表的文档 [full list of markdown extensions](https://vitepress.dev/guide/markdown)
