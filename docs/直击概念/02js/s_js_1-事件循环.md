@@ -29,7 +29,7 @@ Event Loop **解决了 JavaScript 作为单线程语言时的并发性问题**�
   - 只要有空闲就不断轮询查找
 - 重复以上步骤形成事件循环
 
-<vImageViewer src="/02js/eventloop.jpg" alt="Loop简单流程图" :inline="false"/>
+<Image src="/02js/eventloop.jpg" alt="Loop简单流程图" :inline="false"/>
 
 这只是把事件循环这个概念说了，很多重点还没浮出水面。答到这，面试官肯定不会满意，所以你还需要了解以下概念，顶住下一轮深挖。
 
@@ -92,7 +92,7 @@ Event Loop **解决了 JavaScript 作为单线程语言时的并发性问题**�
 4. 主线程执行完同步任务后，检查任务队列，如果有任务，则按照先进先出的原则将任务推入主线程执行。
 5. 重复执行以上步骤，形成事件循环。
 
-<vImageViewer src="/02js/eventloop2.jpg" alt="事件循环流程函数版" :inline="false"/>
+<Image src="/02js/eventloop2.jpg" alt="事件循环流程函数版" :inline="false"/>
 
 ### 梳理：任务队列执行过程
 

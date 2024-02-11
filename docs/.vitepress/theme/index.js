@@ -12,7 +12,7 @@ export default {
   ...DefaultTheme,
   enhanceApp({ app }) {
     app.use(TwoslashFloatingVue)
-    app.component('vImageViewer', vImageViewer)
+    app.component('Image', vImageViewer)
     app.component('demo-preview', ElementPlusContainer)
   },
   setup() {

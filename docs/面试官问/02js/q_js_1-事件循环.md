@@ -94,7 +94,7 @@ setTimeout(() => {
 ```
 
 :::details 流程图提示
-<vImageViewer src="/02js/micro_macro.png" alt="图示" :inline="false"/>
+<Image src="/02js/micro_macro.png" alt="图示" :inline="false"/>
 :::
 
 :::details 答案

@@ -21,8 +21,8 @@
 
 ## 赋值和深浅拷贝的区别
 
-<vImageViewer src="/02js/clone1.png" alt="shadowCopy" :inline="false"/>
-<vImageViewer src="/02js/clone2.png" alt="deepCopy" :inline="false"/>
+<Image src="/02js/clone1.png" alt="shadowCopy" :inline="false"/>
+<Image src="/02js/clone2.png" alt="deepCopy" :inline="false"/>
 
 ::: details 实现深拷贝的几种方式
 
