@@ -7,27 +7,27 @@
 
 ## Web 性能
 
+:white_check_mark:
+
 ## 多媒体（图片、视频）
 
-## HTML 性能优化
-
-## CSS 性能优化
+:white_check_mark:
 
 ## JavaScript 性能优化
 
-## 其他分类参考
+:white_check_mark:
 
-### 请求
+## HTML 性能优化
 
-### 代码体积
+:white_check_mark:
 
-### 加载
+## CSS 性能优化
 
-### 渲染
+:white_check_mark:
 
-### 代码编写
+## 其他更多
 
-### 其他
+:x: 期待您共同参与完善
 
 ## 参考资料
 

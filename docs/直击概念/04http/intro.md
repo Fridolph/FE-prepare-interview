@@ -4,20 +4,32 @@
 
 ## OSI 七层模型
 
-## DNS
+:white_check_mark:
+
+## 浏览器的工作原理
+
+:white_check_mark:
 
 ## HTTP
 
+:white_check_mark:
+
 ### status code
+
+:white_check_mark:
 
 ### request headers
 
+:white_check_mark:
+
 ### response headers
+
+:white_check_mark:
 
 ## HTTPS
 
-### 传输加密
+:white_check_mark:
 
-### 安全性
+## HTTP 缓存
 
-## HTTP 缓存机制
+:white_check_mark:

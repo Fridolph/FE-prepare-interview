@@ -6,22 +6,40 @@
 
 ### 变量：类型、运算、判断
 
+:white_check_mark:
+
 ### 作用域
+
+:white_check_mark:
 
 ### 闭包
 
-### this指向
+:white_check_mark:
+
+### this 指向
+
+:white_check_mark:
 
 ### 原型和原型链
 
+:white_check_mark:
+
 ### 面向对象
+
+:x:
 
 ## JavaScript 进阶
 
 ### Web API
 
+:x:
+
 ### 事件循环
+
+:white_check_mark:
 
 ## JavaScript 高级
 
 ### Promise
+
+:x:
