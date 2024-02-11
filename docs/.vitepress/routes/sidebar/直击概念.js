@@ -11,7 +11,7 @@ export default [
     collapsed: true,
     link: useStraightIntro('html'),
     items: [
-      // useStraightItem('了解flex布局吗', 'css', 1, 'flex'),
+      useStraightItem('BFC', 'css', 1, 'BFC'),
       // useStraightItem('了解grid布局吗', 'css', 1, 'grid'),
     ],
   },
@@ -49,8 +49,7 @@ export default [
       useStraightItem('HTTP Header', 'http', 3, 'http_header'),
       useStraightItem('HTTP缓存', 'http', 4, 'http缓存'),
       useStraightItem('HTTPS', 'http', 5, 'https'),
-      // useStraightItem('https', 'http', 3, 'https'),
-      // useStraightItem('websocket', 'http', 4, 'websocket'),
+      useStraightItem('WebSocket', 'http', 8, 'WebSocket'),
     ],
   },
   {
