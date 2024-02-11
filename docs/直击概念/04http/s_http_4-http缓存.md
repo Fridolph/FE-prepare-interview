@@ -52,7 +52,7 @@ Cache-Control: no-store, no-cache, max-age=0, must-revalidate, proxy-revalidate
 
 托管缓存的特性因部署的产品而异。在大多数情况下，你可以通过 Cache-Control 标头和你自己的配置文件或仪表板来控制缓存的行为。
 
-<vImageViewer src="https://developer.mozilla.org/zh-CN/docs/Web/HTTP/Caching/type-of-cache.png" alt="托管缓存" :inline="false"/>
+<Image src="https://developer.mozilla.org/zh-CN/docs/Web/HTTP/Caching/type-of-cache.png" alt="托管缓存" :inline="false"/>
 
 ```http
 Cache-Control: no-store
@@ -116,7 +116,7 @@ Expires: Tue, 28 Feb 2022 22:22:22 GMT
 
 区分响应的方式本质上是基于它们的 URL：
 
-<vImageViewer src="https://developer.mozilla.org/zh-CN/docs/Web/HTTP/Caching/keyed-with-url.png" alt="区分响应的方式本质上是基于它们的URL" :inline="false"/>
+<Image src="https://developer.mozilla.org/zh-CN/docs/Web/HTTP/Caching/keyed-with-url.png" alt="区分响应的方式本质上是基于它们的URL" :inline="false"/>
 
 但是响应的内容并不总是相同的，即使它们具有相同的 URL。特别是在执行内容协商时，来自服务器的响应可能取决于 Accept、Accept-Language 和 Accept-Encoding 请求标头的值。
 
@@ -130,7 +130,7 @@ Vary: Accept-Language
 
 此外，如果你基于用户代理提供内容优化（例如，响应式设计），你可能会想在 Vary 标头的值中包含“User-Agent”。但是，User-Agent 请求标头通常具有非常多的变体，这大大降低了缓存被重用的机会。因此，如果可能，请考虑一种基于特征检测而不是基于 User-Agent 请求标头来改变行为的方法。
 
-<vImageViewer src="https://developer.mozilla.org/zh-CN/docs/Web/HTTP/Caching/keyed-with-url-and-language.png" alt="这会导致缓存基于响应 URL 和 Accept-Language请求标头的组合进行键控" :inline="false"/>
+<Image src="https://developer.mozilla.org/zh-CN/docs/Web/HTTP/Caching/keyed-with-url-and-language.png" alt="这会导致缓存基于响应 URL 和 Accept-Language请求标头的组合进行键控" :inline="false"/>
 
 对于使用 cookie 来防止其他人重复使用缓存的个性化内容的应用程序，你应该指定 Cache-Control: private 而不是为 Vary 指定 cookie。
 
@@ -312,7 +312,7 @@ Cache-Control: max-age=31536000
 
 如果响应是针对特定用户个性化的，并且你不希望它在折叠中共享，则应添加 private 指令：
 
-<vImageViewer src="https://developer.mozilla.org/zh-CN/docs/Web/HTTP/Caching/request-collapse.png" alt="请求折叠" :inline="false"/>
+<Image src="https://developer.mozilla.org/zh-CN/docs/Web/HTTP/Caching/request-collapse.png" alt="请求折叠" :inline="false"/>
 
 ### 常见的缓存模式
 

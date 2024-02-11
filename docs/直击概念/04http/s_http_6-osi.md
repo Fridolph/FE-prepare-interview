@@ -4,6 +4,8 @@
 
 该模型将通信系统中的数据流划分为七个层，从分布式应用程序数据的最高层表示到跨通信介质传输数据的物理实现。每个中间层为其上一层提供功能，其自身功能则由其下一层提供。功能的类别通过标准的通信协议在软件中实现。
 
+<Image src="/04http/OSI.png" alt="OSI七层协议"/>
+
 ## 层次划分
 
 根据建议 X.200，OSI 将计算机网络体系结构划分为以下七层，标有 1 ～ 7，第 1 层在底部
@@ -46,4 +48,5 @@ OSI 参考模型`并没有提供一个可以实现的方法`，而是`描述了�
 
 ## 参考资料
 
-<https://zh.wikipedia.org/wiki/OSI%E6%A8%A1%E5%9E%8B>
+- [Java 网络编程-基础-OSI 网络参考模型、TCP、UDP、IP](https://www.cnblogs.com/zylblogs/articles/15531878.html)
+- <https://zh.wikipedia.org/wiki/OSI%E6%A8%A1%E5%9E%8B>
