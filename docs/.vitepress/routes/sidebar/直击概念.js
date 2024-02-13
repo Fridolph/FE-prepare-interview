@@ -32,9 +32,10 @@ export default [
     link: useStraightIntro('algo'),
     collapsed: true,
     items: [
-      // useStraightItem('堆栈', 'algo', 1, '堆栈'),
-      // useStraightItem('队列', 'algo', 2, '队列'),
-      // useStraightItem('链表', 'algo', 3, '链表'),
+      useStraightItem('算法基础', 'algo', 0, 'base'),
+      useStraightItem('栈 stack', 'algo', 1, 'stack'),
+      useStraightItem('队列 queue', 'algo', 2, 'queue'),
+      useStraightItem('链表 linkedlist', 'algo', 3, 'linkedlist'),
     ],
   },
   {

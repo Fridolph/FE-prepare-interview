@@ -1,4 +1,4 @@
-import { useQuestionItem } from '../usePath'
+import { useQuestionItem, useQuestionIntro } from '../usePath'
 
 export default [
   {
@@ -24,12 +24,12 @@ export default [
   },
   {
     text: '算法相关',
-    collapsed: true,
-    items: [
-      // useQuestionItem('堆栈', 'algo', 1, '堆栈'),
-      // useQuestionItem('队列', 'algo', 2, '队列'),
-      // useQuestionItem('链表', 'algo', 3, '链表'),
-    ],
+    link: useQuestionIntro('algo'),
+    // items: [
+    // useQuestionItem('堆栈', 'algo', 1, '堆栈'),
+    // useQuestionItem('队列', 'algo', 2, '队列'),
+    // useQuestionItem('链表', 'algo', 3, '链表'),
+    // ],
   },
   {
     text: 'HTTP',

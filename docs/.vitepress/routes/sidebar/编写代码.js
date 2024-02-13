@@ -4,7 +4,7 @@ export default [
   {
     text: '结合代码 & 手写题',
     items: [{ text: '如何利用该版块', link: '/编写代码/index' }],
-  },  
+  },
   {
     text: 'HTML & CSS',
     collapsed: true,
@@ -28,9 +28,9 @@ export default [
     text: '算法相关',
     collapsed: true,
     items: [
-      // useCodingItem('堆栈', 'algo', 1, '堆栈'),
-      // useCodingItem('队列', 'algo', 2, '队列'),
-      // useCodingItem('链表', 'algo', 3, '链表'),
+      useCodingItem('栈 stack', 'algo', 1, 'stack'),
+      useCodingItem('队列 queue', 'algo', 2, 'queue'),
+      useCodingItem('链表 linked list', 'algo', 3, 'linkedlist'),
     ],
   },
   {
