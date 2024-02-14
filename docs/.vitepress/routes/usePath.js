@@ -9,6 +9,7 @@ const typeMap = {
   js: '02js',
   javascript: '02js',
   es6: '02js',
+  sort: '03algo',
   algo: '03algo',
   http: '04http',
   request: '04http',

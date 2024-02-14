@@ -31,6 +31,7 @@ export default [
       useCodingItem('栈 stack', 'algo', 1, 'stack'),
       useCodingItem('队列 queue', 'algo', 2, 'queue'),
       useCodingItem('链表 linked list', 'algo', 3, 'linkedlist'),
+      useCodingItem('冒泡排序', 'sort', 1, 'bubbleSort'),
     ],
   },
   {
