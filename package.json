@@ -19,6 +19,7 @@
     "@vitepress-demo-preview/plugin": "^1.2.2",
     "eslint": "^8.56.0",
     "eslint-plugin-vue": "^9.20.1",
+    "markdown-it-mathjax3": "^4.3.2",
     "pagefind": "^0.12.0",
     "postcss": "^8.4.33",
     "viewerjs": "^1.11.6",

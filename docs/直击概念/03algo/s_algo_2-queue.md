@@ -13,6 +13,8 @@
 - enqueue(data) 将数据添加到队列中。
 - dequeue 删除最早加入队列的数据。
 
+<Image src="/03algo/queue.png" alt="队列的基本操作"/>
+
 ## 队列的属性
 
 - `oldestIndex`
@@ -28,3 +30,4 @@
 ## 参考
 
 - [用 JavaScript 实现栈与队列](https://juejin.cn/post/6844903758887911431)
+- [算法通关手册 - 队列基础知识](https://algo.itcharge.cn/04.Queue/01.Queue-Basic/01.Queue-Basic/)

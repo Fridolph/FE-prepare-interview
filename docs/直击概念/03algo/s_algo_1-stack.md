@@ -10,6 +10,8 @@
 
 ## 栈的操作
 
+<Image src="/03algo/stack.png" alt="堆栈的基本操作"/>
+
 现在我们对栈的模型有了基本概念，下一步就要定义栈的两个操作：
 
 - push(data) 添加数据
@@ -25,3 +27,7 @@
 ::: tip 跳转到编写代码
 [栈的实现](../../编写代码/03algo/c_algo_1-stack/c_algo_1-stack.md)
 :::
+
+## 参考
+
+- 图片转自 [算法通关手册](https://algo.itcharge.cn/03.Stack/01.Stack-Basic/01.Stack-Basic/)
