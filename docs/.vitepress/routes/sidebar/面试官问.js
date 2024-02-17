@@ -91,7 +91,7 @@ export default [
     text: 'React',
     collapsed: true,
     items: [
-      // useQuestionItem('MVC和MVVM', 'react', 1, 'MVC和MVVM'),
+      useQuestionItem('React dev44问', 'react', 1, 'dev44'),
       // useQuestionItem('VirtualDOM和Diff算法', 'vue', 2, 'VirtualDOM和Diff算法'),
     ],
   },
