@@ -91,7 +91,7 @@ export default [
     text: 'React',
     collapsed: true,
     items: [
-      useQuestionItem('React dev44问', 'react', 1, 'dev44'),
+      useQuestionItem('React 44 个面试问题', 'react', 1, 'dev44'),
       // useQuestionItem('VirtualDOM和Diff算法', 'vue', 2, 'VirtualDOM和Diff算法'),
     ],
   },
