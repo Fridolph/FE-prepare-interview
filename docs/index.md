@@ -4,7 +4,7 @@ layout: home
 
 hero:
   name: 'FE-prepare-interview'
-  text: '前端必备的面试宝典'
+  text: '前端必备的知识宝典'
   tagline: 整理搜集自互联网 —— by 霪霖笙箫
   actions:
     - theme: brand

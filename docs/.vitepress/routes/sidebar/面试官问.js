@@ -6,8 +6,9 @@ export default [
     items: [{ text: '如何利用本版块', link: '/面试官问/index' }],
   },
   {
-    text: 'HTML & CSS',
+    text: 'HTML & CSS',    
     collapsed: true,
+    link: useQuestionIntro('html'),
     items: [
       // useQuestionItem('了解flex布局吗', 'css', 1, 'flex'),
       // useQuestionItem('了解grid布局吗', 'css', 1, 'grid'),
@@ -16,6 +17,7 @@ export default [
   {
     text: 'JavaScript',
     collapsed: true,
+    link: useQuestionIntro('js'),
     items: [
       useQuestionItem('事件循环 Event Loop', 'js', 1, '事件循环'),
       useQuestionItem('变量和类型相关', 'js', 2, '变量类型'),
@@ -34,11 +36,13 @@ export default [
   {
     text: 'HTTP',
     collapsed: true,
+    link: useQuestionIntro('http'),
     items: [
       useQuestionItem('http常考察点', 'http', 1, 'http'),
       useQuestionItem('OSI七层模型', 'http', 2, 'osi'),
       useQuestionItem('http缓存机制', 'http', 3, '缓存机制'),
       useQuestionItem('为什么使用https', 'http', 4, 'https'),
+      useQuestionItem('从浏览器输入url到页面渲染', 'http', 5, '从浏览器输入url'),
       // useQuestionItem('网络七层协议', 'http', 1, '网络七层协议'),
       // useQuestionItem('http', 'http', 2, 'http'),
       // useQuestionItem('https', 'http', 3, 'https'),
@@ -47,6 +51,7 @@ export default [
   },
   {
     text: 'Node.js',
+    link: useQuestionIntro('node'),
     collapsed: true,
     items: [
       // useQuestionItem('网络七层协议', 'http', 1, '网络七层协议'),
@@ -54,6 +59,7 @@ export default [
   },
   {
     text: '前端工程化',
+    link: useQuestionIntro('build'),
     collapsed: true,
     items: [
       // useQuestionItem('webpack', 'webpack', 1, 'webpack'),
@@ -65,6 +71,7 @@ export default [
   // 记得看typeMap，别搞错目录了
   {
     text: '性能优化',
+    link: useQuestionIntro('opt'),
     collapsed: true,
     items: [
       // useQuestionItem('图片懒加载', 'opt', 1, '图片懒加载'),
@@ -73,6 +80,7 @@ export default [
   },
   {
     text: '前端安全',
+    link: useQuestionIntro('safe'),
     collapsed: true,
     items: [
       // useQuestionItem('XSS', 'opt', 1, 'XSS'),
@@ -82,14 +90,22 @@ export default [
   {
     text: 'Vue',
     collapsed: true,
+    link: useQuestionIntro('vue'),
     items: [
-      // useQuestionItem('MVC和MVVM', 'vue', 1, 'MVC和MVVM'),
-      // useQuestionItem('VirtualDOM和Diff算法', 'vue', 2, 'VirtualDOM和Diff算法'),
+      useQuestionItem('Vue核心', 'vue', 0, 'vuebase'),
+      useQuestionItem('1-Vue3（同上）', 'vue', 1, 'vue3'),
+      useQuestionItem('2-生命周期', 'vue', 2, 'lifecycle'),
+      useQuestionItem('3-相关API、方法等', 'vue', 3, 'vue_api'),
+      useQuestionItem('4-组件通信', 'vue', 4, 'communication'),
+      useQuestionItem('5-路由', 'vue', 5, 'router'),
+      useQuestionItem('6-状态管理', 'vue', 6, '状态管理'),
+      useQuestionItem('7-其他待整理', 'vue', 7, 'other'),
     ],
   },
   {
     text: 'React',
     collapsed: true,
+    link: useQuestionIntro('react'),
     items: [
       useQuestionItem('React 44 个面试问题', 'react', 1, 'dev44'),
       // useQuestionItem('VirtualDOM和Diff算法', 'vue', 2, 'VirtualDOM和Diff算法'),

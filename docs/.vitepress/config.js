@@ -16,9 +16,9 @@ import interview from './routes/sidebar/网友面经'
 export default defineConfig({
   // base: '/FE-prepare-interview/',
   base: '/',
-  title: 'Web前端必备面试宝典',
+  title: '前端必备的知识宝典',
   description:
-    'Web前端开发必备面试宝典，Fridolph著。内容搜集整理自互联网，遵循GPL开源协议。',
+    '前端必备的知识宝典，经Fridolph整理编写。内容均搜集自互联网，非商业，遵循GPL开源协议。',
   head: [['link', { rel: 'shortcut icon', href: '/favicon.ico' }]],
   lastUpdated: true,
   themeConfig: {

@@ -55,7 +55,7 @@ export default [
     collapsed: true,
     items: [
       useStraightItem('OSI七层模型', 'http', 6, 'osi'),
-      useStraightItem('从浏览器输入 url 到页面渲染', 'http', 7, '从浏览器输入'),
+      useStraightItem('从浏览器输入 url 到页面渲染', 'http', 7, '从浏览器输入url'),
       useStraightItem('HTTP概述', 'http', 1, 'http'),
       useStraightItem('HTTP状态码', 'http', 2, 'http_status_code'),
       useStraightItem('HTTP Header', 'http', 3, 'http_header'),
