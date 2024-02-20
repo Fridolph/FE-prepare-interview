@@ -21,7 +21,7 @@ hero:
       link: /网友面经/三月后再删
     - theme: alt
       text: 简历模版
-      link: /准备简历/index
+      link: /相关准备/index
 
 features:
   - title: HTML & CSS

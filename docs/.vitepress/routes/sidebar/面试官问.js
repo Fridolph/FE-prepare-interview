@@ -10,8 +10,8 @@ export default [
     collapsed: true,
     link: useQuestionIntro('html'),
     items: [
-      // useQuestionItem('了解flex布局吗', 'css', 1, 'flex'),
-      // useQuestionItem('了解grid布局吗', 'css', 1, 'grid'),
+      useQuestionItem('HTML相关', 'html', 1, 'html'),
+      useQuestionItem('CSS相关', 'html', 2, 'css'),
     ],
   },
   {
@@ -19,9 +19,10 @@ export default [
     collapsed: true,
     link: useQuestionIntro('js'),
     items: [
-      useQuestionItem('事件循环 Event Loop', 'js', 1, '事件循环'),
-      useQuestionItem('变量和类型相关', 'js', 2, '变量类型'),
-      useQuestionItem('浅拷贝与深拷贝', 'js', 3, '浅拷贝与深拷贝'),
+      useQuestionItem('基础 Base', 'js', 1, 'base'),
+      useQuestionItem('事件 Event', 'js', 2, 'event'),
+      useQuestionItem('面向对象 Object', 'js', 3, 'object'),
+      useQuestionItem('事件循环 Event Loop', 'js', 4, 'eventloop'),
     ],
   },
   {
@@ -38,9 +39,9 @@ export default [
     collapsed: true,
     link: useQuestionIntro('http'),
     items: [
-      useQuestionItem('http常考察点', 'http', 1, 'http'),
-      useQuestionItem('OSI七层模型', 'http', 2, 'osi'),
-      useQuestionItem('http缓存机制', 'http', 3, '缓存机制'),
+      useQuestionItem('应用层', 'http', 1, 'osi'),
+      useQuestionItem('http 常考察点', 'http', 2, 'http'),
+      useQuestionItem('缓存机制', 'http', 3, '缓存机制'),
       useQuestionItem('为什么使用https', 'http', 4, 'https'),
       useQuestionItem('从浏览器输入url到页面渲染', 'http', 5, '从浏览器输入url'),
       // useQuestionItem('网络七层协议', 'http', 1, '网络七层协议'),
@@ -74,8 +75,7 @@ export default [
     link: useQuestionIntro('opt'),
     collapsed: true,
     items: [
-      // useQuestionItem('图片懒加载', 'opt', 1, '图片懒加载'),
-      // useQuestionItem('白屏', 'opt', 2, '白屏'),
+      useQuestionItem('性能优化实践', 'opt', 1, 'per1'),      
     ],
   },
   {
@@ -83,8 +83,9 @@ export default [
     link: useQuestionIntro('safe'),
     collapsed: true,
     items: [
-      // useQuestionItem('XSS', 'opt', 1, 'XSS'),
-      // useQuestionItem('CSRF', 'opt', 1, 'CSRF'),
+      useQuestionItem('Web安全', 'safe', 1, 'websafe'),      
+      useQuestionItem('XSS', 'safe', 2, 'xss'),      
+      useQuestionItem('CSRF', 'safe', 3, 'csrf'),
     ],
   },
   {
@@ -92,14 +93,15 @@ export default [
     collapsed: true,
     link: useQuestionIntro('vue'),
     items: [
-      useQuestionItem('Vue核心', 'vue', 0, 'vuebase'),
+      useQuestionItem('Vue核心', 'vue', 0, 'vue_base'),
       useQuestionItem('1-Vue3（同上）', 'vue', 1, 'vue3'),
       useQuestionItem('2-生命周期', 'vue', 2, 'lifecycle'),
-      useQuestionItem('3-相关API、方法等', 'vue', 3, 'vue_api'),
+      useQuestionItem('3-相关API、属性、方法等', 'vue', 3, 'vue_api'),
       useQuestionItem('4-组件通信', 'vue', 4, 'communication'),
       useQuestionItem('5-路由', 'vue', 5, 'router'),
-      useQuestionItem('6-状态管理', 'vue', 6, '状态管理'),
-      useQuestionItem('7-其他待整理', 'vue', 7, 'other'),
+      useQuestionItem('6-状态管理', 'vue', 6, 'store'),
+      useQuestionItem('7-最佳实践', 'vue', 7, 'performance'),
+      useQuestionItem('8-其他待整理', 'vue', 8, 'other'),
     ],
   },
   {

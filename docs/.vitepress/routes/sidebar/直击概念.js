@@ -20,11 +20,12 @@ export default [
     link: useStraightIntro('js'),
     collapsed: true,
     items: [
-      useStraightItem('事件循环 Event Loop', 'js', 1, '事件循环'),
-      useStraightItem('变量，声明、类型、判断等', 'js', 2, '变量'),
-      useStraightItem('闭包', 'js', 3, '闭包'),
-      useStraightItem('对象、原型、继承', 'js', 4, '对象、原型、继承'),
-      useStraightItem('this指向', 'js', 5, 'this指向'),
+      useStraightItem('变量，声明、类型、判断等', 'js', 1, 'base'),
+      useStraightItem('闭包', 'js', 2, 'closure'),
+      useStraightItem('对象、原型、继承', 'js', 3, 'object'),
+      useStraightItem('this相关', 'js', 4, 'this'),
+      useStraightItem('事件 Event', 'js', 5, 'event'),
+      useStraightItem('事件循环 Event Loop', 'js', 6, 'eventloop'),
     ],
   },
   {
@@ -113,8 +114,9 @@ export default [
     link: useStraightIntro('vue'),
     collapsed: true,
     items: [
-      // useStraightItem('MVC和MVVM', 'vue', 1, 'MVC和MVVM'),
-      // useStraightItem('VirtualDOM和Diff算法', 'vue', 2, 'VirtualDOM和Diff算法'),
+      useStraightItem('Vue响应式原理', 'vue', 1, 'reactive'),
+      useStraightItem('Vue生命周期', 'vue', 2, 'lifecycle'),
+      useStraightItem('Vue Diff相关', 'vue', 3, 'diff'),
     ],
   },
   {

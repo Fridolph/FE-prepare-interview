@@ -146,6 +146,10 @@ Event Table 存储了宏任务的相关信息，包括事件监听和相应的�
 - 等到同步代码运行完，开始运行 await promise.then 微任务;
 - await promise.then 微任务完成后，把 await 语句后面的全部代码加入到微任务行列;
 
+## 自测
+
+[事件循环](../../%E9%9D%A2%E8%AF%95%E5%AE%98%E9%97%AE/02js/q_js_1-%E4%BA%8B%E4%BB%B6%E5%BE%AA%E7%8E%AF.md)
+
 ## 参考资料
 
 - [关于 JavaScript 单线程的一些事](https://github.com/JChehe/blog/blob/master/posts/%E5%85%B3%E4%BA%8EJavaScript%E5%8D%95%E7%BA%BF%E7%A8%8B%E7%9A%84%E4%B8%80%E4%BA%9B%E4%BA%8B.md)

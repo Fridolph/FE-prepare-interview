@@ -31,7 +31,7 @@ export default defineConfig({
       { text: '直击概念', link: '/直击概念/index' },
       { text: '面试官问', link: '/面试官问/index' },
       { text: '编写代码', link: '/编写代码/index' },
-      { text: '准备简历', link: '/准备简历/三月后再删' },
+      { text: '相关准备', link: '/相关准备/三月后再删' },
       { text: '网友面经', link: '/网友面经/0intro' },
       { text: '参与贡献', link: '/参与贡献/index' },
     ],
@@ -40,13 +40,13 @@ export default defineConfig({
       '/面试官问/': question,
       '/编写代码/': coding,
       '/网友面经/': interview,
-      '/准备简历/': [
+      '/相关准备/': [
         {
           text: '如何利用该版块',
           items: [
-            { text: '祝大家新年快乐', link: '/准备简历/三月后再删' },
-            { text: '推荐工具', link: '/准备简历/index' },
-            { text: '如何写好简历', link: '/准备简历/如何写好简历' },
+            { text: '祝大家新年快乐', link: '/相关准备/三月后再删' },
+            { text: '推荐工具', link: '/相关准备/index' },
+            { text: '如何写好简历', link: '/相关准备/如何写好简历' },
           ],
         },
       ],
