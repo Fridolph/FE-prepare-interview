@@ -13,9 +13,10 @@ Vue2 采用数据劫持结合发布订阅模式（PubSub 模式）的方式，�
 Vue 的数据双向绑定整合了 Observer，Compile 和 Watcher 三者，通过 `Observer 来监听自己的 model 的数据变化`，通过 `Compile 来解析编译模板指令`，最终利用 `Watcher 达到数据变化 -> 视图更新`（搭起 Observer 和 Compile 之间的通信桥梁）。
 
 > Vue3.x 放弃了 Object.defineProperty ，使用 ES6 原生的 `Proxy`，来解决之前所存在的一些问题。
-> :::
 
 <Image src="/07vue/reactive.jpg" alt="Vue响应式原理"/>
+
+:::
 
 ## Vue 如何检测数组的变化
 
