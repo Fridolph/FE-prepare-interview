@@ -1,4 +1,4 @@
-import { useQuestionItem, useQuestionIntro } from '../usePath'
+import { useQuestionItem, useQuestionIntro } from './usePath'
 
 export default [
   {

@@ -1,4 +1,4 @@
-import { useStraightIntro, useStraightItem } from '../usePath'
+import { useStraightIntro, useStraightItem } from './usePath'
 
 export default [
   {

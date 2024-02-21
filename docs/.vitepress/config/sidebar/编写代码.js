@@ -1,4 +1,4 @@
-import { useCodingItem } from '../usePath'
+import { useCodingItem } from './usePath'
 
 export default [
   {

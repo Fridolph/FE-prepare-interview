@@ -1,4 +1,5 @@
 import { defineConfig } from 'vitepress'
+import { basename } from 'node:path'
 // todo:fix 由于npm run build 报错，暂时把该插件去掉，解决后加回来
 // import { postcssIsolateStyles } from 'vitepress'
 // import { pagefindPlugin, chineseSearchOptimize } from 'vitepress-plugin-pagefind'
@@ -7,58 +8,35 @@ import { fileURLToPath, URL } from 'node:url'
 import { transformerTwoslash } from '@shikijs/vitepress-twoslash'
 // https://vitepress.dev/reference/site-config
 // menu route
-import straight from './routes/sidebar/直击概念'
-import question from './routes/sidebar/面试官问'
-import coding from './routes/sidebar/编写代码'
-import contribution from './routes/sidebar/参与贡献'
-import interview from './routes/sidebar/网友面经'
+import head from './config/head'
+import nav from './config/nav'
+import sidebar from './config/sidebar'
+
+const APP_BASE_PATH = basename(process.env.GITHUB_REPOSITORY || '')
 
 export default defineConfig({
-  // base: '/FE-prepare-interview/',
-  base: '/',
+  base: APP_BASE_PATH ? `/${APP_BASE_PATH}/` : '/',
+  outDir: '../dist',
+  lang: 'zh-cn',
   title: '前端必备的知识宝典',
   description:
     '前端必备的知识宝典，经Fridolph整理编写。内容均搜集自互联网，非商业，遵循GPL开源协议。',
-  head: [['link', { rel: 'shortcut icon', href: '/favicon.ico' }]],
-  lastUpdated: true,
-  themeConfig: {
-    outline: 'deep',
+  // head: [['link', { rel: 'shortcut icon', href: '/favicon.ico' }]],
+  head, 
+  themeConfig: {    
     sidebarDepth: 2,
     appearance: true,
     logo: '/me.jpg',
     // https://vitepress.dev/reference/default-theme-config
-    nav: [
-      { text: '直击概念', link: '/直击概念/index' },
-      { text: '面试官问', link: '/面试官问/index' },
-      { text: '编写代码', link: '/编写代码/index' },
-      { text: '相关准备', link: '/相关准备/三月后再删' },
-      { text: '网友面经', link: '/网友面经/0intro' },
-      { text: '参与贡献', link: '/参与贡献/index' },
-    ],
-    sidebar: {
-      '/直击概念/': straight,
-      '/面试官问/': question,
-      '/编写代码/': coding,
-      '/网友面经/': interview,
-      '/相关准备/': [
-        {
-          text: '如何利用该版块',
-          items: [
-            { text: '祝大家新年快乐', link: '/相关准备/三月后再删' },
-            { text: '推荐工具', link: '/相关准备/index' },
-            { text: '如何写好简历', link: '/相关准备/如何写好简历' },
-          ],
-        },
-      ],
-      '/参与贡献/': contribution,
-    },
+    nav,
+    sidebar,
     socialLinks: [
       { icon: 'github', link: 'https://github.com/Fridolph/FE-prepare-interview' },
     ],
     footer: {
       // message: '',
       copyright:
-        'Released <a href="https://creativecommons.org/licenses/by-nc-nd/4.0/deed.zh-hans" target="_blank">CC BY-NC-ND 4.0</a> License. <span style="margin: 0 30px;">Powered by <a href="https://vitepress.dev/zh/" target="_blank">VitePress</a>.</span> Copyright © 2024 <a href="https://blog.fridolph.top" target="_blank">Yinsheng Fu</a>',
+        'Released <a href="https://creativecommons.org/licenses/by-nc-nd/4.0/deed.zh-hans" target="_blank">CC BY-NC-ND 4.0</a> License. <span style="margin: 0 30px;">Powered by <a href="https://vitepress.dev/zh/" target="_blank">VitePress</a>.</span> Copyright © 2023-present <a href="https://blog.fridolph.top" target="_blank">Yinsheng Fu</a>',
     },
     editLink: {
       pattern: 'https://github.com/Fridolph/FE-prepare-interview/edit/dev/docs/:path',
@@ -77,11 +55,16 @@ export default defineConfig({
     },
     // 由于本地搜索对中文和 英文大小写判断稍差
     // 试试algolia - - ORZ 还没申请下来
-    outlineTitle: '本页导航',
-    docFooter: {
-      prev: '上一节',
-      next: '下一节',
+    outline: {
+      level: 'deep',
+      label: '本页目录',
     },
+    docFooter: {
+      prev: '上一篇',
+      next: '下一篇',
+    },
+    darkModeSwitchLabel: '外观',
+    cleanUrls: true,    
     lastUpdated: {
       text: '最后更新于',
       formatOptions: {
@@ -92,7 +75,6 @@ export default defineConfig({
     returnToTopLabel: '返回顶部',
     externalLinkIcon: true,
   },
-  lang: 'zh-cn',
   vite: {
     plugins: [
       // todo:fix 由于npm run build 报错，暂时把该插件去掉，解决后加回来
@@ -117,6 +99,7 @@ export default defineConfig({
   },
   markdown: {
     math: true,
+    lineNumbers: true,
     image: {
       lazyLoading: true,
     },
