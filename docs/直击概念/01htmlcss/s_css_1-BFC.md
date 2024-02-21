@@ -85,6 +85,10 @@
 
 因为正常文档流中建立的 BFC 不得与元素本身所在的块格式化上下文中的任何浮动的外边距重叠
 
+## 自测
+
+[面试官问：CSS 基础](../../%E9%9D%A2%E8%AF%95%E5%AE%98%E9%97%AE/01htmlcss/q_css_1-base.md)
+
 ## 参考
 
 - [掌握外边距折叠](https://developer.mozilla.org/zh-CN/docs/Web/CSS/CSS_box_model/Mastering_margin_collapsing)
