@@ -1,7 +1,7 @@
 # Sticky 粘黏布局
 
 <script setup>
-import Sticky from './Sticky.vue';
+import Sticky from './sticky.vue';
 </script>
 
 ## position: sticky 
@@ -27,8 +27,8 @@ import Sticky from './Sticky.vue';
 - 当滚动条到达底部，如果还不到导航栏最后一个导航被选择的条件时，就要强制选中最后一个导航。这点是交互上的小优化。
 :::
 
-<https://jsbin.com/wekudat/edit?html,css,js,output>
-
 ## 参考资料
 
-滚动导航+吸顶合并方案（含 sticky 详解）<https://juejin.cn/post/6844904085603221518>
+- [jsbin - demo](https://jsbin.com/wekudat/edit?html,css,js,output)
+
+- [滚动导航+吸顶合并方案（含 sticky 详解）](https://juejin.cn/post/6844904085603221518)
