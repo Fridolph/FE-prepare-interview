@@ -47,7 +47,7 @@
 
 ## DOM 事件流
 
-事件流描述的是从页面中接收事件的顺序。
+事件流描述的是从页面中接收事件的顺序。通常，一个事件会从父元素开始向目标元素传播，然后它将被传播回父元素。
 
 事件发生时会在元素节点之间按照特定的顺序传播，这个传播过程即 DOM 事件流。包括以下三个阶段：
 
@@ -141,3 +141,5 @@ $('ul').on('mouseover', function (e) {
 
 - [MDN - 事件介绍](https://developer.mozilla.org/zh-CN/docs/Learn/JavaScript/Building_blocks/Events)
 - [谈谈事件冒泡、事件捕获和事件委托](https://juejin.cn/post/6965127548980166670)
+- [简述 JavaScript 的事件捕获和事件冒泡](https://juejin.cn/post/7005558885947965454)
+- [JS中的事件冒泡、事件捕获、事件委托](https://juejin.cn/post/7192584563799883832)

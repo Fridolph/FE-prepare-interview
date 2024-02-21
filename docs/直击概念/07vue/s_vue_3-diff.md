@@ -340,6 +340,12 @@ while 循环主要处理了以下五种情景：
   - 从旧的 VNode 为 key 值，对应 index 序列为 value 值的哈希表中找到与 newStartVnode 一致 key 的旧的 VNode 节点，再进行 patchVnode，同时将这个真实 dom 移动到 oldStartVnode 对应的真实 dom 的前面
   - 调用 createElm 创建一个新的 dom 节点放到当前 newStartIdx 的位置
 
+## Vue 中 key 的作用
+
+所以我们需要使用 key 来给每个节点做一个唯一标识，Diff 算法就可以正确的识别此节点，找到正确的位置区插入新的节点
+
+<Image src="/07vue/vue-key.webp" alt="Vue中key的作用"/>
+
 ## 总结
 
 **当数据发生改变时**，订阅者 `watcher` 就会调用 `patch` 给真实的 DOM 打补丁。通过 isSameVnode 进行判断，相同则调用 patchVnode 方法
@@ -358,8 +364,6 @@ while 循环主要处理了以下五种情景：
 2. 新旧头尾指针进行比较，循环向中间靠拢，根据情况调用 patchVnode 进行 patch 重复流程、调用 createElem 创建一个新节点，从哈希表寻找 key 一致的 VNode 节点再分情况操作
 
 ## 自测
-
-
 
 ## 参考
 
