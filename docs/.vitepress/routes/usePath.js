@@ -12,6 +12,7 @@ const typeMap = {
   sort: '03algo',
   algo: '03algo',
   http: '04http',
+  browser: '04http',
   request: '04http',
   node: '05node',
   nodejs: '05node',
@@ -27,6 +28,8 @@ const typeMap = {
   vite: '09build',
   build: '09build',
   safe: '10safe',
+  ts: '11ts',
+  typescript: '11ts',
 }
 
 export function useStraightIntro(type) {

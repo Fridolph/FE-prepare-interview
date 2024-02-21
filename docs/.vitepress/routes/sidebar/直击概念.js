@@ -25,7 +25,6 @@ export default [
       useStraightItem('对象、原型、继承', 'js', 3, 'object'),
       useStraightItem('this相关', 'js', 4, 'this'),
       useStraightItem('事件 Event', 'js', 5, 'event'),
-      useStraightItem('事件循环 Event Loop', 'js', 6, 'eventloop'),
     ],
   },
   {
@@ -55,13 +54,14 @@ export default [
     link: useStraightIntro('http'),
     collapsed: true,
     items: [
-      useStraightItem('OSI七层模型', 'http', 6, 'osi'),
-      useStraightItem('从浏览器输入 url 到页面渲染', 'http', 7, '从浏览器输入url'),
+      useStraightItem('OSI七层模型', 'http', 0, 'osi'),
       useStraightItem('HTTP概述', 'http', 1, 'http'),
       useStraightItem('HTTP状态码', 'http', 2, 'http_status_code'),
       useStraightItem('HTTP Header', 'http', 3, 'http_header'),
-      useStraightItem('HTTP缓存', 'http', 4, 'http缓存'),
+      useStraightItem('HTTP缓存', 'http', 4, 'cache'),
       useStraightItem('HTTPS', 'http', 5, 'https'),
+      useStraightItem('从浏览器输入 url 到页面渲染', 'http', 6, '从浏览器输入url'),
+      useStraightItem('事件循环 Event Loop', 'http', 7, 'eventloop'),
       useStraightItem('WebSocket', 'http', 8, 'WebSocket'),
     ],
   },
@@ -107,6 +107,14 @@ export default [
       useStraightItem('CSRF', 'safe', 3, 'CSRF'),
       useStraightItem('中间人攻击', 'safe', 4, '中间人攻击'),
       useStraightItem('旁观者攻击', 'safe', 5, '旁观者攻击'),
+    ],
+  },
+  {
+    text: 'TypeScript',
+    link: useStraightIntro('ts'),
+    collapsed: true,
+    items: [
+      // useStraightItem('Web安全', 'safe', 1, 'Web安全'),
     ],
   },
   {
