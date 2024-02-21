@@ -18,7 +18,7 @@
 
 ### HTTPS
 
-HTTPS（超文本传输协议安全）是 [HTTP](../04http/s_http_1-http.md) 协议的加密版本，它使用 [SSL](https://developer.mozilla.org/zh-CN/docs/Glossary/SSL) 或 [TLS](https://developer.mozilla.org/zh-CN/docs/Glossary/TLS) 协议来对客户端和服务器之间的所有通信进行加密。所建立的安全连接使得客户端可以确认所连接的服务器，并且可以交换敏感数据。
+HTTPS（超文本传输协议安全）是 [HTTP](../../%E7%9B%B4%E5%87%BB%E6%A6%82%E5%BF%B5/04http/s_http_1-http.md) 协议的加密版本，它使用 [SSL](https://developer.mozilla.org/zh-CN/docs/Glossary/SSL) 或 [TLS](https://developer.mozilla.org/zh-CN/docs/Glossary/TLS) 协议来对客户端和服务器之间的所有通信进行加密。所建立的安全连接使得客户端可以确认所连接的服务器，并且可以交换敏感数据。
 
 ### HTTP Strict-Transport-Security
 

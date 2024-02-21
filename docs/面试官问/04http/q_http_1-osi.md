@@ -1,6 +1,6 @@
 # 应用层 - 最上层
 
-直击概念 - [OSI 模型](../../%E7%9B%B4%E5%87%BB%E6%A6%82%E5%BF%B5/04http/s_http_6-osi.md)
+直击概念 - [OSI 模型](../../%E7%9B%B4%E5%87%BB%E6%A6%82%E5%BF%B5/04http/s_http_0-osi.md)
 
 ## 请说一下 OSI 七层模型是哪些
 

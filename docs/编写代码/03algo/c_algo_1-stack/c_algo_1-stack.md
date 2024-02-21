@@ -1,6 +1,6 @@
 # 栈 Stack
 
-温故知新，可跳转直接概念[——栈 Stack](../../../直击概念/03algo/s_algo_2-stack.md)
+温故知新，可跳转[直接概念 - 栈 Stack](../../../%E7%9B%B4%E5%87%BB%E6%A6%82%E5%BF%B5/03algo/s_algo_1-stack.md)
 
 ## 栈的实现
 

@@ -28,6 +28,6 @@
 
 ## 回顾
 
-[http](../../%E7%9B%B4%E5%87%BB%E6%A6%82%E5%BF%B5/04http/s_http_1-http.md)
+- [http](../../直击概念/04http/s_http_1-http.md)
 
-[http缓存](../../%E7%9B%B4%E5%87%BB%E6%A6%82%E5%BF%B5/04http/s_http_4-http%E7%BC%93%E5%AD%98.md)
+- [http缓存](../../直击概念/04http/s_http_4-cache.md)
