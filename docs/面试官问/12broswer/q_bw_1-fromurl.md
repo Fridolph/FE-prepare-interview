@@ -1,6 +1,6 @@
 # 经典题
 
-[直击概念 - 从浏览器输入 url 到页面渲染经历了什么](../../%E7%9B%B4%E5%87%BB%E6%A6%82%E5%BF%B5/12broswer/s_bw_1-fromurl.md)
+[直击概念 - 浏览器工作原理](../../%E7%9B%B4%E5%87%BB%E6%A6%82%E5%BF%B5/12broswer/s_bw_1-broswer.md)
 
 ## 从浏览器输入 url 到页面渲染经历了什么
 

@@ -26,18 +26,7 @@ export default [
       useQuestionItem('核心 API', 'js', 4, 'api'),
       useQuestionItem('事件 Event', 'js', 5, 'event'),
     ],
-  },
-  {
-    text: '算法相关',
-    collapsed: true,
-    link: useQuestionIntro('algo'),
-    items: [
-    // items: [
-    // useQuestionItem('堆栈', 'algo', 1, '堆栈'),
-    // useQuestionItem('队列', 'algo', 2, '队列'),
-    // useQuestionItem('链表', 'algo', 3, '链表'),
-    ],
-  },
+  },  
   {
     text: 'HTTP',
     collapsed: true,
@@ -91,7 +80,7 @@ export default [
     collapsed: true,
     link: useQuestionIntro('vue'),
     items: [
-      useQuestionItem('Vue核心', 'vue', 0, 'vue_base'),
+      useQuestionItem('Vue核心原理', 'vue', 0, 'vue_base'),
       useQuestionItem('1-Vue3（同上）', 'vue', 1, 'vue3'),
       useQuestionItem('2-生命周期', 'vue', 2, 'lifecycle'),
       useQuestionItem('3-相关属性、方法、API等', 'vue', 3, 'vue_api'),
@@ -117,6 +106,17 @@ export default [
     link: useQuestionIntro('solution'),
     items: [
       useQuestionItem('特定场景下解决方案', 'slt', 1, 'solution'),
+    ],
+  },
+  {
+    text: '算法相关',
+    collapsed: true,
+    link: useQuestionIntro('algo'),
+    items: [
+    // items: [
+    // useQuestionItem('堆栈', 'algo', 1, '堆栈'),
+    // useQuestionItem('队列', 'algo', 2, '队列'),
+    // useQuestionItem('链表', 'algo', 3, '链表'),
     ],
   },
   {

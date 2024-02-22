@@ -1,5 +1,7 @@
 # 事件循环 Event Loop
 
+自测 [JavaScript 事件循环](../../%E9%9D%A2%E8%AF%95%E5%AE%98%E9%97%AE/12broswer/q_bw_2-eventloop.md)
+
 ## 定义
 
 事件循环是`单线程`的 JavaScript 在`处理异步`事件时进行的一种`循环过程`。
@@ -145,10 +147,6 @@ Event Table 存储了宏任务的相关信息，包括事件监听和相应的�
 - 运行其他同步代码;
 - 等到同步代码运行完，开始运行 await promise.then 微任务;
 - await promise.then 微任务完成后，把 await 语句后面的全部代码加入到微任务行列;
-
-## 自测
-
-[JavaScript事件循环](../../%E9%9D%A2%E8%AF%95%E5%AE%98%E9%97%AE/12broswer/q_bw_2-eventloop.md)
 
 ## 参考资料
 
