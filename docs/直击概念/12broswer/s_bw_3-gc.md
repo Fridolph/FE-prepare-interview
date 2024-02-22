@@ -96,8 +96,8 @@ Scavenge 算法的垃圾回收过程主要就是将存活对象在 From 空间�
 
 ## 参考
 
-- [程序员冷月 - 一文搞懂 V8 引擎的垃圾回收](https://juejin.cn/post/6981588276356317214)
+- [一文搞懂 V8 引擎的垃圾回收](https://juejin.cn/post/6981588276356317214)——程序员冷月
 - [MDN - 内存管理](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Memory_Management#%E5%9E%83%E5%9C%BE%E5%9B%9E%E6%94%B6)
 - [nodejs-memory - V8 的垃圾回收机制与内存限制](https://github.com/zqjflash/nodejs-memory)
 
-> 推荐另一篇高质量文章 [「硬核 JS」你真的了解垃圾回收机制吗](https://juejin.cn/post/6981588276356317214) 需要授权转载，尊重原创，这里就没用里面的内容，自行查看吧
+推荐另一篇高质量文章 [「硬核 JS」你真的了解垃圾回收机制吗](https://juejin.cn/post/6981588276356317214) 需要授权转载，尊重原创，这里就没用里面的内容，自行查看吧

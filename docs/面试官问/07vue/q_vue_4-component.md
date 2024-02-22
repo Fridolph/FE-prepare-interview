@@ -163,7 +163,7 @@ keep-alive 组件是 vue 的`内置组件`，用于`缓存内部组件实例`。
 在具体的实现上，keep-alive 在**内部维护了一个 key 数组和一个缓存对象**
 
 ```js
-// keep-alive 内部的声明周期函数
+// keep-alive 内部的生命周期函数
 created () {
   this.cache = Object.create(null)
   this.keys = []

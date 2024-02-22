@@ -218,7 +218,7 @@ article {
 
 ## 更多参考
 
-- [CSS 性能优化](https://developer.mozilla.org/zh-CN/docs/Learn/Performance/CSS)
-- [CSS 动画性能](https://developer.mozilla.org/zh-CN/docs/Web/Performance/CSS_JavaScript_animation_performance)
-- [字体最佳实践](https://web.dev/articles/font-best-practices)
+- MDN - [CSS 性能优化](https://developer.mozilla.org/zh-CN/docs/Learn/Performance/CSS)
+- MDN - [CSS 动画性能](https://developer.mozilla.org/zh-CN/docs/Web/Performance/CSS_JavaScript_animation_performance)
+- MDN - [字体最佳实践](https://web.dev/articles/font-best-practices)
 - [content-visibility：提升渲染性能的新 CSS 属性](https://web.dev/articles/content-visibility)

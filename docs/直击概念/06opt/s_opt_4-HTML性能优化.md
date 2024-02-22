@@ -170,6 +170,6 @@ srcset 提供源图像的固有尺寸以及它们的文件名，而 sizes 在每
 
 ## 参考
 
-- MDN[HTML 性能优化](https://developer.mozilla.org/zh-CN/docs/Learn/Performance/HTML)
-- [从服务器获取数据](https://developer.mozilla.org/zh-CN/docs/Learn/JavaScript/Client-side_web_APIs/Fetching_data)
-- [操作文档](https://developer.mozilla.org/zh-CN/docs/Learn/JavaScript/Client-side_web_APIs/Manipulating_documents)
+- MDN - [HTML 性能优化](https://developer.mozilla.org/zh-CN/docs/Learn/Performance/HTML)
+- MDN - [从服务器获取数据](https://developer.mozilla.org/zh-CN/docs/Learn/JavaScript/Client-side_web_APIs/Fetching_data)
+- MDN - [操作文档](https://developer.mozilla.org/zh-CN/docs/Learn/JavaScript/Client-side_web_APIs/Manipulating_documents)

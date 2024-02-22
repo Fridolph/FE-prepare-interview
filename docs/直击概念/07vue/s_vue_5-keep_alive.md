@@ -232,4 +232,4 @@ export default {
 
 ## 参考
 
-- [作者：bb_xiaxia1998 - 说说你对 Vue 的 keep-alive 的理解](https://juejin.cn/post/7204854015464161336)
+- [说说你对 Vue 的 keep-alive 的理解](https://juejin.cn/post/7204854015464161336)——bb_xiaxia1998

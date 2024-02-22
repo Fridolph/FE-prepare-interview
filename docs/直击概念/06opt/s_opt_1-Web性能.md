@@ -132,7 +132,7 @@ UI 的缺乏响应性和卡顿均会影响到感知性能。即使一个任务�
 
 ## 测试性能
 
-<https://developer.mozilla.org/zh-CN/docs/Learn/Performance/Measuring_performance>
+[MDN - 测量性能](https://developer.mozilla.org/zh-CN/docs/Learn/Performance/Measuring_performance)
 
 ## 总结
 
@@ -140,6 +140,6 @@ UI 的缺乏响应性和卡顿均会影响到感知性能。即使一个任务�
 
 ## 参考资料
 
-- <https://developer.mozilla.org/zh-CN/docs/Learn/Performance/Perceived_performance>
+- [MDN - Web性能](https://developer.mozilla.org/zh-CN/docs/Learn/Performance/Perceived_performance)
 
 > ps 记得可以给 MDN 这几篇未翻译的文章提交 issue。源于 MDN，反哺 MDN。

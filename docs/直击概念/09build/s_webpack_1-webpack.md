@@ -40,4 +40,4 @@ Webpack 的运⾏流程是⼀个`串⾏`的过程，从启动到结束会`依次
 
 ## 转载自
 
-- [作者：何逸轩 - webpack 系列](https://juejin.cn/post/7140769906080874504)
+- [webpack 系列](https://juejin.cn/post/7140769906080874504)——何逸轩

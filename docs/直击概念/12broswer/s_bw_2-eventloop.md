@@ -150,6 +150,6 @@ Event Table 存储了宏任务的相关信息，包括事件监听和相应的�
 
 ## 参考资料
 
-- [关于 JavaScript 单线程的一些事](https://github.com/JChehe/blog/blob/master/posts/%E5%85%B3%E4%BA%8EJavaScript%E5%8D%95%E7%BA%BF%E7%A8%8B%E7%9A%84%E4%B8%80%E4%BA%9B%E4%BA%8B.md)
-- [一看就懂的事件循环机制(event loop)](https://juejin.cn/post/7002037475874963493)
-- [深入 JS 执行原理：一文搞定 EventLoop、宏任务、微任务](https://mp.weixin.qq.com/s/W0yDX9Nme3nbBOrzLRwPbQ)
+- [关于 JavaScript 单线程的一些事](https://github.com/JChehe/blog/blob/master/posts/%E5%85%B3%E4%BA%8EJavaScript%E5%8D%95%E7%BA%BF%E7%A8%8B%E7%9A%84%E4%B8%80%E4%BA%9B%E4%BA%8B.md) ——JChehe
+- [一看就懂的事件循环机制(event loop)](https://juejin.cn/post/7002037475874963493)——藤原托漆
+- [深入 JS 执行原理：一文搞定 EventLoop、宏任务、微任务](https://mp.weixin.qq.com/s/W0yDX9Nme3nbBOrzLRwPbQ)——程序员Sunday
