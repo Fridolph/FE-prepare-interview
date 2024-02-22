@@ -148,7 +148,7 @@ Event Table 存储了宏任务的相关信息，包括事件监听和相应的�
 
 ## 自测
 
-[JavaScript事件循环](../../%E9%9D%A2%E8%AF%95%E5%AE%98%E9%97%AE/04http/q_http_6-eventloop.md)
+[JavaScript事件循环](../../%E9%9D%A2%E8%AF%95%E5%AE%98%E9%97%AE/12broswer/q_bw_2-eventloop.md)
 
 ## 参考资料
 

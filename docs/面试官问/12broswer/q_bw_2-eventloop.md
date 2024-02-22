@@ -1,6 +1,6 @@
 # 事件循环 Event Loop
 
-[直击概念 - 事件循环](../../%E7%9B%B4%E5%87%BB%E6%A6%82%E5%BF%B5/04http/s_http_7-eventloop.md)
+[直击概念 - 事件循环](../../%E7%9B%B4%E5%87%BB%E6%A6%82%E5%BF%B5/12broswer/s_bw_2-eventloop.md)
 
 ## 能说下 JavaScript 的事件循环机制吗
 

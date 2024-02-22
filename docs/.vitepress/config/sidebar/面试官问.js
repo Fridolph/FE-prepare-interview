@@ -29,12 +29,14 @@ export default [
   },
   {
     text: '算法相关',
+    collapsed: true,
     link: useQuestionIntro('algo'),
+    items: [
     // items: [
     // useQuestionItem('堆栈', 'algo', 1, '堆栈'),
     // useQuestionItem('队列', 'algo', 2, '队列'),
     // useQuestionItem('链表', 'algo', 3, '链表'),
-    // ],
+    ],
   },
   {
     text: 'HTTP',
@@ -54,20 +56,22 @@ export default [
     ],
   },
   {
-    text: 'Node.js',
-    link: useQuestionIntro('node'),
+    text: 'Broswer',
+    link: useQuestionIntro('bw'),
     collapsed: true,
-    items: [
-      // useQuestionItem('网络七层协议', 'http', 1, '网络七层协议'),
+    items: [      
+      useQuestionItem('从浏览器输入 url 到页面渲染', 'bw', 1, 'fromurl'),
+      useQuestionItem('事件循环 Event Loop', 'bw', 2, 'eventloop'),
+      useQuestionItem('垃圾回收 GC', 'bw', 3, 'gc'),
     ],
-  },
+  },  
   {
     text: '前端工程化',
     link: useQuestionIntro('build'),
     collapsed: true,
     items: [
-      // useQuestionItem('webpack', 'webpack', 1, 'webpack'),
-      // useQuestionItem('Webpack优化实践', 'webpack', 1, 'Webpack优化实践'),
+      useQuestionItem('Webpack', 'webpack', 1, 'webpack'),
+      useQuestionItem('Vite', 'vite', 1, 'vite'),
     ],
   },
   // 前端工程化 和 性能优化是两个大类，但性能相关很多是交杂在一起的
@@ -77,16 +81,9 @@ export default [
     text: '性能优化',
     link: useQuestionIntro('opt'),
     collapsed: true,
-    items: [useQuestionItem('性能优化实践', 'opt', 1, 'per1')],
-  },
-  {
-    text: '前端安全',
-    link: useQuestionIntro('safe'),
-    collapsed: true,
     items: [
-      useQuestionItem('Web安全', 'safe', 1, 'websafe'),
-      useQuestionItem('XSS', 'safe', 2, 'xss'),
-      useQuestionItem('CSRF', 'safe', 3, 'csrf'),
+      useQuestionItem('基本性能优化策略', 'opt', 1, 'base'),
+      useQuestionItem('图片 Image', 'opt', 2, 'image')
     ],
   },
   {
@@ -115,6 +112,14 @@ export default [
     ],
   },
   {
+    text: '解决方案',
+    collapsed: true,
+    link: useQuestionIntro('solution'),
+    items: [
+      useQuestionItem('特定场景下解决方案', 'slt', 1, 'solution'),
+    ],
+  },
+  {
     text: 'TypeScript',
     collapsed: true,
     link: useQuestionIntro('ts'),
@@ -123,4 +128,22 @@ export default [
       // useQuestionItem('VirtualDOM和Diff算法', 'vue', 2, 'VirtualDOM和Diff算法'),
     ],
   },
+  {
+    text: 'Node.js',
+    link: useQuestionIntro('node'),
+    collapsed: true,
+    items: [
+      // useQuestionItem('网络七层协议', 'http', 1, '网络七层协议'),
+    ],
+  },  
+  {
+    text: '前端安全',
+    link: useQuestionIntro('safe'),
+    collapsed: true,
+    items: [
+      useQuestionItem('Web安全', 'safe', 1, 'websafe'),
+      useQuestionItem('XSS', 'safe', 2, 'xss'),
+      useQuestionItem('CSRF', 'safe', 3, 'csrf'),
+    ],
+  },  
 ]

@@ -42,6 +42,20 @@
 
 - 最后，如果你想在页面中包含动图，那么请知道 Safari 允许在 `<img>` 和 `<picture>` 元素中使用视频文件。这样，你还可以为所有其他现代浏览器添加`动态 WebP`。
 
+| 特性       | JPG                        | PNG                        | WebP           |
+| ---------- | -------------------------- | -------------------------- | -------------- |
+| 压缩算法   | 有损压缩                   | 无损压缩                   | 有损压缩       |
+| 透明度     | 不支持透明度               | 支持透明度                 | 支持透明度     |
+| 图片质量   | 可调整质量                 | 无法调整质量               | 可调整质量     |
+| 文件大小   | 相对较小                   | 相对较大                   | 相对较小       |
+| 浏览器支持 | 支持在所有主流浏览器上显示 | 支持在所有主流浏览器上显示 | 部分浏览器支持 |
+| 动画支持   | 不支持动画                 | 不支持动画                 | 支持动画       |
+| 兼容性     | 兼容性较好                 | 兼容性较好                 | 兼容性较差     |
+
+::: warning
+这个表格只是对这些格式的一般特征进行了总结，并不代表所有情况。实际情况可能因图像内容、压缩设置和浏览器支持等因素而有所不同。因此，在选择图像格式时，您应根据具体要求和应用场景进行评估和选择
+:::
+
 ### 提供最佳尺寸
 
 对于较小的屏幕，你希望提供更低分辨率的图像，而对于较大的屏幕则相反。
@@ -96,13 +110,22 @@
 按从小到大的顺序排序视频源。例如，给定三种分别压缩为 10 MB、12 MB 和 13 MB 的不同格式的视频，先声明最小的，最后声明最大的：
 
 ```html
-<video width="400" height="300" controls="controls">
+<video
+  width="400"
+  height="300"
+  controls="controls">
   <!-- WebM: 10 MB -->
-  <source src="video.webm" type="video/webm" />
+  <source
+    src="video.webm"
+    type="video/webm" />
   <!-- MPEG-4/H.264: 12 MB -->
-  <source src="video.mp4" type="video/mp4" />
+  <source
+    src="video.mp4"
+    type="video/mp4" />
   <!-- Ogg/Theora: 13 MB -->
-  <source src="video.ogv" type="video/ogv" />
+  <source
+    src="video.ogv"
+    type="video/ogv" />
 </video>
 ```
 
@@ -111,7 +134,12 @@
 要确保背景视频自动循环播放，你必须在视频标签中添加几个属性：autoplay、muted 和 playsinline。
 
 ```html
-<video autoplay="" loop="" muted="true" playsinline="" src="backgroundvideo.mp4"></video>
+<video
+  autoplay=""
+  loop=""
+  muted="true"
+  playsinline=""
+  src="backgroundvideo.mp4"></video>
 ```
 
 虽然 loop 和 autoplay 足以使视频循环和自动播放，但想要在移动浏览器中自动播放的话，muted 属性是必需的。
@@ -123,9 +151,18 @@ Playsinline 对于移动 Safari 浏览器来说是必需的，它允许视频播
 对于 hero 视频或者其他没有音频的视频，移除音频是明智的选择。
 
 ```html
-<video autoplay="" loop="" muted="true" playsinline="" id="hero-video">
-  <source src="banner_video.webm" type='video/webm; codecs="vp8, vorbis"' />
-  <source src="web_banner.mp4" type="video/mp4" />
+<video
+  autoplay=""
+  loop=""
+  muted="true"
+  playsinline=""
+  id="hero-video">
+  <source
+    src="banner_video.webm"
+    type='video/webm; codecs="vp8, vorbis"' />
+  <source
+    src="web_banner.mp4"
+    type="video/mp4" />
 </video>
 ```
 

@@ -60,26 +60,28 @@ export default [
       useStraightItem('HTTP Header', 'http', 3, 'http_header'),
       useStraightItem('HTTP缓存', 'http', 4, 'cache'),
       useStraightItem('HTTPS', 'http', 5, 'https'),
-      useStraightItem('从浏览器输入 url 到页面渲染', 'http', 6, '从浏览器输入url'),
-      useStraightItem('事件循环 Event Loop', 'http', 7, 'eventloop'),
       useStraightItem('WebSocket', 'http', 8, 'WebSocket'),
+      // useStraightItem('从浏览器输入 url 到页面渲染', 'http', 6, '从浏览器输入url'),
+      // useStraightItem('事件循环 Event Loop', 'http', 7, 'eventloop'),
     ],
   },
   {
-    text: 'Node.js',
-    link: useStraightIntro('nodejs'),
+    text: 'Broswer',
+    link: useStraightIntro('bw'),
     collapsed: true,
-    items: [
-      // useStraightItem('网络七层协议', 'http', 1, '网络七层协议'),
+    items: [      
+      useStraightItem('从浏览器输入 url 到页面渲染', 'bw', 1, 'fromurl'),
+      useStraightItem('事件循环 Event Loop', 'bw', 2, 'eventloop'),
+      useStraightItem('垃圾回收 GC', 'bw', 3, 'gc'),
     ],
-  },
+  },  
   {
     text: '前端工程化',
     link: useStraightIntro('webpack'),
     collapsed: true,
     items: [
-      // useStraightItem('webpack', 'webpack', 1, 'webpack'),
-      // useStraightItem('Webpack优化实践', 'webpack', 1, 'Webpack优化实践'),
+      useStraightItem('webpack', 'webpack', 1, 'webpack'),
+      useStraightItem('vite', 'vite', 1, 'vite'),
     ],
   },
   // 前端工程化 和 性能优化是两个大类，但性能相关很多是交杂在一起的
@@ -91,32 +93,12 @@ export default [
     collapsed: true,
     items: [
       useStraightItem('Web性能', 'opt', 1, 'Web性能'),
-      useStraightItem('多媒体', 'opt', 2, '多媒体'),
+      useStraightItem('多媒体（图片和视频）', 'opt', 2, '多媒体'),
       useStraightItem('JavaScript性能优化', 'opt', 3, 'JavaScript性能优化'),
       useStraightItem('HTML性能优化', 'opt', 4, 'HTML性能优化'),
       useStraightItem('CSS性能优化', 'opt', 5, 'CSS性能优化'),
     ],
-  },
-  {
-    text: '前端安全',
-    link: useStraightIntro('safe'),
-    collapsed: true,
-    items: [
-      useStraightItem('Web安全', 'safe', 1, 'Web安全'),
-      useStraightItem('XSS', 'safe', 2, 'XSS'),
-      useStraightItem('CSRF', 'safe', 3, 'CSRF'),
-      useStraightItem('中间人攻击', 'safe', 4, '中间人攻击'),
-      useStraightItem('旁观者攻击', 'safe', 5, '旁观者攻击'),
-    ],
-  },
-  {
-    text: 'TypeScript',
-    link: useStraightIntro('ts'),
-    collapsed: true,
-    items: [
-      // useStraightItem('Web安全', 'safe', 1, 'Web安全'),
-    ],
-  },
+  },    
   {
     text: 'Vue',
     link: useStraightIntro('vue'),
@@ -134,6 +116,42 @@ export default [
     items: [
       // useStraightItem('MVC和MVVM', 'react', 1, 'MVC和MVVM'),
       // useStraightItem('VirtualDOM和Diff算法', 'vue', 2, 'VirtualDOM和Diff算法'),
+    ],
+  },
+  {
+    text: '解决方案',
+    collapsed: true,
+    link: useStraightIntro('solution'),
+    items: [
+      // useStraightItem('特定场景下解决方案', 'slt', 1, 'solution'),
+    ],
+  },
+  {
+    text: 'TypeScript',
+    link: useStraightIntro('ts'),
+    collapsed: true,
+    items: [
+      // useStraightItem('Web安全', 'safe', 1, 'Web安全'),
+    ],
+  },  
+  {
+    text: 'Node.js',
+    link: useStraightIntro('nodejs'),
+    collapsed: true,
+    items: [
+      // useStraightItem('网络七层协议', 'http', 1, '网络七层协议'),
+    ],
+  },
+  {
+    text: '前端安全',
+    link: useStraightIntro('safe'),
+    collapsed: true,
+    items: [
+      useStraightItem('Web安全', 'safe', 1, 'Web安全'),
+      useStraightItem('XSS', 'safe', 2, 'XSS'),
+      useStraightItem('CSRF', 'safe', 3, 'CSRF'),
+      useStraightItem('中间人攻击', 'safe', 4, '中间人攻击'),
+      useStraightItem('旁观者攻击', 'safe', 5, '旁观者攻击'),
     ],
   },
 ]

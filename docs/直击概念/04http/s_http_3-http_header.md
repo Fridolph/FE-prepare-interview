@@ -22,103 +22,103 @@ HTTP 标头（header）允许客户端和服务器通过 HTTP 请求（request�
 
 ## 验证 Authentication
 
-### WWW-Authenticate
+- WWW-Authenticate
 
 定义应该用于访问资源的身份验证方法。
 
-### Authorization
+- Authorization
 
 包含用于向服务器验证用户代理身份的凭据。
 
-### Proxy-Authenticate
+- Proxy-Authenticate
 
 定义应用于访问代理服务器后面资源的身份验证方法。
 
-### Proxy-Authorization
+- Proxy-Authorization
 
 包含用于使用代理服务器验证用户代理的凭据。
 
 ## 缓存（Cache）
 
-### Age
+- Age
 
 对象在代理缓存中的时间（以秒为单位）。
 
-### Cache-Control
+- Cache-Control
 
 请求和响应中缓存机制的指令。
 
-### Clear-Site-Data
+- Clear-Site-Data
 
 清除与请求网站相关联的浏览器数据（例如 cookie、storage、cache）。
 
-### Expires
+- Expires
 
 响应被视为过时的日期/时间。
 
-### Pragma
+- Pragma
 
 特定于实现的标头可能会在请求—响应链（request-response chain）的任何地方产生各种影响。用于向后兼容 Cache-Control 标头尚不存在的 HTTP/1.0 缓存。
 
 ## 条件 Conditional
 
-### Last-Modified
+- Last-Modified
 
 资源的最后修改日期，用于比较同一个资源的多个版本。它不如 ETag 准确，但在某些环境中更容易计算。使用 If-Modified-Since 和 If-Unmodified-Since 的条件请求可以使用此值来更改请求的行为。
 
-### If-Modified-Since
+- If-Modified-Since
 
 使请求有条件，并期望只有在给定日期后修改资源时才请求传输资源。仅当缓存过期时才用于传输数据。
 
-### If-Unmodified-Since
+- If-Unmodified-Since
 
 使请求有条件，并期望只有在给定日期后资源未被修改时才请求传输资源。这确保了特定范围的新片段与先前片段的一致性，或者在修改现有文档时实现乐观的（optimistic）并发控制系统。
 
-### ETag
+- ETag
 
 标识资源版本的唯一字符串。使用 If-Match 和 If-None-Match 的条件请求使用此值来更改请求的行为。
 
-### If-Match
+- If-Match
 
 使请求有条件，并且仅当存储的资源与给定的 ETag 之一匹配时才应用该方法。
 
-### If-None-Match
+- If-None-Match
 
 使请求有条件，并且仅当存储的资源与给定的 ETag 都不匹配时才应用该方法。这用于更新缓存（用于安全请求），或防止在资源已存在时上传新资源。
 
-### Vary
+- Vary
 
 确定如何匹配请求标头以决定是否可以使用缓存的响应而不是从源服务器请求新的响应。
 
 ## 消息主体信息
 
-### Content-Length
+- Content-Length
 
 资源的大小，以十进制字节数表示。
 
-### Content-Type
+- Content-Type
 
 指示资源的媒体类型。
 
-### Content-Encoding
+- Content-Encoding
 
 用于指定压缩算法。
 
-### Content-Language
+- Content-Language
 
 描述面向受众的人类语言，以便用户可以根据自己的首选语言进行区分。
 
-### Content-Location
+- Content-Location
 
 指示返回数据的备用位置。
 
 ## 连接管理 Connection management
 
-### Connection
+- Connection
 
 控制当前事务完成后网络连接是否保持打开状态。
 
-### Keep-Alive
+- Keep-Alive
 
 控制持久连接应保持打开状态的时间。
 
@@ -126,25 +126,25 @@ HTTP 标头（header）允许客户端和服务器通过 HTTP 请求（request�
 
 内容协商（Content negotiation）标头。
 
-### Accept
+- Accept
 
 通知服务器可以发回的数据类型。
 
-### Accept-Encoding
+- Accept-Encoding
 
 编码算法，通常是压缩算法，用于返回的资源。
 
-### Accept-Language
+- Accept-Language
 
 通知服务器有关服务器预期返回的人类语言。这是一个提示，不一定在用户的完全控制之下：服务器应该始终注意不要覆盖明确的用户选择（比如从下拉列表中选择一种语言）。
 
 ## 控制 Control
 
-### Expect
+- Expect
 
 表示服务器需要满足的期望才能正确处理请求。
 
-### Max-Forwards
+- Max-Forwards
 
 使用 TRACE 时，指示请求在被反映到发送方之前可以执行的最大跃点数。
 
@@ -158,17 +158,17 @@ Cookie 算一个大知识点，单独开了一个文档。请跳转查看
 
 ## 下载
 
-### Content-Disposition
+- Content-Disposition
 
 指示传输的资源是否应内联显示（没有标题的默认行为），或者是否应像下载一样处理并且浏览器应显示“另存为”对话框。
 
 ## 代理
 
-### Forwarded
+- Forwarded
 
 包含来自代理服务器面向客户端的信息，当请求路径中涉及代理时，这些信息会被更改或丢失。
 
-### Via
+- Via
 
 由代理添加，包括正向和反向代理，并且可以出现在请求标头和响应标头中。
 
@@ -184,51 +184,51 @@ Cookie 算一个大知识点，单独开了一个文档。请跳转查看
 
 ## 请求上下文
 
-### From
+- From
 
 包含一个电子邮箱地址，这个电子邮箱地址属于发送请求的用户代理的实际掌控者的人类用户。
 
-### Host
+- Host
 
 指定服务器的域名（用于虚拟主机）和（可选）服务器侦听的 TCP 端口号。
 
-### Referer
+- Referer
 
 前一个网页的地址，表示从该网页链接（进入）到当前请求的页面。
 
-### Referrer-Policy
+- Referrer-Policy
 
 管理 Referer 标头中发送的哪些引用信息应包含在发出的请求中。
 
-### User-Agent
+- User-Agent
 
 包含一个特征字符串，允许网络协议对端识别发起请求的用户代理软件的应用程序类型、操作系统、软件供应商或软件版本。另请参阅 Firefox 用户代理字符串参考。
 
 ## 响应上下文
 
-### Allow
+- Allow
 
 列出资源所支持的 HTTP 方法的集合。
 
-### Server
+- Server
 
 包含了处理请求的源头服务器所用到的软件相关信息。
 
 ## 范围请求
 
-### Accept-Ranges
+- Accept-Ranges
 
 指示服务器是否支持范围请求，如果支持，范围可以用哪个单位表示。
 
-### Range
+- Range
 
 指示服务器应返回的文档部分。
 
-### If-Range
+- If-Range
 
 创建一个条件范围请求，只有在给定的 etag 或日期与远程资源匹配时才会满足。用于防止从资源的不兼容版本下载两个范围。
 
-### Content-Range
+- Content-Range
 
 指示部分消息在完整正文消息中的位置。
 
@@ -238,14 +238,18 @@ Cookie 算一个大知识点，单独开了一个文档。请跳转查看
 
 ## 传输编码
 
-### Transfer-Encoding
+- Transfer-Encoding
 指定用于将资源安全地传输给用户的编码形式。
 
-### TE
+- TE
 指定用户代理愿意接受的传输编码。
 
-### Trailer
+- Trailer
 允许发送方在分块消息的末尾包含其他字段。
+
+## 自测
+
+[http](../../%E9%9D%A2%E8%AF%95%E5%AE%98%E9%97%AE/04http/q_http_2-http.md)
 
 ## 参考资料
 
