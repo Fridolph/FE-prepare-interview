@@ -242,7 +242,148 @@ HMR 的核心就是客户端从服务端拉取更新后的文件，准确的说�
   - 必须是 ES6 的语法，因为有很多第三方库仍采用 CommonJS 语法，为了充分发挥 Scope hoisting 的作用，需要配置 mainFields 对第三方模块优先采用 jsnext:main 中指向的 ES6 模块化语法
 - `动态Polyfill`
   - 建议采用 polyfill-service 只给用户返回需要的 polyfill，社区维护。 (部分国内奇葩浏览器 UA 可能无法识别，但可以降级返回所需全部 polyfill)
-    :::
+:::
+
+## 怎么去掉 console.log
+
+### Webpack
+
+::: details
+Webpack 5 自带 terser-webpack-plugin；Webpack 4 需要安装 terser-webpack-plugin
+
+```js
+const TerserWebpackPlugin = require("terser-webpack-plugin");
+
+module.exports = {
+  // 省略...
+  mode: "production",
+  optimization: {
+  	minimizer: [
+	    new TerserWebpackPlugin({
+        terserOptions: {
+          compress: {
+            warnings: true,
+            drop_console: true,
+            drop_debugger: true,
+            pure_funcs: ['console.log', "console.table"] // 删除console
+          }
+        }
+      });
+    ]
+  }
+}
+```
+
+### 在Vite项目中
+
+::: details
+- 环境变量引入
+  
+  vite已经将这个功能内置到了，所以我们只需要配置vite.config.js文件即可，起作用的文件包括drop_console去掉console信息drop_debugger为去掉debugger信息
+
+```js
+import { defineConfig, loadEnv } from 'vite'
+import vue from '@vitejs/plugin-vue'
+
+export default defineConfig(({ mode, command }) => ({
+  build: { 
+    minify: "terser", 
+    terserOptions: { 
+      compress: { 
+        drop_console: command === "build" && loadEnv(mode, __dirname).VITE_API_ENV === "prod", 
+        drop_debugger: command === "build" && loadEnv(mode, __dirname).VITE_API_ENV === "prod" 
+      } 
+    } 
+  },
+  plugins: [vue()]
+}))
+```
+
+- 打包： 命令: npm run build_prod
+:::
+
+### Vue-cli 中配置
+
+::: details 这是在 Vue-cli 项目中推荐使用的清除 console 插件
+安装
+
+```bash
+npm i babel-plugin-transform-remove-console --save-dev
+```
+
+使用
+
+```js
+// babel.config.js
+module.exports = {
+  plugins: ['transform-remove-console'],
+}
+
+// 生产环境如下配置
+const prodPlugins = []
+if (process.env.NODE_ENV === 'production') {
+  prodPlugins.push('transform-remove-console')
+}
+
+module.exports = {
+  plugins: [...prodPlugins],
+}
+```
+
+:::
+
+### 手写 Loader 删除
+
+::: details
+
+1. 新建一个 js 文件，我这里名为 clearConsole.js，其实这里也是用正则去匹配然后替换为空
+
+```js
+const reg = /(console.log\()(.*)(\))/g
+module.exports = function (source) {
+  source = source.replace(reg, '')
+  return source
+}
+```
+
+2. 在 Vue.config.js 配置
+
+```js
+module.exports = {
+  // 省略...
+  configureWebpack: {
+    module: {
+      rules: [
+        {
+          test: /\.vue$/,
+          exclude: /node_modules/,
+          loader: path.resolve(__dirname, './clearConsole.js'),
+        },
+        {
+          test: /\.js$/,
+          exclude: /node_modules/,
+          loader: path.resolve(__dirname, './clearConsole.js'),
+        },
+      ],
+    },
+  },
+}
+```
+
+配置如上代码就可以啦~，清除 js 文件和 vue 文件里的 console.log。exclude 代表不去 node_module 目录下查找。
+
+:::
+
+
+### 其他物理方式
+
+::: tip 可了解，不推荐
+
+开发中我们还是要，需要的只是线上代码不跑 log 就成：
+
+1. 简单粗暴删除 console.log = function() {}
+2. VS code 正则全局替换
+   :::
 
 ## 其他
 
@@ -308,3 +449,5 @@ source map 是**将编译、打包、压缩后的代码映射回源代码的过�
 - [webpack 系列](https://juejin.cn/post/7140769906080874504)——何逸轩
 - [前端打包工具介绍和对比](https://juejin.cn/post/7113803425145421832)——卷起来的小白
 - [再来一打 Webpack 面试题](https://juejin.cn/post/6844904094281236487)——童欧巴
+- [这些操作删除 console.log 代码，你都知道吗](https://juejin.cn/post/6992749075326042126)——秦声
+- [vite项目初始化之~打包去掉console信息](https://juejin.cn/post/7044876656049127437)——皓子
