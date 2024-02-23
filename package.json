@@ -4,13 +4,10 @@
   "version": "1.0.0",
   "description": "前端必备的知识宝典，整理搜索自互联网，by Fridolph 霪霖笙箫。",
   "type": "module",
-  "scripts": {
-    "dev": "vitepress dev docs",
-    "build": "vitepress build docs",
-    "preview": "vitepress preview docs",
-    "docs:dev": "vitepress dev src",
-    "docs:build": "vitepress build src",
-    "docs:preview": "vitepress preview src"
+  "scripts": {    
+    "dev": "vitepress dev src",
+    "build": "vitepress build src",
+    "preview": "vitepress preview src"
   },
   "dependencies": {
     "@docsearch/js": "3",
