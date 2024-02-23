@@ -12,10 +12,8 @@ import head from './config/head'
 import nav from './config/nav'
 import sidebar from './config/sidebar'
 
-const APP_BASE_PATH = basename(process.env.GITHUB_REPOSITORY || '')
-
 export default defineConfig({
-  base: APP_BASE_PATH ? `/${APP_BASE_PATH}/` : '/',
+  base: '/FE-prepare-interview/dist/',
   outDir: '../dist',
   lang: 'zh-cn',
   title: '前端必备的知识宝典',
