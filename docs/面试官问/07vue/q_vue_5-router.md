@@ -56,8 +56,8 @@
 `全局路由钩子`：
 
 - router.beforeEach 全局前置守卫 进入路由之前
-- router.beforeResolve 全局解析守卫（2.5.0+）在 beforeRouteEnter 调用之后调用
 - router.afterEach 全局后置钩子 进入路由之后
+- router.beforeResolve 全局解析守卫（2.5.0+）在 beforeRouteEnter 它会在导航将要被解析之前被执行。此时所有组件都已经获取完毕，且其它导航守卫也都已经完成调用。返回一个用来移除该守卫的函数。
 
 `单个路由独享钩子`：
 

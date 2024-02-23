@@ -38,22 +38,22 @@ Proxy 实现的响应式原理与 Vue2 的实现原理相同，实现方式大�
 
 ::: details
 
-一、响应式原理
+**一、响应式原理**
 
 - Vue2 响应式原理基于 `Object.defineProperty`
 - Vue3 响应式原理基于 `Proxy`
 
-二、API 不同
+**二、API 不同**
 
 - Vue2 使用 Options 选项式
 - Vue3 推荐使用 Composition API 组合式
 
-三、定义响应式数据不同
+**三、定义响应式数据不同**
 
 - vue2 在 data 里的数据都是响应式的
 - vue3 使用 ref、reactive，ref 取值需要用 .value
 
-四、生命周期不同
+**四、生命周期不同**
 
 - Vue2
   - beforeCreate、created
@@ -66,13 +66,13 @@ Proxy 实现的响应式原理与 Vue2 的实现原理相同，实现方式大�
   - onBeforeUpdate、onUpdated
   - onBeforeUnmount、onUnmounted
 
-五、获取组件实例方法不同
+**五、获取组件实例方法不同**
 
 - Vue2 ref 属性，通过 this.$refs 获取到实例
 - Vue3 中不能直接使用 $refs ，需要用 ref 定义一个响应式数据并设置 null，且组件要设置 ref 的属性
 - Vue3 获取子组件实例后，父组件只能使用子组件暴露 defineExpose 出来的方法或变量
 
-六、组件传值（通信）
+**六、组件传值（通信）**
 
 - Vue2 父组件 v-bind，子组件 props 拿到
 - Vue3 setup(props, context)来接收；用 ts + setup，还需使用 defineProps 和 defineEmits 来定义 props 和 emit
