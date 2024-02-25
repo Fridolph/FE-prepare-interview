@@ -1,10 +1,10 @@
 import { useCodingItem } from './usePath'
 
 export default [
-  {
-    text: '结合代码 & 手写题',
-    items: [{ text: '如何利用该版块', link: '/编写代码/index' }],
-  },
+  // {
+  //   text: '结合代码 & 手写题',
+  //   items: [{ text: '如何利用该版块', link: '/编写代码/index' }],
+  // },
   {
     text: '算法相关',
     collapsed: true,
@@ -31,16 +31,16 @@ export default [
       useCodingItem('常见布局一览', 'css', 1, '常见布局'),
       useCodingItem('水平垂直居中', 'css', 2, '水平垂直居中'),
       useCodingItem('sticky 粘黏布局', 'css', 3, 'sticky'),
-      useCodingItem('flex布局之画骰子', 'css', 4, 'flex'),
-      useCodingItem('css新特性之grid', 'css', 5, 'grid'),
+      useCodingItem('flex 布局之画骰子', 'css', 4, 'flex'),
+      useCodingItem('css 新特性之 grid', 'css', 5, 'grid'),
     ],
   },
   {
     text: 'JavaScript',
     collapsed: true,
     items: [
-      useCodingItem('实现简易Promise', 'js', 1, 'promise'),
-      useCodingItem('写个deepCopy实现深拷贝', 'js', 2, 'deepcopy'),
+      useCodingItem('实现简易 Promise', 'js', 1, 'promise'),
+      useCodingItem('写个 deepCopy 实现深拷贝', 'js', 2, 'deepcopy'),
     ],
   },  
   // {

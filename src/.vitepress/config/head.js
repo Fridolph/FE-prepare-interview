@@ -6,4 +6,5 @@ export default [
   ['link', { rel: 'mask-icon', href: '/favicon.ico', color: '#3eaf7c' }],
   ['meta', { name: 'msapplication-TileImage', content: '/favicon.ico' }],
   ['meta', { name: 'msapplication-TileColor', content: '#000000' }],
+  ['link', { rel: 'shortcut icon', href: '/favicon.ico' }]
 ]

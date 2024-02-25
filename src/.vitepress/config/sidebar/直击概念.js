@@ -1,18 +1,17 @@
 import { useStraightIntro, useStraightItem } from './usePath'
 
 export default [
-  {
-    text: '直击概念',
-    items: [{ text: '如何利用该版块', link: '/直击概念/index' }],
-  },
-
+  // {
+  //   text: '直击概念',
+  //   items: [{ text: '如何利用该版块', link: '/直击概念/index' }],
+  // },
   {
     text: 'HTML & CSS',
     collapsed: true,
     link: useStraightIntro('html'),
     items: [
       useStraightItem('BFC', 'css', 1, 'BFC'),
-      // useStraightItem('了解grid布局吗', 'css', 1, 'grid'),
+      // useStraightItem('了解 grid 布局吗', 'css', 1, 'grid'),
     ],
   },
   {
@@ -23,7 +22,7 @@ export default [
       useStraightItem('变量，声明、类型、判断等', 'js', 1, 'base'),
       useStraightItem('闭包', 'js', 2, 'closure'),
       useStraightItem('对象、原型、继承', 'js', 3, 'object'),
-      useStraightItem('this相关', 'js', 4, 'this'),
+      useStraightItem('this 相关', 'js', 4, 'this'),
       useStraightItem('事件 Event', 'js', 5, 'event'),
     ],
   },  
@@ -32,14 +31,14 @@ export default [
     link: useStraightIntro('http'),
     collapsed: true,
     items: [
-      useStraightItem('OSI七层模型', 'http', 0, 'osi'),
-      useStraightItem('HTTP概述', 'http', 1, 'http'),
-      useStraightItem('HTTP状态码', 'http', 2, 'http_status_code'),
+      useStraightItem('OSI 七层模型', 'http', 0, 'osi'),
+      useStraightItem('HTTP 概述', 'http', 1, 'http'),
+      useStraightItem('HTTP 状态码', 'http', 2, 'http_status_code'),
       useStraightItem('HTTP Header', 'http', 3, 'http_header'),
-      useStraightItem('HTTP缓存', 'http', 4, 'cache'),
+      useStraightItem('HTTP 缓存', 'http', 4, 'cache'),
       useStraightItem('HTTPS', 'http', 5, 'https'),
       useStraightItem('WebSocket', 'http', 8, 'WebSocket'),
-      // useStraightItem('从浏览器输入 url 到页面渲染', 'http', 6, '从浏览器输入url'),
+      // useStraightItem('从浏览器输入 url 到页面渲染', 'http', 6, '从浏览器输入 url'),
       // useStraightItem('事件循环 Event Loop', 'http', 7, 'eventloop'),
     ],
   },
@@ -65,18 +64,18 @@ export default [
     ],
   },
   // 前端工程化 和 性能优化是两个大类，但性能相关很多是交杂在一起的
-  // 这里sidebar分开了，但目录里是一个大类需注意下
-  // 记得看typeMap，别搞错目录了
+  // 这里 sidebar 分开了，但目录里是一个大类需注意下
+  // 记得看 typeMap，别搞错目录了
   {
     text: '性能优化',
     link: useStraightIntro('opt'),
     collapsed: true,
     items: [
-      useStraightItem('Web性能', 'opt', 1, 'Web性能'),
+      useStraightItem('Web 性能', 'opt', 1, 'Web 性能'),
       useStraightItem('多媒体（图片和视频）', 'opt', 2, '多媒体'),
-      useStraightItem('JavaScript性能优化', 'opt', 3, 'JavaScript性能优化'),
-      useStraightItem('HTML性能优化', 'opt', 4, 'HTML性能优化'),
-      useStraightItem('CSS性能优化', 'opt', 5, 'CSS性能优化'),
+      useStraightItem('JavaScript 性能优化', 'opt', 3, 'JavaScript 性能优化'),
+      useStraightItem('HTML 性能优化', 'opt', 4, 'HTML 性能优化'),
+      useStraightItem('CSS 性能优化', 'opt', 5, 'CSS 性能优化'),
     ],
   },    
   {
@@ -96,8 +95,8 @@ export default [
     link: useStraightIntro('react'),
     collapsed: true,
     items: [
-      // useStraightItem('MVC和MVVM', 'react', 1, 'MVC和MVVM'),
-      // useStraightItem('VirtualDOM和Diff算法', 'vue', 2, 'VirtualDOM和Diff算法'),
+      // useStraightItem('MVC 和 MVVM', 'react', 1, 'MVC 和 MVVM'),
+      // useStraightItem('VirtualDOM 和 Diff 算法', 'vue', 2, 'VirtualDOM 和 Diff 算法'),
     ],
   },
   {
@@ -151,7 +150,7 @@ export default [
     link: useStraightIntro('safe'),
     collapsed: true,
     items: [
-      useStraightItem('Web安全', 'safe', 1, 'Web安全'),
+      useStraightItem('Web 安全', 'safe', 1, 'Web 安全'),
       useStraightItem('XSS', 'safe', 2, 'XSS'),
       useStraightItem('CSRF', 'safe', 3, 'CSRF'),
       useStraightItem('中间人攻击', 'safe', 4, '中间人攻击'),

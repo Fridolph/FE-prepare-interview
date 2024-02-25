@@ -1,6 +1,6 @@
 import { defineConfig } from 'vitepress'
 import { basename } from 'node:path'
-// todo:fix 由于npm run build 报错，暂时把该插件去掉，解决后加回来
+// todo:fix 由于 npm run build 报错，暂时把该插件去掉，解决后加回来
 // import { postcssIsolateStyles } from 'vitepress'
 // import { pagefindPlugin, chineseSearchOptimize } from 'vitepress-plugin-pagefind'
 import { containerPreview, componentPreview } from '@vitepress-demo-preview/plugin'
@@ -18,19 +18,17 @@ export default defineConfig({
   lang: 'zh-cn',
   title: '前端必备的知识宝典',
   description:
-    '前端必备的知识宝典，经Fridolph整理编写。内容均搜集自互联网，非商业，遵循GPL开源协议。',
+    '前端必备的知识宝典，经 Fridolph 整理编写。内容均搜集自互联网，非商业，遵循 GPL 开源协议。',
   // head: [['link', { rel: 'shortcut icon', href: '/favicon.ico' }]],
-  head, 
-  themeConfig: {    
+  head,
+  themeConfig: {
     sidebarDepth: 2,
     appearance: true,
     logo: '/me.jpg',
     // https://vitepress.dev/reference/default-theme-config
     nav,
     sidebar,
-    socialLinks: [
-      { icon: 'github', link: 'https://github.com/Fridolph/FE-prepare-interview' },
-    ],
+    socialLinks: [{ icon: 'github', link: 'https://github.com/Fridolph/FE-prepare-interview' }],
     footer: {
       // message: '',
       copyright:
@@ -45,14 +43,13 @@ export default defineConfig({
       options: {
         _render(src, env, md) {
           const html = md.render(src, env)
-          if (env.frontmatter?.title)
-            return md.render(`# ${env.frontmatter.title}`) + html
+          if (env.frontmatter?.title) return md.render(`# ${env.frontmatter.title}`) + html
           return html
         },
       },
     },
     // 由于本地搜索对中文和 英文大小写判断稍差
-    // 试试algolia - - ORZ 还没申请下来
+    // 试试 algolia - - ORZ 还没申请下来
     outline: {
       level: 'deep',
       label: '本页目录',
@@ -62,7 +59,7 @@ export default defineConfig({
       next: '下一篇',
     },
     darkModeSwitchLabel: '外观',
-    cleanUrls: true,    
+    cleanUrls: true,
     lastUpdated: {
       text: '最后更新于',
       formatOptions: {
@@ -75,14 +72,14 @@ export default defineConfig({
   },
   vite: {
     plugins: [
-      // todo:fix 由于npm run build 报错，暂时把该插件去掉，解决后加回来
+      // todo:fix 由于 npm run build 报错，暂时把该插件去掉，解决后加回来
       // postcssIsolateStyles(),
       // pagefindPlugin({
       //   customSearchQuery: chineseSearchOptimize,
       //   btnPlaceholder: '搜索',
       //   placeholder: '搜索文档',
       //   emptyText: '空空如也',
-      //   heading: '共: {{searchResult}} 条结果',
+      //   heading: '共：{{searchResult}} 条结果',
       //   excludeSelector: ['img', 'a.header-anchor'],
       //   forceLanguage: 'zh-cn',
       //   indexingCommand:
