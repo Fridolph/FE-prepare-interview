@@ -29,8 +29,8 @@
 
 ## 赋值和深浅拷贝的区别
 
-<Image src="/02js/clone1.png" alt="shadowCopy" :inline="false"/>
-<Image src="/02js/clone2.png" alt="deepCopy" :inline="false"/>
+<Image src="/02js/clone1.png" alt="shadowCopy" />
+<Image src="/02js/clone2.png" alt="deepCopy" />
 
 ::: details 实现深拷贝的几种方式
 

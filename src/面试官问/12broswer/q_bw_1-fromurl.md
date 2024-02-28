@@ -7,6 +7,7 @@
 > 先来精简版，见招拆招，避免说一大堆不到重点，面试官若想深究细节，自然会问的
 
 ::: details
+
 1. 先通过 DNS 解析，拿到 url 对应 IP 地址
 2. 与服务器 “三次握手” 建立 HTTP 连接
 3. 发送 HTTP 请求返 HTML 给浏览器
@@ -17,7 +18,7 @@
 8. Layout 布局，确定渲染树中所有节点的宽度、高度和位置
 9. RenderTree 绘制 将各个节点绘制到屏幕上
 10. 等待交互
-:::
+    :::
 
 ::: warning 注意
 构建 DOM 树，构建 CSSOM 树，及下载所需资源这几步没有严格的先后顺序
@@ -71,32 +72,45 @@ TCP 链接建立后发送 HTTP 请求
 4. 客户端 -> ACK + 1 -> 服务端确认并关闭
    :::
 
-### 拿到 HTML 后，浏览器是如何进行解析和渲染的
+### 浏览器是如何解析 JavaScript 脚本的
 
 ::: details
 
-1. 浏览器创建 Document 对象并解析 HTML，将解析到的元素和文本节点添加到文档中，此时 `document.readystate 为 loading`
+1. 浏览器`创建 Document 对象`并`解析 HTML`，将解析到的元素和文本节点`添加到文档`中，此时 `document.readystate` 为 `loading`
 
 2. HTML 解析器遇到没有 async 和 defer 的 script 时，将他们添加到文档中，然后执行行内或外部脚本：
 
-- 这些脚本会同步执行，并且在脚本下载和执行时解析器会暂停。
+- 这些脚本会`同步执行`，并且在脚本下载和执行时解析器会暂停。
 - 这样就可以用 document.write()把文本插入到输入流中。
 - 同步脚本经常简单定义函数和注册事件处理程序，他们可以遍历和操作 script 和他们之前的文档内容
 
-3. 当解析器遇到设置了 async 属性的 script 时，开始下载脚本并继续解析文档：
+3. 当解析器遇到设置了 async 属性的 script 时，开始`下载`脚本并`继续解析`文档：
 
 - 脚本会在它下载完成后尽快执行，但是解析器不会停下来等它下载。
 - 异步脚本禁止使用 document.write()，它们可以访问自己 script 和之前的文档元素
 
-4. 当文档完成解析，`document.readState 变成 interactive`
+4. 当文档完成解析，`document.readState` 变成 `interactive`
 
-5. 所有 defer 脚本会按照在文档出现的顺序执行，延迟脚本能访问完整文档树，禁止使用 document.write()
+5. 所有 `defer` 脚本会按照在文档出现的`顺序执行`，延迟脚本能访问完整文档树，禁止使用 document.write()
 
-6. 浏览器在 Document 对象上触发 DOMContentLoaded 事件
+6. 浏览器在 Document 对象上触发 `DOMContentLoaded` 事件
 
 7. 此时文档完全解析完成，浏览器可能还在等待如图片等内容加载，
-   等这些内容完成载入并且所有异步脚本完成载入和执行，`document.readState 变为 complete`，window 触发 load 事件
+   等这些内容完成载入并且所有异步脚本完成载入和执行，`document.readState` 变为 `complete`，window 触发 `load` 事件
 
 :::
 
 完成以上，最后显示页面（HTML 解析过程中会逐步显示页面）
+
+### 浏览器是如何进行渲染的
+
+::: details
+1. 解析HTML，生成DOM树和CSSOM树
+2. 样式计算 - Computed Style
+3. 布局，生成 Layout 树
+4. 分层 - Layer
+5. 绘制 - Paint
+6. 分块 - Compositing
+7. 光栅化 - Raster
+8. 呈现 - Draw
+:::

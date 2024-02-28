@@ -43,6 +43,19 @@ export default [
       useCodingItem('写个 deepCopy 实现深拷贝', 'js', 2, 'deepcopy'),
     ],
   },  
+  {
+    text: 'Vue',
+    collapsed: true,
+    items: [
+      useCodingItem('Vue响应式原理', 'vue', 1, 'reactive'),
+    ],
+  },
+  {
+    text: 'React',
+    collapsed: true,
+    items: [
+    ],
+  },
   // {
   //   text: 'HTTP',
   //   collapsed: true,
@@ -73,16 +86,4 @@ export default [
   //   items: [
   //   ],
   // },
-  {
-    text: 'Vue',
-    collapsed: true,
-    items: [
-    ],
-  },
-  {
-    text: 'React',
-    collapsed: true,
-    items: [
-    ],
-  },
 ]
