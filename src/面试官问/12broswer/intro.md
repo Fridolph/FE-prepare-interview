@@ -3,4 +3,8 @@
 
 ## 浏览器的工作原理
 
-:white_check_mark:
+- :white_check_mark: 从浏览器输入 url 到页面渲染经历了什么
+  
+- :white_check_mark: 事件循环
+  
+- :white_check_mark: 垃圾回收

@@ -1,10 +1,14 @@
 import { useQuestionItem, useQuestionIntro } from './usePath'
 
 export default [
-  // {
-  //   text: '面试官问',
-  //   items: [{ text: '如何利用本版块', link: '/面试官问/index' }],
-  // },
+  {
+    text: '面试官问',
+    items: [
+      // { text: '如何利用本版块', link: '/面试官问/index' },
+      { text: '自我介绍', link: '/面试官问/00me/1自我介绍' },
+      { text: '项目难点梳理', link: '/面试官问/00me/2难点梳理' },
+    ],
+  },
   {
     text: 'HTML & CSS',
     collapsed: true,
@@ -32,7 +36,7 @@ export default [
     collapsed: true,
     link: useQuestionIntro('http'),
     items: [
-      useQuestionItem('应用层', 'http', 1, 'osi'),
+      useQuestionItem('http 基础', 'http', 1, 'base'),
       useQuestionItem('http 常考察点', 'http', 2, 'http'),
       useQuestionItem('缓存机制', 'http', 3, 'cache'),
       useQuestionItem('为什么使用 https', 'http', 4, 'https'),                  
@@ -46,7 +50,7 @@ export default [
     items: [
       useQuestionItem('从浏览器输入 url 到页面渲染', 'bw', 1, 'fromurl'),
       useQuestionItem('事件循环 Event Loop', 'bw', 2, 'eventloop'),
-      useQuestionItem('垃圾回收 GC', 'bw', 3, 'gc'),
+      useQuestionItem('其他', 'bw', 3, 'other'),
     ],
   },
   {
@@ -54,8 +58,9 @@ export default [
     link: useQuestionIntro('build'),
     collapsed: true,
     items: [
-      useQuestionItem('Webpack', 'webpack', 1, 'webpack'),
       useQuestionItem('Vite', 'vite', 1, 'vite'),
+      useQuestionItem('Webpack', 'webpack', 1, 'webpack'),
+      useQuestionItem('其他', 'webpack', 2, 'other'),
     ],
   },
   // 前端工程化 和 性能优化是两个大类，但性能相关很多是交杂在一起的

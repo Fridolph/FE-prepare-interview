@@ -17,7 +17,7 @@ webpack 是一个模块打包器。webpack 的主要目标是将 JavaScript 文�
 
 :::
 
-::: details Webpack 的运⾏流程是⼀个串⾏的过程，从启动到结束会`依次执⾏`以下流程：
+::: details Webpack 的运行流程是⼀个串行的过程，从启动到结束会`依次执行`以下流程：
 
 1. **初始化参数**：解析 webpack 配置参数，合并 shell 传入和 webpack.config.js 文件配置的参数，形成最后的配置结果。
 2. **开始编译**：上一步得到的参数初始化`compiler`对象，注册所有配置的插件，插件监听 webpack 构建生命周期的事件节点，做出相应的反应，执行对象的 run 方法开始执行编译。
