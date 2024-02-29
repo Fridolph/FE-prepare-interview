@@ -24,6 +24,9 @@ export default [
       useStraightItem('对象、原型、继承', 'js', 3, 'object'),
       useStraightItem('this 相关', 'js', 4, 'this'),
       useStraightItem('事件 Event', 'js', 5, 'event'),
+      useStraightItem('Promise - 设计', 'promise', 1, 'design'),
+      useStraightItem('Promise - 基础', 'promise', 2, 'base'),
+      useStraightItem('Promise - 进阶', 'promise', 3, 'promise'),
     ],
   },  
   {

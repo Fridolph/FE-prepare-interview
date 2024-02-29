@@ -38,11 +38,19 @@ export default [
   {
     text: 'JavaScript',
     collapsed: true,
-    items: [
-      useCodingItem('实现简易 Promise', 'js', 1, 'promise'),
+    items: [      
       useCodingItem('写个 deepCopy 实现深拷贝', 'js', 2, 'deepcopy'),
     ],
-  },  
+  },
+  {
+    text: 'Promise',
+    collapsed: true,
+    items: [      
+      useCodingItem('实现简易 Promise', 'promise', 1, 'promise'),
+      useCodingItem('设计个支持并发前端接口缓存', 'promise', 2, 'concurrent'),
+    ],
+  },
+
   {
     text: 'Vue',
     collapsed: true,
