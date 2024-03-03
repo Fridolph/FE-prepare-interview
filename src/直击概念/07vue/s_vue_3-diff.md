@@ -1,4 +1,74 @@
-# Vue 的 diff 算法详细分析
+# Virtual DOM & Diff
+
+## 虚拟 DOM - Virtual DOM
+
+Virtual DOM 是对 DOM 的抽象,本质上是 JavaScript 对象,这个对象就是更加轻量级的对 DOM 的描述.
+
+<Image src="/07vue/vdom.png" alt="虚拟 DOM" />
+
+## 为什么需要 Virtual DOM
+
+首先,我们都知道在前端性能优化的一个秘诀就是尽可能少地操作 DOM,不仅仅是 DOM 相对较慢,更因为频繁变动 DOM 会造成浏览器的回流或者重回,这些都是性能的杀手,因此我们需要这一层抽象,在 patch 过程中尽可能地一次性将差异更新到 DOM 中,这样保证了 DOM 不会出现性能很差的情况.
+
+其次,现代前端框架的一个基本要求就是无须手动操作 DOM,一方面是因为手动操作 DOM 无法保证程序性能,多人协作的项目中如果 review 不严格,可能会有开发者写出性能较低的代码,另一方面更重要的是省略手动 DOM 操作可以大大提高开发效率.
+
+最后,也是 Virtual DOM 最初的目的,就是更好的跨平台,比如 Node.js 就没有 DOM,如果想实现 SSR(服务端渲染),那么一个方式就是借助 Virtual DOM,因为 Virtual DOM 本身是 JavaScript 对象.
+
+## Virtual DOM 的更新
+
+Virtual DOM 归根到底是 JavaScript 对象,我们得想办法将 Virtual DOM 与真实的 DOM 对应起来,也就是说,需要我们声明一个函数,此函数可以将 vnode 转化为真实 DOM.
+
+```js
+function createElm(vnode, insertedVnodeQueue) {
+  let data = vnode.data
+  let i
+  // 省略 hook 调用
+  let children = vnode.children
+  let type = vnode.type
+
+  /// 根据 type 来分别生成 DOM
+  // 处理 comment
+  if (type === 'comment') {
+    if (vnode.text == null) {
+      vnode.text = ''
+    }
+    vnode.elm = api.createComment(vnode.text)
+  }
+  // 处理其它 type
+  else if (type) {
+    const elm = (vnode.elm = data.ns ? api.createElementNS(data.ns, type) : api.createElement(type))
+
+    // 调用 create hook
+    for (let i = 0; i < cbs.create.length; ++i) cbs.create[i](emptyNode, vnode)
+
+    // 分别处理 children 和 text。
+    // 这里隐含一个逻辑：vnode 的 children 和 text 不会／应该同时存在。
+    if (isArray(children)) {
+      // 递归 children，保证 vnode tree 中每个 vnode 都有自己对应的 dom；
+      // 即构建 vnode tree 对应的 dom tree。
+      children.forEach(ch => {
+        ch && api.appendChild(elm, createElm(ch, insertedVnodeQueue))
+      })
+    } else if (isPrimitive(vnode.text)) {
+      api.appendChild(elm, api.createTextNode(vnode.text))
+    }
+    // 调用 create hook；为 insert hook 填充 insertedVnodeQueue。
+    i = vnode.data.hook
+    if (i) {
+      i.create && i.create(emptyNode, vnode)
+      i.insert && insertedVnodeQueue.push(vnode)
+    }
+  }
+  // 处理 text（text的 type 是空）
+  else {
+    vnode.elm = api.createTextNode(vnode.text)
+  }
+
+  return vnode.elm
+}
+```
+
+## Vue 的 diff 算法详细分析
 
 > 你看 Vue 源码干嘛？你使用 Vue 又不需要它的源码，你只需要会用就行了 —— 尤大 （说得很有道理，但不卷找不到工作）
 
@@ -369,4 +439,5 @@ while 循环主要处理了以下五种情景：
 
 ## 参考
 
-- [Vue 的 diff 算法详细分析](https://juejin.cn/post/7204844328111374391#heading-24)
+- [Vue 的 diff 算法详细分析](https://juejin.cn/post/7204844328111374391#heading-24)——bb_xiaxia1998
+- [面试官: 你对虚拟 DOM 原理的理解?](https://juejin.cn/post/6844903902429577229)——寻找海蓝 96

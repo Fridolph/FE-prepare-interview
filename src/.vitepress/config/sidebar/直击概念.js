@@ -28,7 +28,7 @@ export default [
       useStraightItem('Promise - 基础', 'promise', 2, 'base'),
       useStraightItem('Promise - 进阶', 'promise', 3, 'promise'),
     ],
-  },  
+  },
   {
     text: 'HTTP',
     link: useStraightIntro('http'),
@@ -49,14 +49,14 @@ export default [
     text: 'Broswer',
     link: useStraightIntro('bw'),
     collapsed: true,
-    items: [      
+    items: [
       useStraightItem('浏览器工作原理', 'bw', 1, 'broswer'),
       useStraightItem('浏览器进程模型', 'bw', 4, 'process'),
       useStraightItem('浏览器渲染原理', 'bw', 5, 'render'),
       useStraightItem('事件循环 Event Loop', 'bw', 2, 'eventloop'),
       useStraightItem('垃圾回收 GC', 'bw', 3, 'gc'),
     ],
-  },  
+  },
   {
     text: '前端工程化',
     link: useStraightIntro('webpack'),
@@ -74,13 +74,13 @@ export default [
     link: useStraightIntro('opt'),
     collapsed: true,
     items: [
-      useStraightItem('Web 性能', 'opt', 1, 'Web 性能'),
+      useStraightItem('Web 性能', 'opt', 1, 'Web性能'),
       useStraightItem('多媒体（图片和视频）', 'opt', 2, '多媒体'),
-      useStraightItem('JavaScript 性能优化', 'opt', 3, 'JavaScript 性能优化'),
-      useStraightItem('HTML 性能优化', 'opt', 4, 'HTML 性能优化'),
-      useStraightItem('CSS 性能优化', 'opt', 5, 'CSS 性能优化'),
+      useStraightItem('JavaScript 性能优化', 'opt', 3, 'JavaScript性能优化'),
+      useStraightItem('HTML 性能优化', 'opt', 4, 'HTML性能优化'),
+      useStraightItem('CSS 性能优化', 'opt', 5, 'CSS性能优化'),
     ],
-  },    
+  },
   {
     text: 'Vue',
     link: useStraightIntro('vue'),
@@ -88,7 +88,7 @@ export default [
     items: [
       useStraightItem('响应式 Reactive', 'vue', 1, 'reactive'),
       useStraightItem('生命周期 Lifecylcle', 'vue', 2, 'lifecycle'),
-      useStraightItem('编译 Compile', 'vue', 4, 'compile'),
+      useStraightItem('模版编译 Compile', 'vue', 4, 'compile'),
       useStraightItem('Virtual DOM & Diff', 'vue', 3, 'diff'),
       useStraightItem('keep-alive', 'vue', 5, 'keep_alive'),
     ],
@@ -136,9 +136,7 @@ export default [
     text: 'TypeScript',
     link: useStraightIntro('ts'),
     collapsed: true,
-    items: [
-      useStraightItem('TypeScript 基础', 'ts', 1, 'base'),
-    ],
+    items: [useStraightItem('TypeScript 基础', 'ts', 1, 'base')],
   },
   {
     text: 'Node.js',

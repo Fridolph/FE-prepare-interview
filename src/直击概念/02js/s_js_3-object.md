@@ -80,6 +80,8 @@ Object.create 用于创建一个对象，接受两个参数，使用如下：
 
 ## 原型链
 
+
+
 <Image src="/02js/prototype2.png" alt="对象的查找过程" :inline="false"/>
 
 最后一个 null，设计上是为了避免死循环而设置的, **Object.prototype 的隐式原型指向 null**。
