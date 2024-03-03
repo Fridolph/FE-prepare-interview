@@ -1,4 +1,4 @@
-import { useCodingItem } from './usePath'
+import { useCodingItem, useCodingIntro } from './usePath'
 
 export default [
   // {
@@ -58,6 +58,30 @@ export default [
       useCodingItem('Vue响应式原理', 'vue', 1, 'reactive'),
     ],
   },
+
+  {
+    text: 'VueUse',
+    collapsed: true,
+    link: useCodingIntro('vueuse', 'vueuse.intro'),
+    items: [
+      useCodingItem('State', 'vueuse', 1, 'state'),
+      // useCodingItem('Elements', 'vueuse', 2, 'elements'),
+      // useCodingItem('Browser', 'vueuse', 3, 'browser'),
+      // useCodingItem('Sensors', 'vueuse', 4, 'sensors'),
+      // useCodingItem('Network', 'vueuse', 5, 'network'),
+      // useCodingItem('Animation', 'vueuse', 6, 'animation'),
+      // useCodingItem('Component', 'vueuse', 7, 'component'),
+      // useCodingItem('Watch', 'vueuse', 8, 'watch'),
+      // useCodingItem('Reactivity', 'vueuse', 9, 'reactivity'),
+      // useCodingItem('Array', 'vueuse', 10, 'array'),
+      // useCodingItem('Time', 'vueuse', 11, 'time'),
+      // useCodingItem('Utilities', 'vueuse', 12, 'utilities'),
+      // useCodingItem('@Electron', 'vueuse', 13, '@electron'),
+      // useCodingItem('@Firebase', 'vueuse', 14, '@firebase'),
+      // useCodingItem('@Head', 'vueuse', 15, '@Head'),
+    ],
+  },
+
   {
     text: 'React',
     collapsed: true,

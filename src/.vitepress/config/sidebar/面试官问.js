@@ -29,6 +29,8 @@ export default [
       useQuestionItem('面向对象 Object', 'js', 3, 'object'),
       useQuestionItem('核心 API', 'js', 4, 'api'),
       useQuestionItem('事件 Event', 'js', 5, 'event'),
+      useQuestionItem('ES6 相关', 'es6', 1, 'base'),
+      useQuestionItem('Promise', 'es6', 2, 'promise'),
     ],
   },
   {

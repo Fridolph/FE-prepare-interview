@@ -226,16 +226,18 @@ export function sendCacheRequest(request: MyRequestConfig) {
           if (callbackMap.has(cacheKey)) {
             callbackMap.get(cacheKey)!.push({
               onSuccess: resolve,
-              onError: reject
+              onError: reject,
             })
-          } 
+          }
           // 缓存数据 没有记录时：
           // 设置 cacheKey，并把回调函数放进去
           else {
-            callbackMap.set(cacheKey, [{
-              onSuccess: resolve,
-              onError: reject
-            }])
+            callbackMap.set(cacheKey, [
+              {
+                onSuccess: resolve,
+                onError: reject,
+              },
+            ])
           }
         })
       }
@@ -245,52 +247,54 @@ export function sendCacheRequest(request: MyRequestConfig) {
   }
 
   // 不需缓存，说明已开始执行
-  return axios(request).then(resolve => {
-    // 这里简单判断一下 200就算成功，不管里面的数据
-    if (res.status === 200) {
-      statusMap.set(cacheKey, 'completed')
-      cacheMap.set(cacheKey, resolve)
-    } else {
-      // 不成功的情况下 删掉 statusMap 中的状态，让下次请求重新响应
+  return axios(request).then(
+    resolve => {
+      // 这里简单判断一下 200就算成功，不管里面的数据
+      if (res.status === 200) {
+        statusMap.set(cacheKey, 'completed')
+        cacheMap.set(cacheKey, resolve)
+      } else {
+        // 不成功的情况下 删掉 statusMap 中的状态，让下次请求重新响应
+        statusMap.delete(cacheKey)
+      }
+      // 这里触发 resolve 的回调函数
+      if (callbackMap.has(cacheKey)) {
+        callbackMap.get(cacheKey)!.forEach(callback => {
+          callback.onSuccess(resolve)
+        })
+        // 调用完成后清除掉（垃圾回收）
+        callbackMap.delete(cacheKey)
+      }
+      return resolve
+    },
+    reject => {
+      // 不成功的情况下删掉 statusMap 中的状态
+      // 以便让下次请求发送时，再重新调用该请求
       statusMap.delete(cacheKey)
-    }
-    // 这里触发 resolve 的回调函数
-    if (callbackMap.has(cacheKey)) {
-      callbackMap.get(cacheKey)!.forEach(callback => {
-        callback.onSuccess(resolve)
-      })
-      // 调用完成后清除掉（垃圾回收）
-      callbackMap.delete(cacheKey)
-    }
-    return resolve
-  }, reject => {
-    // 不成功的情况下删掉 statusMap 中的状态
-    // 以便让下次请求发送时，再重新调用该请求
-    statusMap.delete(cacheKey)
 
-    // 这里触发reject的回调函数
-    if (callbackMap.has(cacheKey)) {
-      callbackMap.get(cacheKey)!.forEach(callback => {
-        callback.onError(reject)
-      })
-      // 调用完成之后清除掉（垃圾回收）
-      callbackMap.delete(cacheKey)
+      // 这里触发reject的回调函数
+      if (callbackMap.has(cacheKey)) {
+        callbackMap.get(cacheKey)!.forEach(callback => {
+          callback.onError(reject)
+        })
+        // 调用完成之后清除掉（垃圾回收）
+        callbackMap.delete(cacheKey)
+      }
+      return Promise.reject(reject)
     }
-    return Promise.reject(reject)
-  })
+  )
 }
 ```
 
 ## 总结
 
-promise封装并发缓存到这里就结束啦。
+promise 封装并发缓存到这里就结束啦。
 
 当时的场景是一个页面里有好几个下拉选择框，选项都是接口提供的常量。但是接口只提供了一个接口返回这些常量，前端拿到以后自己再根据类型挑出来，所以这种情况我们肯定不能每个下拉框都去调一次接口，只能是寄托缓存机制了。
 
-这种写法，在另一种场景下也很好用，比如将需要用户操作的流程封装成promise。
+这种写法，在另一种场景下也很好用，比如将需要用户操作的流程封装成 promise。
 
-例如，A页面点击A按钮，出现一个B弹窗，弹窗里有B按钮，用户点击B按钮之后关闭弹窗，再弹出C弹窗C按钮，点击C之后流程完成，这种情况就很适合将每个弹窗里的操作流程都封装成一个promise，最外面的A页面只需要连着调用这几个promise就可以了，而不需要维护控制这几个弹窗显示隐藏的变量了。
-
+例如，A 页面点击 A 按钮，出现一个 B 弹窗，弹窗里有 B 按钮，用户点击 B 按钮之后关闭弹窗，再弹出 C 弹窗 C 按钮，点击 C 之后流程完成，这种情况就很适合将每个弹窗里的操作流程都封装成一个 promise，最外面的 A 页面只需要连着调用这几个 promise 就可以了，而不需要维护控制这几个弹窗显示隐藏的变量了。
 
 ## 参考
 

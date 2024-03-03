@@ -21,6 +21,7 @@ const typeMap = {
   optimization: '06opt',
   vue: '07vue',
   vuex: '07vue',
+  vueuse: '07vue',
   react: '08react',
   redux: '08react',
   mobx: '08react',
@@ -45,8 +46,8 @@ export function useQuestionIntro(type) {
   return `/面试官问/${typeMap[type]}/intro`
 }
 
-export function useCodingIntro(type) {
-  return `/编写代码/${typeMap[type]}/intro`
+export function useCodingIntro(type, intro = 'intro') {
+  return `/编写代码/${typeMap[type]}/${intro}`
 }
 
 export function useStraightItem(title, type, index = 0, fileName, options = {}) {
