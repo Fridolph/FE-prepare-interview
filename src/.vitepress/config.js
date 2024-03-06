@@ -12,10 +12,11 @@ import head from './config/head'
 import nav from './config/nav'
 import sidebar from './config/sidebar'
 
+let base = process.env.NODE_ENV === 'production' ? '/FE-prepare-interview/' : '/'
 
 export default defineConfig({
   // base: '/FE-prepare-interview/',
-  base: '/',
+  base,
   outDir: '../dist',
   lang: 'zh-cn',
   title: '前端必备的知识宝典',
