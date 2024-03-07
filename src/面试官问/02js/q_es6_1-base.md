@@ -59,19 +59,19 @@ Map 便是为了快速搜索和查找数据而生的。
 
 - 访问元素
 
-  Map.prototype.get(key)
+  .get(key)
 
 - 插入元素
 
-  Map.prototype.set(key, value)
+  .set(key, value)
 
 - 删除元素
 
-  Map.prototype.delete(key)
+  .delete(key)
 
 - 获取大小
 
-  Map.prototype.size()
+  .size()
 
 - 元素的迭代
 

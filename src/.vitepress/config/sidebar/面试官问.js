@@ -4,7 +4,7 @@ export default [
   {
     text: '面试官问',
     items: [
-      // { text: '如何利用本版块', link: '/面试官问/index' },
+      { text: '如何利用本版块', link: '/面试官问/index' },
       // { text: '自我介绍', link: '/面试官问/00me/1自我介绍' },
       // { text: '项目难点梳理', link: '/面试官问/00me/2难点梳理' },
     ],
@@ -109,7 +109,10 @@ export default [
     text: '解决方案',
     collapsed: true,
     link: useQuestionIntro('solution'),
-    items: [useQuestionItem('特定场景下解决方案', 'slt', 1, 'solution')],
+    items: [
+      useQuestionItem('特定场景的某些解决方案', 'slt', 1, 'solution'),
+      useQuestionItem('如何阻止重复请求', 'slt', 2, 'repeatRequest')
+    ],
   },
   {
     text: '算法相关',
