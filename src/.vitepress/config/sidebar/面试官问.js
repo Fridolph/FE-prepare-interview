@@ -3,10 +3,11 @@ import { useQuestionItem, useQuestionIntro } from './usePath'
 export default [
   {
     text: '面试官问',
+    collapsed: true,
     items: [
       { text: '如何利用本版块', link: '/面试官问/index' },
-      // { text: '自我介绍', link: '/面试官问/00me/1自我介绍' },
-      // { text: '项目难点梳理', link: '/面试官问/00me/2难点梳理' },
+      { text: '自我介绍', link: '/面试官问/00me/1自我介绍' },
+      { text: '项目难点梳理', link: '/面试官问/00me/2难点梳理' },
     ],
   },
   {
@@ -21,7 +22,7 @@ export default [
   },
   {
     text: 'JavaScript',
-    collapsed: true,
+    collapsed: false,
     link: useQuestionIntro('js'),
     items: [
       useQuestionItem('基础 Base', 'js', 1, 'base'),
@@ -36,7 +37,7 @@ export default [
   },  
   {
     text: 'HTTP',
-    collapsed: true,
+    collapsed: false,
     link: useQuestionIntro('http'),
     items: [
       useQuestionItem('http 基础', 'http', 1, 'base'),
@@ -49,11 +50,20 @@ export default [
   {
     text: 'Broswer',
     link: useQuestionIntro('bw'),
-    collapsed: true,
+    collapsed: false,
     items: [
       useQuestionItem('从浏览器输入 url 到页面渲染', 'bw', 1, 'fromurl'),
       useQuestionItem('事件循环 Event Loop', 'bw', 2, 'eventloop'),
       useQuestionItem('其他', 'bw', 3, 'other'),
+    ],
+  },
+  {
+    text: '移动端 & 小程序',
+    // link: useQuestionIntro('bw'),
+    collapsed: true,
+    items: [
+      // useQuestionItem('移动开发基础', 'app', 1, 'base'),      
+      useQuestionItem('uniapp相关', 'app', 2, 'uniapp'),      
     ],
   },
   {
@@ -139,7 +149,8 @@ export default [
     link: useQuestionIntro('node'),
     collapsed: true,
     items: [
-      // useQuestionItem('网络七层协议', 'http', 1, '网络七层协议'),
+      useQuestionItem('Node 相关基础', 'node', 1, 'base'),
+      useQuestionItem('Express 和 Koa 区别', 'node', 2, 'express_koa'),
     ],
   },
   {

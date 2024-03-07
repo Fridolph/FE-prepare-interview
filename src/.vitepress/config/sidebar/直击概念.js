@@ -17,7 +17,7 @@ export default [
   {
     text: 'JavaScript',
     link: useStraightIntro('js'),
-    collapsed: true,
+    collapsed: false,
     items: [
       useStraightItem('变量，声明、类型、判断等', 'js', 1, 'base'),
       useStraightItem('闭包', 'js', 2, 'closure'),
@@ -50,7 +50,7 @@ export default [
   {
     text: 'Broswer',
     link: useStraightIntro('bw'),
-    collapsed: true,
+    collapsed: false,
     items: [
       useStraightItem('浏览器工作原理', 'bw', 1, 'broswer'),
       useStraightItem('浏览器进程模型', 'bw', 4, 'process'),
@@ -74,7 +74,7 @@ export default [
   {
     text: '性能优化',
     link: useStraightIntro('opt'),
-    collapsed: true,
+    collapsed: false,
     items: [
       useStraightItem('Web 性能', 'opt', 1, 'Web性能'),
       useStraightItem('多媒体（图片和视频）', 'opt', 2, '多媒体'),
@@ -86,7 +86,7 @@ export default [
   {
     text: 'Vue',
     link: useStraightIntro('vue'),
-    collapsed: true,
+    collapsed: false,
     items: [
       useStraightItem('响应式 Reactive', 'vue', 1, 'reactive'),
       useStraightItem('生命周期 Lifecylcle', 'vue', 2, 'lifecycle'),
@@ -104,14 +104,14 @@ export default [
       // useStraightItem('VirtualDOM 和 Diff 算法', 'vue', 2, 'VirtualDOM 和 Diff 算法'),
     ],
   },
-  {
-    text: '解决方案',
-    collapsed: true,
-    link: useStraightIntro('solution'),
-    items: [
+  // {
+    // text: '解决方案',
+    // collapsed: true,
+    // link: useStraightIntro('solution'),
+    // items: [
       // useStraightItem('特定场景下解决方案', 'slt', 1, 'solution'),
-    ],
-  },
+    // ],
+  // },
   {
     text: '算法相关',
     link: useStraightIntro('algo'),
