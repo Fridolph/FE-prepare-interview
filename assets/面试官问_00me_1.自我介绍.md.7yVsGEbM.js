@@ -1,0 +1,1 @@
+import{_ as e,c as t,o as a}from"./chunks/framework.VAJu91au.js";const i=JSON.parse('{"title":"","description":"","frontmatter":{},"headers":[],"relativePath":"面试官问/00me/1.自我介绍.md","filePath":"面试官问/00me/1.自我介绍.md","lastUpdated":null}'),r={name:"面试官问/00me/1.自我介绍.md"};function o(s,_,n,c,d,m){return a(),t("div")}const l=e(r,[["render",o]]);export{i as __pageData,l as default};
