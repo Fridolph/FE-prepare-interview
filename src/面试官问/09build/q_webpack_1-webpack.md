@@ -3,6 +3,7 @@
 ## Webpack 是什么
 
 ::: details
+
 webpack 是一个模块打包器。webpack 的主要目标是将 JavaScript 文件打包在一起，打包后的文件用于在浏览器中使用，但它也能够胜任转换(transform)、打包(bundle)。
 
 :::
@@ -17,6 +18,8 @@ webpack 是一个模块打包器。webpack 的主要目标是将 JavaScript 文�
 
 :::
 
+较为完整的回答：
+
 ::: details Webpack 的运行流程是⼀个串行的过程，从启动到结束会`依次执行`以下流程：
 
 1. **初始化参数**：解析 webpack 配置参数，合并 shell 传入和 webpack.config.js 文件配置的参数，形成最后的配置结果。
@@ -26,35 +29,37 @@ webpack 是一个模块打包器。webpack 的主要目标是将 JavaScript 文�
 5. **完成模块编译**：在经过第 4 步使⽤ Loader 翻译完所有模块后，得到了每个模块被翻译后的`最终内容`以`及它们之间的依赖关系`；
 6. **输出资源**：根据⼊⼝和模块之间的依赖关系，组装成⼀个个包含多个模块的 `Chunk`，再把每个 Chunk 转换成⼀个单独的⽂件加⼊到输出列表，这步是可以修改输出内容的最后机会；
 7. **输出完成**：在确定好输出内容后，根据配置确定输出的路径和⽂件名，把⽂件内容`写⼊到⽂件`系统。
-   :::
+
+:::
 
 ## 相关使用
 
-### 有哪些常见 loader
+### 有哪些常见 loader 
 
-::: details
+::: details 实际不用报菜名，有个了解就好
 
 - raw-loader：加载文件原始内容（utf-8）
-- file-loader：把文件输出到一个文件夹中，在代码中通过相对 URL 去引用输出的文件 (处理图片和字体)
-- url-loader：与 file-loader 类似，区别是用户可以设置一个阈值，大于阈值会交给 file-loader 处理，小于阈值时返回文件 base64 形式编码 (处理图片和字体)
+- `file-loader`：把文件输出到一个文件夹中，在代码中通过相对 URL 去引用输出的文件 (处理图片和字体)
+- `url-loader`：与 file-loader 类似，区别是用户可以设置一个阈值，大于阈值会交给 file-loader 处理，小于阈值时返回文件 base64 形式编码 (处理图片和字体)
 - source-map-loader：加载额外的 Source Map 文件，以方便断点调试
 - svg-inline-loader：将压缩后的 SVG 内容注入代码中
-- image-loader：加载并且压缩图片文件
+- `image-loader`：加载并且压缩图片文件
 - json-loader 加载 JSON 文件（默认包含）
-- babel-loader：把 ES6 转换成 ES5
+- `babel-loader`：把 ES6 转换成 ES5
 - ts-loader: 将 TypeScript 转换成 JavaScript
 - awesome-typescript-loader：将 TypeScript 转换成 JavaScript，性能优于 ts-loader
 - sass-loader：将 SCSS/SASS 代码转换成 CSS
-- css-loader：加载 CSS，支持模块化、压缩、文件导入等特性
-- style-loader：把 CSS 代码注入到 JavaScript 中，通过 DOM 操作去加载 CSS
+- `css-loader`：加载 CSS，支持模块化、压缩、文件导入等特性
+- `style-loader`：把 CSS 代码注入到 JavaScript 中，通过 DOM 操作去加载 CSS
 - postcss-loader：扩展 CSS 语法，使用下一代 CSS，可以配合 autoprefixer 插件自动补齐 CSS3 前缀
 - eslint-loader：通过 ESLint 检查 JavaScript 代码
 - tslint-loader：通过 TSLint 检查 TypeScript 代码
 - coverjs-loader：计算测试的覆盖率
-- vue-loader：加载 Vue.js 单文件组件
+- `vue-loader`：加载 Vue.js 单文件组件
 - i18n-loader: 国际化
-- cache-loader: 可以在一些性能开销较大的 Loader 之前添加，目的是将结果缓存到磁盘里
-  :::
+- `cache-loader`: 可以在一些性能开销较大的 Loader 之前添加，目的是将结果缓存到磁盘里
+
+:::
 
 ### 有哪些常见的 Plugin
 
@@ -79,10 +84,12 @@ webpack 是一个模块打包器。webpack 的主要目标是将 JavaScript 文�
 ### 说一说 Loader 和 Plugin 的区别
 
 ::: details
-|特性|Loader|Plugin|
-|-|-|-|
-|从本质上|是一个函数，在该函数中对接收到的内容进行转换，返回转换后的结果|为插件，可扩展 Webpack 的功能，在 Webpack 运行的生命周期中会广播出许多事件，Plugin 可以监听这些事件，在合适的时机通过 Webpack 提供的 API 改变输出结果|
-|从配置上|在 `module.rules` 中配置，作为模块的解析规则，类型为数组。每一项都是一个 Object，内部包含了 test(类型文件)、loader、options (参数)等属性。|在 `plugins` 中单独配置，类型为数组，每一项是一个 Plugin 的实例，参数都通过构造函数传入|
+
+| 特性     | Loader                                                                                                                                     | Plugin                                                                                                                                                |
+| -------- | ------------------------------------------------------------------------------------------------------------------------------------------ | ----------------------------------------------------------------------------------------------------------------------------------------------------- |
+| 从本质上 | 是一个函数，在该函数中对接收到的内容进行转换，返回转换后的结果                                                                             | 为插件，可扩展 Webpack 的功能，在 Webpack 运行的生命周期中会广播出许多事件，Plugin 可以监听这些事件，在合适的时机通过 Webpack 提供的 API 改变输出结果 |
+| 从配置上 | 在 `module.rules` 中配置，作为模块的解析规则，类型为数组。每一项都是一个 Object，内部包含了 test(类型文件)、loader、options (参数)等属性。 | 在 `plugins` 中单独配置，类型为数组，每一项是一个 Plugin 的实例，参数都通过构造函数传入                                                               |
+
 :::
 
 ### 用过哪些可以提高效率的插件
@@ -94,7 +101,8 @@ webpack 是一个模块打包器。webpack 的主要目标是将 JavaScript 文�
 - speed-measure-webpack-plugin：简称 SMP，分析出 Webpack 打包过程中 Loader 和 Plugin 的耗时，有助于找到构建过程中的性能瓶颈。
 - size-plugin：监控资源体积变化，尽早发现问题
 - HotModuleReplacementPlugin：模块热替换
-  :::
+
+:::
 
 ### 简单描述一下编写 loader 的思路
 
@@ -111,7 +119,8 @@ Loader `支持链式调用`，所以开发上需要严格遵循`“单一职责�
 - 加载本地 Loader 方法
   - npm link
   - ResolveLoader
-    :::
+
+:::
 
 ### 简单描述一下编写 Plugin 的思路
 
@@ -242,11 +251,12 @@ HMR 的核心就是客户端从服务端拉取更新后的文件，准确的说�
   - 必须是 ES6 的语法，因为有很多第三方库仍采用 CommonJS 语法，为了充分发挥 Scope hoisting 的作用，需要配置 mainFields 对第三方模块优先采用 jsnext:main 中指向的 ES6 模块化语法
 - `动态Polyfill`
   - 建议采用 polyfill-service 只给用户返回需要的 polyfill，社区维护。 (部分国内奇葩浏览器 UA 可能无法识别，但可以降级返回所需全部 polyfill)
+    
 :::
 
-## 怎么去掉 console.log
+## 打包时怎么去掉 console.log
 
-### Webpack
+### 在 Webpack 项目中
 
 ::: details
 Webpack 5 自带 terser-webpack-plugin；Webpack 4 需要安装 terser-webpack-plugin
@@ -274,32 +284,36 @@ module.exports = {
 }
 ```
 
-### 在Vite项目中
+:::
+
+### 在 Vite 项目中
 
 ::: details
+
 - 环境变量引入
-  
-  vite已经将这个功能内置到了，所以我们只需要配置vite.config.js文件即可，起作用的文件包括drop_console去掉console信息drop_debugger为去掉debugger信息
+
+  vite 已经将这个功能内置到了，所以我们只需要配置 vite.config.js 文件即可，起作用的文件包括 drop_console 去掉 console 信息 drop_debugger 为去掉 debugger 信息
 
 ```js
 import { defineConfig, loadEnv } from 'vite'
 import vue from '@vitejs/plugin-vue'
 
 export default defineConfig(({ mode, command }) => ({
-  build: { 
-    minify: "terser", 
-    terserOptions: { 
-      compress: { 
-        drop_console: command === "build" && loadEnv(mode, __dirname).VITE_API_ENV === "prod", 
-        drop_debugger: command === "build" && loadEnv(mode, __dirname).VITE_API_ENV === "prod" 
-      } 
-    } 
+  build: {
+    minify: 'terser',
+    terserOptions: {
+      compress: {
+        drop_console: command === 'build' && loadEnv(mode, __dirname).VITE_API_ENV === 'prod',
+        drop_debugger: command === 'build' && loadEnv(mode, __dirname).VITE_API_ENV === 'prod',
+      },
+    },
   },
-  plugins: [vue()]
+  plugins: [vue()],
 }))
 ```
 
 - 打包： 命令: npm run build_prod
+
 :::
 
 ### Vue-cli 中配置
@@ -374,7 +388,6 @@ module.exports = {
 
 :::
 
-
 ### 其他物理方式
 
 ::: tip 可了解，不推荐
@@ -433,7 +446,8 @@ source map 是**将编译、打包、压缩后的代码映射回源代码的过�
 - `sourcemap`：通过 nginx 设置将 .map 文件只对白名单开放(公司内网)
 
 > 注意：避免在生产中使用 inline- 和 eval-，因为它们会增加 bundle 体积大小，并降低整体性能。
-> :::
+
+:::
 
 ### 文件指纹是什么？怎么用
 
@@ -450,4 +464,4 @@ source map 是**将编译、打包、压缩后的代码映射回源代码的过�
 - [前端打包工具介绍和对比](https://juejin.cn/post/7113803425145421832)——卷起来的小白
 - [再来一打 Webpack 面试题](https://juejin.cn/post/6844904094281236487)——童欧巴
 - [这些操作删除 console.log 代码，你都知道吗](https://juejin.cn/post/6992749075326042126)——秦声
-- [vite项目初始化之~打包去掉console信息](https://juejin.cn/post/7044876656049127437)——皓子
+- [vite 项目初始化之~打包去掉 console 信息](https://juejin.cn/post/7044876656049127437)——皓子

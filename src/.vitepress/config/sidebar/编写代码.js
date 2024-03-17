@@ -50,7 +50,13 @@ export default [
       useCodingItem('设计个支持并发前端接口缓存', 'promise', 2, 'concurrent'),
     ],
   },
-
+  {
+    text: '源码分析',
+    collapsed: true,
+    items: [      
+      useCodingItem('了解 Axios', 'axios', 1, 'axios'),      
+    ],
+  },
   {
     text: 'Vue',
     collapsed: true,

@@ -42,7 +42,7 @@ export default [
       useStraightItem('HTTP Header', 'http', 3, 'http_header'),
       useStraightItem('HTTP 缓存', 'http', 4, 'cache'),
       useStraightItem('HTTPS', 'http', 5, 'https'),
-      useStraightItem('WebSocket', 'http', 8, 'WebSocket'),
+      useStraightItem('WebSocket', 'http', 6, 'WebSocket'),
       // useStraightItem('从浏览器输入 url 到页面渲染', 'http', 6, '从浏览器输入 url'),
       // useStraightItem('事件循环 Event Loop', 'http', 7, 'eventloop'),
     ],

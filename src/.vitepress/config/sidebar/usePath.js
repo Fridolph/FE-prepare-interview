@@ -4,6 +4,8 @@ const CODING = '编写代码'
 // const CONTRIBUTION = '参与贡献'
 
 const typeMap = {
+  other: '00other',
+  axios: '00other',
   html: '01htmlcss',
   css: '01htmlcss',
   js: '02js',

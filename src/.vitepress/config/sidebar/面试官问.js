@@ -6,8 +6,9 @@ export default [
     collapsed: true,
     items: [
       { text: '如何利用本版块', link: '/面试官问/index' },
-      { text: '自我介绍', link: '/面试官问/00me/1自我介绍' },
-      { text: '项目难点梳理', link: '/面试官问/00me/2难点梳理' },
+      // { text: '自我介绍', link: '/面试官问/00me/1自我介绍' },
+      // { text: '项目难点梳理', link: '/面试官问/00me/2难点梳理' },
+      // { text: 'HR或领导面', link: '/面试官问/00me/3其他问题' },
     ],
   },
   {
@@ -30,7 +31,7 @@ export default [
       useQuestionItem('面向对象 Object', 'js', 3, 'object'),
       useQuestionItem('核心 API', 'js', 4, 'api'),
       useQuestionItem('事件 Event', 'js', 5, 'event'),
-      useQuestionItem('ES6 (2015)', 'es6', 1, 'es6'),      
+      useQuestionItem('ES6 (2015)', 'es6', 1, 'base'),      
       useQuestionItem('Promise', 'es6', 2, 'promise'),
       useQuestionItem('ESNext', 'es6', 3, 'esnext'),
     ],

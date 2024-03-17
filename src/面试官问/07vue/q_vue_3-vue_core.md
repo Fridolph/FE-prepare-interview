@@ -129,6 +129,101 @@ watch 与 vue2.x 中 watch 配置功能一致，但也有两个小坑。
 
 ### 说一下 ref 的作用是什么
 
+- 对于 Vue2
+
+::: details
+
+1. 获取 DOM 元素
+
+```vue
+<template>
+  <div ref="myref">123</div>
+</template>
+
+<script>
+export default {
+  mounted() {
+    console.log('获取 DOM 元素', this.$refs.myref)
+  },
+}
+</script>
+```
+
+2. 获取子组件中的 data
+
+```vue
+<template>
+  <div>{{ msg }}</div>
+</template>
+
+<script>
+export default {
+  data() {
+    return {
+      msg: '我是子组件',
+    }
+  },
+  methods: {
+    getMsg() {
+      return this.msg
+    },
+  },
+}
+</script>
+```
+
+```vue
+<template>
+  <div title="父组件">
+    <Child ref="child" />
+  </div>
+</template>
+
+<script>
+import Child from './child.vue'
+export default {
+  components: { Child },
+  mounted() {
+    console.log('获取子组件中的 data', this.$refs.child.msg)
+  },
+}
+</script>
+```
+
+3. 调用子组件中的方法
+
+同上，通过 `this.$refs.child.getMsg()` 会获取到子组件中 methods 里的 `getMsg` 方法
+
+:::
+
+- 对于 Vue3
+
+::: details
+
+1. ref 用来定义响应式数据
+
+```js
+import { ref } from 'vue'
+const msg = ref('hello world')
+```
+
+2. 获取实例
+
+```vue
+<template>
+  <div ref="dom"></div>
+</template>
+<script setup>
+import { ref, onMounted } from 'vue'
+const dom = ref(null)
+onMounted(() => {
+  console.log('获取 DOM 元素', dom.value)
+})
+</script>
+```
+
+:::
+
 ## 方法
 
 ### v-on 常用的修饰符
@@ -138,7 +233,8 @@ watch 与 vue2.x 中 watch 配置功能一致，但也有两个小坑。
 - `.stop` 调用 event.stopPropagation()，阻止冒泡事件
 - `.prevent` 调用 event.preventDefault()，阻止默认行为
 - `.native` 监听组件根元素的原生事件
-  :::
+
+:::
 
 ### data 为什么是一个函数而不是对象
 
