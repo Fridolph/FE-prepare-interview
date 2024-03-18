@@ -92,7 +92,7 @@ useFullscreen
 
 useGamepad
 
-useImage
+✔️ useImage
 
 useMediaControls
 

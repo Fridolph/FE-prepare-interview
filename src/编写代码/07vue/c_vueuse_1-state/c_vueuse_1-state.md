@@ -2,6 +2,8 @@
 
 ## createGlobalState
 
+<https://www.vueusejs.com/shared/createGlobalState/>
+
 将状态保存全局作用域中，以便跨 Vue 实例复用。
 
 ::: code-group

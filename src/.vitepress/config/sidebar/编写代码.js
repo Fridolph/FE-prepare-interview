@@ -72,8 +72,8 @@ export default [
     items: [
       useCodingItem('State', 'vueuse', 1, 'State'),
       // useCodingItem('Elements', 'vueuse', 2, 'Elements'),
-      // useCodingItem('Browser', 'vueuse', 3, 'Browser'),
-      // useCodingItem('Sensors', 'vueuse', 4, 'Sensors'),
+      useCodingItem('Browser', 'vueuse', 3, 'Browser'),
+      useCodingItem('Sensors', 'vueuse', 4, 'Sensors'),
       // useCodingItem('Network', 'vueuse', 5, 'Network'),
       // useCodingItem('Animation', 'vueuse', 6, 'Animation'),
       // useCodingItem('Component', 'vueuse', 7, 'Component'),
