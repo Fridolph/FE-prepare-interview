@@ -1,26 +1,22 @@
 # String
 
-## capitalize
-
-先将字符串转换为小写，然后将第一个字母转换为大写。
-
-```ts
-export const capitalize = (str: string): string => {
-  // 函数在输入字符串为空或空字符串时返回空字符串
-  // 这是一个良好的实践，有助于避免在后续处理中出现错误
-  if (!str || str.length === 0) return ''
-  const lower = str.toLowerCase()
-  return lower.substring(0, 1).toUpperCase() + lower.substring(1, lower.length)
-}
-```
-
-::: warning
-函数在处理特殊字符时可能会产生不期望的结果，例如中文、日文、韩文等非英文字符。在这些情况下，函数可能无法正确地转换为大写开头
-:::
+字符串相关处理的函数
 
 ## camel
 
 将输入字符串转换为驼峰命名法（Camel Case）
+
+- 基本用法
+
+给定一个字符串，以驼峰式大小写格式返回它。
+
+```ts
+import { camel } from 'radash'
+
+camel('green fish blue fish') // => greenFishBlueFish
+```
+
+- 源码解析
 
 ```ts
 export const camel = (str: string): string => {
@@ -47,9 +43,134 @@ export const camel = (str: string): string => {
 }
 ```
 
+## capitalize
+
+先将字符串转换为小写，然后将第一个字母转换为大写。
+
+- 基本用法
+
+给定一个字符串，返回它的第一个字母大写，所有其他字母小写。
+
+```ts
+import { capitalize } from 'radash'
+
+capitalize('green fish blue FISH')
+// => Green fish blue fish
+```
+
+- 源码解析
+
+```ts
+export const capitalize = (str: string): string => {
+  // 函数在输入字符串为空或空字符串时返回空字符串
+  if (!str || str.length === 0) return ''
+  // 这是一个良好的实践，有助于避免在后续处理中出现错误
+
+  const lower = str.toLowerCase()
+  return lower.substring(0, 1).toUpperCase() + lower.substring(1, lower.length)
+}
+```
+
+::: warning
+函数在处理特殊字符时可能会产生不期望的结果，例如中文、日文、韩文等非英文字符。在这些情况下，函数可能无法正确地转换为大写开头
+:::
+
+## dash
+
+这个函数可以将字符串转换为 dash-case 格式的字符串。
+
+- 基本用法
+
+给定一个字符串，以破折号格式返回它。
+
+```ts
+import { dash } from 'radash'
+dash('green fish blue fish')
+// => green-fish-blue-fish
+```
+
+```ts
+export const dash = (str: string): string => {
+  const parts =
+    str
+      // 匹配大写字母组成的单词（capitalize）
+      // 将匹配到的单词的首字母转换为小写，并将其余字母保持原样
+      ?.replace(/([A-Z])+/g, capitalize)
+      // 根据正则表达式匹配到的单词和各种标点符号来分割字符串
+      ?.split(/(?=[A-Z])|[\.\-\s_]/)
+      // 将分割后的字符串数组中的每个字符串转换为小写
+      .map(x => x.toLowerCase()) ?? []
+
+  // 如果分割后的字符串数组为空，则返回空字符串
+  if (parts.length === 0) return ''
+  if (parts.length === 1) return parts[0]
+  // 否则，使用reduce方法将字符串数组中的每个字符串连成一个字符串，每个字符串之间用连字符(-)分隔
+  return parts.reduce((acc, part) => {
+    return `${acc}-${part.toLowerCase()}`
+  })
+}
+```
+
+::: warning
+函数缺乏类型检查，无法保证传入的字符串参数 str 一定是一个字符串。在实际使用中，应该确保传入的是一个字符串
+:::
+
+## pascal
+
+将字符串转换为帕斯卡大小写
+
+- 基本用法
+
+以帕斯卡大小写方式格式化给定的字符串。
+
+```ts
+import { pascal } from 'radash'
+
+pascal('hello world') // => 'HelloWorld'
+pascal('va va boom') // => 'VaVaBoom'
+```
+
+- 源码解析
+
+```ts
+export const pascal = (str: string): string => {
+  // 使用正则表达式/[\.\-\s_]/分割字符串，得到一个字符串数组parts
+  const parts = str?.split(/[\.\-\s_]/).map(x => x.toLowerCase()) ?? []
+  if (parts.length === 0) return ''
+  return (
+    parts
+      // 遍历parts数组，对每个单词的首字母进行大写转换，其他字母进行小写转换。
+      .map(str => str.charAt(0).toUpperCase() + str.slice(1))
+      // 将处理后的单词连接起来，返回结果
+      .join('')
+  )
+}
+```
+
+::: warning 注意事项：
+
+1. 函数使用了可选链操作符 `?.` 来处理传入的 str 是否为 null 或 undefined 的情况。
+2. 正则表达式/[\.\-\s_]/用于分割字符串，其中 `. 代表任意字符， `-` 代表连字符，`\_` 代表下划线。
+3. 函数返回结果后，如果 parts 数组为空，则返回空字符串。
+
+:::
+
 ## snake
 
 这个函数可以用于将各种格式的字符串转换为下划线分隔的 camelCase 格式的字符串，常用于命名对象的属性或方法。
+
+- 基本用法
+
+给定一个字符串，以蛇形格式返回它。
+
+```ts
+import { snake } from 'radash'
+
+snake('green fish blue fish')
+// => green_fish_blue_fish
+```
+
+- 源码解析
 
 ```ts
 export const snake = (
@@ -83,39 +204,58 @@ export const snake = (
 }
 ```
 
-## dash
+## template
 
-这个函数可以将字符串转换为 dash-case 格式的字符串。
+给定一个字符串、一个数据对象和一个要搜索的格式表达式，返回一个字符串，其中与搜索匹配的所有元素都替换为数据对象中的匹配值。
+
+- 基本用法
+
+这个函数可以用于各种场景，例如在字符串模板中替换占位符，或者在邮件发送时替换用户信息。
 
 ```ts
-export const dash = (str: string): string => {
-  const parts =
-    str
-      // 匹配大写字母组成的单词（capitalize）
-      // 将匹配到的单词的首字母转换为小写，并将其余字母保持原样
-      ?.replace(/([A-Z])+/g, capitalize)
-      // 根据正则表达式匹配到的单词和各种标点符号来分割字符串
-      ?.split(/(?=[A-Z])|[\.\-\s_]/)
-      // 将分割后的字符串数组中的每个字符串转换为小写
-      .map(x => x.toLowerCase()) ?? []
+import { template } from 'radash'
 
-  // 如果分割后的字符串数组为空，则返回空字符串
-  if (parts.length === 0) return ''
-  if (parts.length === 1) return parts[0]
-  // 否则，使用reduce方法将字符串数组中的每个字符串连成一个字符串，每个字符串之间用连字符(-)分隔
-  return parts.reduce((acc, part) => {
-    return `${acc}-${part.toLowerCase()}`
-  })
+template('It is {{color}}', { color: 'blue' }) 
+// => It is blue
+template('It is <color>', { color: 'blue' }, /<(.+?)>/g) 
+// => It is blue
+```
+
+- 源码解析
+
+```ts
+export const template = (str: string, data: Record<string, any>, regex = /\{\{(.+?)\}\}/g) => {
+  // 使用Array.from()方法将match数组转换为一个新的数组，并将其作为参数传递给reduce()方法。
+  // 匹配字符串str中的占位符，并将它们存储在match数组中
+  return (
+    Array.from(str.matchAll(regex))
+      // 遍历match数组
+      .reduce((acc, match) => {
+        // 对于每个匹配项，将传入data[match[1]] 替换当前 match[0]
+        return acc.replace(match[0], data[match[1]])
+      }, str)
+  )
 }
 ```
 
-::: warning
-函数缺乏类型检查，无法保证传入的字符串参数 str 一定是一个字符串。在实际使用中，应该确保传入的是一个字符串
-:::
-
 ## title
 
+将字符串转换为标题大小写
+  
+- 基本用法
+
 以标题大小写方式格式化给定的字符串
+
+```ts
+import { title } from 'radash'
+
+title('hello world') // => 'Hello World'
+title('va_va_boom') // => 'Va Va Boom'
+title('root-hook') // => 'Root Hook'
+title('queryItems') // => 'Query Items'
+```
+
+- 源码解析
 
 ```ts
 export const title = (str: string | null | undefined): string => {
@@ -135,37 +275,24 @@ export const title = (str: string | null | undefined): string => {
 }
 ```
 
-## template
-
-这个函数可以用于各种场景，例如在字符串模板中替换占位符，或者在邮件发送时替换用户信息。
-
-例如，假设有一个字符串模板 `Hello, {{name}}!`，可以使用这个函数将其替换为 Hello, John!，传入 { name: "John" } 对象作为参数。
-
-`template('Hello, {{name}}', { name: "John" })`
-
-```ts
-export const template = (str: string, data: Record<string, any>, regex = /\{\{(.+?)\}\}/g) => {
-  // 使用Array.from()方法将match数组转换为一个新的数组，并将其作为参数传递给reduce()方法。
-  // 匹配字符串str中的占位符，并将它们存储在match数组中
-  return (
-    Array.from(str.matchAll(regex))
-      // 遍历match数组
-      .reduce((acc, match) => {
-        // 对于每个匹配项，将传入data[match[1]] 替换当前 match[0]
-        return acc.replace(match[0], data[match[1]])
-      }, str)
-  )
-}
-```
-
 ## trim
 
 使用正则表达式来匹配字符串的开头和结尾，并将其中的 charsToTrim 替换为空字符串。这样可以实现 trim 功能。
 
-- `trim('  hello ') // => 'hello'`
-- `trim('__hello__', '_') // => 'hello'`
-- `trim('/repos/:owner/:repo/', '/') // => 'repos/:owner/:repo'`
-- `trim('222222__hello__1111111', '12_') // => 'hello'`
+- 基本用法
+
+```ts
+import { trim } from 'radash'
+
+trim('  hello ') // => hello
+trim('__hello__', '_') // => hello
+trim('/repos/:owner/', '/') // => repos/:owner
+
+// Trim 还可以处理多个要修剪的字符。
+trim('222__hello__111', '12_') // => hello
+```
+
+- 源码解析
 
 ```ts
 export const trim = (str: string | null | undefined, charsToTrim: string = ' ') => {

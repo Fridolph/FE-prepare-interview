@@ -41,7 +41,8 @@ const typeMap = {
   solve: '13solution',
   mobile: '14app',
   app: '14app',
-  uni: '14app'
+  uni: '14app',
+  radash: '15radash',
 }
 
 export function useStraightIntro(type) {

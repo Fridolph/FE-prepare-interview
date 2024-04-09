@@ -20,6 +20,7 @@ export const draw = <T>(array: readonly T[]): T | null => {
   return array[index]
 }
 
+// Note, this is not a cutting edge performance optimized function. This function is optimized for simplicity and best used as a utility. If performance is a priority for you, use a randomness and/or shuffle library.
 export const shuffle = <T>(array: readonly T[]): T[] => {
   return array
     .map(a => ({ rand: Math.random(), value: a }))

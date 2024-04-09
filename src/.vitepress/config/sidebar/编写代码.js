@@ -89,11 +89,28 @@ export default [
   },
 
   {
-    text: 'React',
+    text: 'Radash',
     collapsed: true,
+    link: useCodingIntro('radash'),
     items: [
+      useCodingItem('Array', 'radash', 1, 'Array'),
+      // useCodingItem('Async', 'radash', 2, 'Async'),
+      // useCodingItem('Curry', 'radash', 3, 'Curry'),
+      // useCodingItem('Number', 'radash', 4, 'Number'),
+      // useCodingItem('Object', 'radash', 5, 'Object'),
+      useCodingItem('Random', 'radash', 6, 'Random'),
+      useCodingItem('String', 'radash', 7, 'String'),
+      useCodingItem('Typed', 'radash', 8, 'Typed'),
     ],
   },
+
+  // {
+  //   text: 'React',
+  //   collapsed: true,
+  //   items: [
+  //     // 
+  //   ],
+  // },
   // {
   //   text: 'HTTP',
   //   collapsed: true,
