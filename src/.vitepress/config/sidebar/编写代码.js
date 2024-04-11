@@ -101,6 +101,7 @@ export default [
       useCodingItem('Random', 'radash', 6, 'Random'),
       useCodingItem('String', 'radash', 7, 'String'),
       useCodingItem('Typed', 'radash', 8, 'Typed'),
+      useCodingItem('Typed', 'radash', 9, 'Series'),
     ],
   },
 
