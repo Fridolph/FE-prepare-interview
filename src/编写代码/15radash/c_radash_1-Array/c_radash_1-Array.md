@@ -299,7 +299,6 @@ const diff = <T>(identity: (item: T) =>
 在实际应用中，应该根据具体情况来判断是否需要这种类型的转换，并确保有适当的类型检查和错误处理机制。
 :::
 
-
 ## flat
 
 将数组的数组展平为一维。
@@ -362,6 +361,37 @@ const gods = [
 
 const [finalGods, lesserGods] = fork(gods, f => f.power > 90)
 // [[ra, vishnu, zues], [loki]]
+```
+
+- 源码解析
+
+```ts
+export const fork = <T>(
+  // 由于使用了readonly T[]类型，这意味着list在函数外部无法修改
+  list: readonly T[],
+  condition: (item: T) => boolean
+): [T[], T[]] => {  
+  // 非空判断，确定返回类型
+  if (!list) return [[], []]
+  return list.reduce(
+    (acc, item) => {
+      // acc 默认值为 [[], []]
+      // 这里解构相当于 a = [], b = []
+      const [a, b] = acc 
+      // 将list中的每个元素依次应用condition函数
+      // 根据结果将元素添加到不同的数组中      
+      if (condition(item)) {
+        return [[...a, item], b]
+      } else {
+        return [a, [...b, item]]
+      }
+    },
+    // 这里使用了隐式的类型转换as [T[], T[]]
+    // 这本身是一个安全的类型转换
+    // 为了提高代码的可读性，可以显式地声明返回类型的类型
+    [[], []] as [T[], T[]]
+  )
+}
 ```
 
 ## group
@@ -503,5 +533,210 @@ export const iterate = <T>(
     value = func(value, i)
   }
   return value
+}
+```
+
+## last
+
+获取列表中的最后一项
+
+- 基本用法
+
+给定一个项目数组，返回最后一个项目，如果不存在项目，则返回默认值。
+
+```ts
+import { last } from 'radash'
+
+const fish = ['marlin', 'bass', 'trout']
+const lastFish = last(fish) // => 'trout'
+const lastItem = last([], 'bass') // => 'bass'
+```
+
+我们平时都会写 `arr[arr.length - 1]` 那么看下 Radash 源码又有什么不一样吧？
+
+- 源码解析
+
+```ts
+export const last = <T>(
+  // readonly 不可变数组
+  array: readonly T[],
+  // 默认值，可选
+  defaultValue: T | null | undefined = undefined
+) => {
+  // 这里用到了 ?. 操作符
+  // 先检查array是否为null或undefined，或者是否是一个空数组
+  return array?.length > 0
+    ? // 如果 array 存在，则返回 array[array.length - 1]
+      array[array.length - 1]
+    : // 如果 array 不存在，则返回默认值
+      defaultValue
+  // 如果默认值不存在，则返回 undefined
+}
+```
+
+使用可选类型可以避免因为检查空数组导致的错误。对比我们平时写的代码多了健全的类型判断，只要注意边界判断，大家都可以写出高质量的代码。
+
+## max
+
+从数组中获取最大的项
+
+- 基本用法
+
+给定一个项数组和一个获取每个项值的函数，返回具有最大值的项。在内部使用 \_.boil。
+
+```ts
+import { max } from 'radash'
+
+const fish = [
+  {
+    name: 'Marlin',
+    weight: 105,
+    source: 'ocean',
+  },
+  {
+    name: 'Bass',
+    weight: 8,
+    source: 'lake',
+  },
+  {
+    name: 'Trout',
+    weight: 13,
+    source: 'lake',
+  },
+]
+
+max(fish, f => f.weight)
+// => {name: "Marlin", weight: 105, source: "ocean"}
+```
+
+## min & max
+
+获取数组中最小 / 最大的项（由于实现基本相同，这里放一起说了）
+
+- 基本用法
+
+同上。给定一个项数组和一个获取每个项值的函数，返回具有最小值的项。在内部使用 \_.boil。
+
+```ts
+import { min, max } from 'radash'
+
+const fish = [
+  {
+    name: 'Marlin',
+    weight: 105,
+    source: 'ocean',
+  },
+  {
+    name: 'Bass',
+    weight: 8,
+    source: 'lake',
+  },
+  {
+    name: 'Trout',
+    weight: 13,
+    source: 'lake',
+  },
+]
+
+min(fish, f => f.weight)
+// => {name: "Bass", weight: 8, source: "lake"}
+max(fish, f => f.weight)
+// => {name: "Marlin", weight: 105, source: "ocean"}
+```
+
+- 源码解析
+
+```ts
+// 这里是函数重载的运用：
+// 1. 接受一个readonly [number, ...number[]]类型的数组，返回一个number类型的最小值
+// 这种类型表示法通常用于表示一个不可变的整数数组
+export function min(array: readonly [number, ...number[]]): number
+// 2. 接受一个readonly number[]类型的数组，返回一个number类型的最小值
+export function min(array: readonly number[]): number | null
+// 3. 接受一个readonly T[]类型的数组和一个可选的getter函数
+// 返回一个T类型的最小值。  这允许min函数处理非数字类型的数据
+export function min<T>(array: readonly T[], getter: (item: T) => number): T | null
+export function min<T>(array: readonly T[], getter?: (item: T) => number): T | null {
+  // 尝试使用getter函数来获取数组中每个元素的值
+  const get = getter ?? ((v: any) => v)
+  // 如果getter未定义，则使用默认的比较函数（(a, b) => a < b）
+  // 我们调用boil函数对数组进行排序，并返回排序后的第一个元素
+  return boil(array, (a, b) => (get(a) < get(b) ? a : b))
+}
+
+export function max(array: readonly [number, ...number[]]): number
+export function max(array: readonly number[]): number | null
+export function max<T>(array: readonly T[], getter: (item: T) => number): T | null
+export function max<T>(array: readonly T[], getter?: (item: T) => number): T | null {
+  const get = getter ?? ((v: any) => v)
+  return boil(array, (a, b) => (get(a) > get(b) ? a : b))
+}
+```
+
+## merge
+
+合并两个列表，覆盖第一个列表中的项
+
+- 基本用法
+
+给定两个项数组和一个标识函数，返回第一个列表中所有与第二个列表匹配的项。
+
+> 这个函数可以用于合并两个数组，特别是当需要根据某些规则（由 matcher 函数定义）来匹配和合并数组中的元素时非常有用。例如，可以在合并用户列表时使用这个函数，根据用户名进行匹配。
+
+```ts
+import { merge } from 'radash'
+
+const gods = [
+  {
+    name: 'Zeus',
+    power: 92,
+  },
+  {
+    name: 'Ra',
+    power: 97,
+  },
+]
+
+const newGods = [
+  {
+    name: 'Zeus',
+    power: 100,
+  },
+]
+
+merge(gods, newGods, f => f.name)
+// => [{name: "Zeus" power: 100}, {name: "Ra", power: 97}]
+```
+
+> 使用 lib 经常会看到 mergeOptions 方法，原理差不多，用来合并两个对象，覆盖第一个对象中的项。
+
+- 源码解析
+
+```ts
+export const merge = <T>(
+  root: readonly T[],
+  // root和others都是只读的数组
+  others: readonly T[],
+  // matcher是一个函数，用于比较两个对象的相似性
+  matcher: (item: T) => any
+) => {
+  // 边界、非空判断：这里至少保证该方法返回一个空数组
+  if (!others && !root) return []
+  if (!others) return root
+  if (!root) return []
+  if (!matcher) return root
+
+  // reduce方法中的函数会遍历root数组中的每个元素，
+  // 并将其与others数组中的每个元素进行比较。
+  return root.reduce((acc, r) => {
+    const matched = others.find(o => matcher(r) === matcher(o))
+    // 如果找到了匹配的元素，则将其添加到结果数组中；
+    if (matched) acc.push(matched)
+    // 否则，将当前元素添加到结果数组中。
+    else acc.push(r)
+
+    // 最后，返回合并后的结果数组。
+    return acc
+  }, [] as T[])
 }
 ```

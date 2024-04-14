@@ -394,6 +394,7 @@ export const fork = <T>(
   condition: (item: T) => boolean
 ): [T[], T[]] => {
   if (!list) return [[], []]
+
   return list.reduce(
     (acc, item) => {
       const [a, b] = acc
