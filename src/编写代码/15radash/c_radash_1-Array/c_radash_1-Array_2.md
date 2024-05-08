@@ -699,10 +699,60 @@ import { zip } from 'radash'
 const names = ['ra', 'zeus', 'loki']
 const cultures = ['egypt', 'greek', 'norse']
 
-zip(names, cultures)
+const zipped1 = zip(names, cultures)
 // => [
 //   [ra, egypt]
 //   [zeus, greek]
 //   [loki, norse]
 // ]
+
+const zipped2 = zip(['a', 'b'], [1, 2], [true, false]) 
+// zipped -> [['a', 1, true], ['b', 2, false]]
+```
+
+- 源码解析
+
+zip函数可以用于将多个数组组合成一个新的数组，特别用于多维数组的处理。例如，如果有一个包含3个一维数组的数组，可以使用zip函数将其组合成一个二维数组。
+
+```ts
+// 类型定义：函数使用了泛型（T1, T2, T3, T4, T5）来处理不同类型的数组。
+// 然而，由于TypeScript不支持匿名类型，因此需要在函数定义中指定数组中元素的类型
+export function zip<T1, T2, T3, T4, T5>(
+  array1: T1[],
+  array2: T2[],
+  array3: T3[],
+  array4: T4[],
+  array5: T5[]
+): [T1, T2, T3, T4, T5][]
+// 函数重载：为了实现不同长度的数组组合，zip函数使用了重载来定义不同的函数声明。
+// 这些声明分别对应1到5个数组作为参数的情况。
+export function zip<T1, T2, T3, T4>(
+  array1: T1[],
+  array2: T2[],
+  array3: T3[],
+  array4: T4[]
+): [T1, T2, T3, T4][]
+export function zip<T1, T2, T3>(
+  array1: T1[],
+  array2: T2[],
+  array3: T3[]
+): [T1, T2, T3][]
+export function zip<T1, T2>(array1: T1[], array2: T2[]): [T1, T2][]
+export function zip<T>(...arrays: T[][]): T[][] {
+  // 1. 参数检查：zip函数在接收参数时，会检查参数是否为空数组。
+  // 如果参数为空，函数将返回一个空数组
+  if (!arrays || !arrays.length) return []
+  // 2. 最大长度：函数会计算输入数组中的最大长度
+  // 然后，我们创建了一个新数组，其长度为最大长度
+  return new Array(
+    // 3. 循环和递归：zip函数使用了递归和循环来处理输入数组。
+    // 在实现中，递归函数会不断减少输入数组的长度，直到输入数组的长度变为1。
+    // 此时，函数将开始组合这些数组
+    Math.max(...arrays.map(({ length }) => length))
+  )
+    // 用空数组来填充，这样就变成了 [ [] , [] , [] , ... ] 二维数组的形式
+    .fill([])
+    // .map()方法是将整个二维数组转换为一个新数组，新数组中的每个元素都是原始数组中对应索引值的元素
+    .map((_, idx) => arrays.map(array => array[idx]))
+}
 ```
