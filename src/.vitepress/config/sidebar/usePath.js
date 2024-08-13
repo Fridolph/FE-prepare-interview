@@ -15,8 +15,8 @@ const typeMap = {
   promise: '02js',
   sort: '03algo',
   algo: '03algo',
-  http: '04http',  
-  request: '04http',  
+  http: '04http',
+  request: '04http',
   node: '05node',
   nodejs: '05node',
   opt: '06opt',
@@ -43,6 +43,8 @@ const typeMap = {
   app: '14app',
   uni: '14app',
   radash: '15radash',
+  pn: '16patterns',
+  patterns: '16patterns',
 }
 
 export function useStraightIntro(type) {

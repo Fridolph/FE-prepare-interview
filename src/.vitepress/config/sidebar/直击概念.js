@@ -81,6 +81,19 @@ export default [
       useStraightItem('JavaScript 性能优化', 'opt', 3, 'JavaScript性能优化'),
       useStraightItem('HTML 性能优化', 'opt', 4, 'HTML性能优化'),
       useStraightItem('CSS 性能优化', 'opt', 5, 'CSS性能优化'),
+      useStraightItem('性能模式 JS', 'opt', 6, '性能模式_js'),
+      useStraightItem('性能模式 import', 'opt', 7, '性能模式_import'),
+      useStraightItem('性能模式 load', 'opt', 8, '性能模式_load'),
+      useStraightItem('性能模式 list', 'opt', 9, '性能模式_list'),
+    ],
+  },
+  {
+    text: '编程模式',
+    link: useStraightIntro('pn'),
+    collapsed: true,
+    items: [
+      useStraightItem('JS设计模式', 'pn', 1, 'design'),
+      // useStraightItem('JS设计模式', 'pn', 1, 'design'),
     ],
   },
   {
@@ -105,12 +118,12 @@ export default [
     ],
   },
   // {
-    // text: '解决方案',
-    // collapsed: true,
-    // link: useStraightIntro('solution'),
-    // items: [
-      // useStraightItem('特定场景下解决方案', 'slt', 1, 'solution'),
-    // ],
+  // text: '解决方案',
+  // collapsed: true,
+  // link: useStraightIntro('solution'),
+  // items: [
+  // useStraightItem('特定场景下解决方案', 'slt', 1, 'solution'),
+  // ],
   // },
   {
     text: '算法相关',

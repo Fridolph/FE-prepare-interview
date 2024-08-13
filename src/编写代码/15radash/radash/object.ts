@@ -53,11 +53,7 @@ export const mapKeys = <
 /**
  * Map over all the keys to create a new object
  */
-export const mapValues = <
-  TValue,
-  TKey extends string | number | symbol,
-  TNewValue
->(
+export const mapValues = <TValue, TKey extends string | number | symbol, TNewValue>(
   obj: Record<TKey, TValue>,
   mapFunc: (value: TValue, key: TKey) => TNewValue
 ): Record<TKey, TNewValue> => {
@@ -186,10 +182,7 @@ export const pick = <T extends object, TKeys extends keyof T>(
  * returning a new object with the properties
  * that remain
  */
-export const omit = <T, TKeys extends keyof T>(
-  obj: T,
-  keys: TKeys[]
-): Omit<T, TKeys> => {
+export const omit = <T, TKeys extends keyof T>(obj: T, keys: TKeys[]): Omit<T, TKeys> => {
   if (!obj) return {} as Omit<T, TKeys>
   if (!keys || keys.length === 0) return obj as Omit<T, TKeys>
   return keys.reduce(
@@ -238,11 +231,7 @@ export const get = <TDefault = unknown>(
  * set({}, 'name', 'ra') // => { name: 'ra' }
  * set({}, 'cards[0].value', 2) // => { cards: [{ value: 2 }] }
  */
-export const set = <T extends object, K>(
-  initial: T,
-  path: string,
-  value: K
-): T => {
+export const set = <T extends object, K>(initial: T, path: string, value: K): T => {
   if (!initial) return {} as T
   if (!path || value === undefined) return initial
   const segments = path.split(/[\.\[\]]/g).filter(x => !!x.trim())
@@ -275,19 +264,16 @@ export const assign = <X extends Record<string | symbol | number, any>>(
 ): X => {
   if (!initial || !override) return initial ?? override ?? {}
 
-  return Object.entries({ ...initial, ...override }).reduce(
-    (acc, [key, value]) => {
-      return {
-        ...acc,
-        [key]: (() => {
-          if (isObject(initial[key])) return assign(initial[key], value)
-          // if (isArray(value)) return value.map(x => assign)
-          return value
-        })()
-      }
-    },
-    {} as X
-  )
+  return Object.entries({ ...initial, ...override }).reduce((acc, [key, value]) => {
+    return {
+      ...acc,
+      [key]: (() => {
+        if (isObject(initial[key])) return assign(initial[key], value)
+        // if (isArray(value)) return value.map(x => assign)
+        return value
+      })(),
+    }
+  }, {} as X)
 }
 
 /**
@@ -302,9 +288,7 @@ export const keys = <TValue extends object>(value: TValue): string[] => {
   if (!value) return []
   const getKeys = (nested: any, paths: string[]): string[] => {
     if (isObject(nested)) {
-      return Object.entries(nested).flatMap(([k, v]) =>
-        getKeys(v, [...paths, k])
-      )
+      return Object.entries(nested).flatMap(([k, v]) => getKeys(v, [...paths, k]))
     }
     if (isArray(nested)) {
       return nested.flatMap((item, i) => getKeys(item, [...paths, `${i}`]))
