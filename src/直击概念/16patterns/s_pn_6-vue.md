@@ -47,7 +47,7 @@ const { name } = defineProps(['name'])
 
 从上面的组件可以看出，由于它非常集中，可能很难对其进行操作，并且也很难重复使用它的个别部分。为了使事情更具可组合性，我们可以从这个组件中提取出几个较小的组件。
 
-![拆分组件](./vue1.png)
+<Image src="/16patterns/vue1.png" alt="拆分组件" />
 
 我们可以让主要的 Tweet 组件成为 TweetUser 和 TweetDetails 组件的父组件。TweetUser 将显示用户信息，并且是显示用户头像的 TweetAvatar 组件的父组件。TweetDetails 将简单地显示推文中的额外信息，如推文文本和提交日期。组件树如下所示：
 
@@ -152,7 +152,7 @@ export default {
 
 虽然这种方法在 Vue v3 中仍然适用并达到了其目的，但随着组件变得更大和更复杂，管理和维护它们可能会变得具有挑战性。在特定选项中定义组件逻辑可能会使代码更难阅读和理解，特别是在处理复杂的组件时更是如此。在此设置中，在组件之间提取和重用通用逻辑也会很困难。
 
-![optionsApi](./optionsApi.png)
+<Image src="/16patterns/optionsApi.png" alt="optionsApi" />
 
 尽管这个组件很小，但里面的逻辑已经错综交织。有些部分专门用于计数器的功能，而其他部分则涉及宽度逻辑。随着组件的增长，在组件内部组织和定位相关逻辑将变得更加具有挑战性。
 
@@ -168,7 +168,7 @@ export default {
 
 通过使用 Composition API 设置中的可组合函数，我们能够把应用程序的上下文拆分成更小、可重用的部分，从而使逻辑分离。让我们可视化一下我们刚刚做出的更改，与初始的 Options API 示例组件相比。
 
-![compositionApi](./compositionApi.png)
+<Image src="/16patterns/compositionApi.png" alt="compositionApi" />
 
 在 Vue 中使用可组合函数使我们更容易将组件的逻辑拆分为几个较小的部分。由于我们不再局限于在 Options API 的特定选项中组织代码，因此现在重用相同的具有状态逻辑的组件变得更加容易。
 
@@ -223,23 +223,24 @@ DogImages 组件可以被视为表现组件。表现组件通常是无状态的�
 
 将这两个组件结合在一起，使得将应用逻辑的处理与视图分离成为可能。这种分离有助于提高代码的可维护性和重用性。容器组件专注于数据获取和处理，而展示组件则专注于如何展示这些数据，从而保持代码的清晰和模块化。
 
-```vue
-<!-- DogImagesContainer.vue -->
+DogImagesContainer.vue
+
+```html
 <template>
   <DogImages :dogs="dogs" />
 </template>
 
 <script setup>
-import { ref, onMounted } from 'vue'
-import DogImages from './DogImages.vue'
+  import { ref, onMounted } from 'vue'
+  import DogImages from './DogImages.vue'
 
-const dogs = ref([])
+  const dogs = ref([])
 
-onMounted(async () => {
-  const response = await fetch('https://dog.ceo/api/breed/labrador/images/random/6')
-  const { message } = await response.json()
-  dogs.value = message
-})
+  onMounted(async () => {
+    const response = await fetch('https://dog.ceo/api/breed/labrador/images/random/6')
+    const { message } = await response.json()
+    dogs.value = message
+  })
 </script>
 ```
 
