@@ -2,7 +2,7 @@ import { defineConfig } from 'vitepress'
 import { basename } from 'node:path'
 // todo:fix 由于 npm run build 报错，暂时把该插件去掉，解决后加回来
 // import { postcssIsolateStyles } from 'vitepress'
-// import { pagefindPlugin, chineseSearchOptimize } from 'vitepress-plugin-pagefind'
+
 import { containerPreview, componentPreview } from '@vitepress-demo-preview/plugin'
 import { fileURLToPath, URL } from 'node:url'
 import { transformerTwoslash } from '@shikijs/vitepress-twoslash'
