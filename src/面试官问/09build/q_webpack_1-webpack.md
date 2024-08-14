@@ -1,5 +1,16 @@
 # Webpack
 
+## Babel 的原理是什么
+
+::: details babel 的转译过程也分为三个阶段
+
+- `解析 Parse` 将代码解析生成抽象语法树（AST），即词法分析与语法分析的过程；
+- `转换 Transform` 对于 AST 进行变换⼀系列的操作，babel 接受得
+  到 AST 并通过 `babel-traverse` 对其进行遍历，在此过程中进行添加、更新及移除等操作；
+- `生成 Generate` 将变换后的 AST 再转换为 JS 代码, 使⽤到的模块是 `babel-generator`。
+
+:::
+
 ## Webpack 是什么
 
 ::: details
@@ -34,7 +45,7 @@ webpack 是一个模块打包器。webpack 的主要目标是将 JavaScript 文�
 
 ## 相关使用
 
-### 有哪些常见 loader 
+### 有哪些常见 loader
 
 ::: details 实际不用报菜名，有个了解就好
 
@@ -251,7 +262,7 @@ HMR 的核心就是客户端从服务端拉取更新后的文件，准确的说�
   - 必须是 ES6 的语法，因为有很多第三方库仍采用 CommonJS 语法，为了充分发挥 Scope hoisting 的作用，需要配置 mainFields 对第三方模块优先采用 jsnext:main 中指向的 ES6 模块化语法
 - `动态Polyfill`
   - 建议采用 polyfill-service 只给用户返回需要的 polyfill，社区维护。 (部分国内奇葩浏览器 UA 可能无法识别，但可以降级返回所需全部 polyfill)
-    
+
 :::
 
 ## 打包时怎么去掉 console.log

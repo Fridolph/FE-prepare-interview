@@ -31,11 +31,11 @@ export default [
       useQuestionItem('面向对象 Object', 'js', 3, 'object'),
       useQuestionItem('核心 API', 'js', 4, 'api'),
       useQuestionItem('事件 Event', 'js', 5, 'event'),
-      useQuestionItem('ES6 (2015)', 'es6', 1, 'base'),      
+      useQuestionItem('ES6 (2015)', 'es6', 1, 'base'),
       useQuestionItem('Promise', 'es6', 2, 'promise'),
       useQuestionItem('ESNext', 'es6', 3, 'esnext'),
     ],
-  },  
+  },
   {
     text: 'HTTP',
     collapsed: false,
@@ -44,7 +44,7 @@ export default [
       useQuestionItem('http 基础', 'http', 1, 'base'),
       useQuestionItem('http 常考察点', 'http', 2, 'http'),
       useQuestionItem('缓存机制', 'http', 3, 'cache'),
-      useQuestionItem('为什么使用 https', 'http', 4, 'https'),                  
+      useQuestionItem('为什么使用 https', 'http', 4, 'https'),
       // useQuestionItem('websocket', 'http', 4, 'websocket'),
     ],
   },
@@ -63,8 +63,8 @@ export default [
     // link: useQuestionIntro('bw'),
     collapsed: true,
     items: [
-      // useQuestionItem('移动开发基础', 'app', 1, 'base'),      
-      useQuestionItem('uniapp相关', 'app', 2, 'uniapp'),      
+      useQuestionItem('微信小程序', 'app', 1, 'mini'),
+      useQuestionItem('uniapp相关', 'app', 2, 'uniapp'),
     ],
   },
   {
@@ -74,7 +74,7 @@ export default [
     items: [
       useQuestionItem('Vite', 'vite', 1, 'vite'),
       useQuestionItem('Webpack', 'webpack', 1, 'webpack'),
-      useQuestionItem('其他', 'webpack', 2, 'other'),
+      useQuestionItem('组件', 'webpack', 2, 'component'),
     ],
   },
   // 前端工程化 和 性能优化是两个大类，但性能相关很多是交杂在一起的
@@ -87,6 +87,7 @@ export default [
     items: [
       useQuestionItem('基本性能优化策略', 'opt', 1, 'base'),
       useQuestionItem('图片 Image', 'opt', 2, 'image'),
+      useQuestionItem('其他综合', 'opt', 3, 'other'),
     ],
   },
   {
@@ -122,7 +123,7 @@ export default [
     link: useQuestionIntro('solution'),
     items: [
       useQuestionItem('特定场景的某些解决方案', 'slt', 1, 'solution'),
-      useQuestionItem('如何阻止重复请求', 'slt', 2, 'repeatRequest')
+      useQuestionItem('如何阻止重复请求', 'slt', 2, 'repeatRequest'),
     ],
   },
   {
