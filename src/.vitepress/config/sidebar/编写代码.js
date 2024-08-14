@@ -26,7 +26,7 @@ export default [
   },
   {
     text: 'HTML & CSS',
-    collapsed: true,
+    collapsed: false,
     items: [
       useCodingItem('常见布局一览', 'css', 1, '常见布局'),
       useCodingItem('水平垂直居中', 'css', 2, '水平垂直居中'),
@@ -37,32 +37,26 @@ export default [
   },
   {
     text: 'JavaScript',
-    collapsed: true,
-    items: [      
-      useCodingItem('写个 deepCopy 实现深拷贝', 'js', 2, 'deepcopy'),
-    ],
+    collapsed: false,
+    items: [useCodingItem('写个 deepCopy 实现深拷贝', 'js', 2, 'deepcopy')],
   },
   {
     text: 'Promise',
-    collapsed: true,
-    items: [      
+    collapsed: false,
+    items: [
       useCodingItem('实现简易 Promise', 'promise', 1, 'promise'),
       useCodingItem('设计个支持并发前端接口缓存', 'promise', 2, 'concurrent'),
     ],
   },
   {
     text: '源码分析',
-    collapsed: true,
-    items: [      
-      useCodingItem('了解 Axios', 'axios', 1, 'axios'),      
-    ],
+    collapsed: false,
+    items: [useCodingItem('了解 Axios', 'axios', 1, 'axios')],
   },
   {
     text: 'Vue',
     collapsed: true,
-    items: [
-      useCodingItem('Vue响应式原理', 'vue', 1, 'reactive'),
-    ],
+    items: [useCodingItem('Vue响应式原理', 'vue', 1, 'reactive')],
   },
 
   {
@@ -109,7 +103,7 @@ export default [
   //   text: 'React',
   //   collapsed: true,
   //   items: [
-  //     // 
+  //     //
   //   ],
   // },
   // {
@@ -129,7 +123,7 @@ export default [
   //   collapsed: true,
   //   items: [
   //   ],
-  // },  
+  // },
   // {
   //   text: '性能优化',
   //   collapsed: true,

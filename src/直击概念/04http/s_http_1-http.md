@@ -11,20 +11,20 @@ HTTP 遵循经典的`客户端—服务端`模型，客户端打开一个连接�
 
 HTTP 是一种用作获取诸如 HTML 文档这类资源的协议。它是 Web 上进行任何数据交换的基础，同时，也是一种客户端—服务器（client-server）协议
 
-<Image src="https://developer.mozilla.org/zh-CN/docs/Web/HTTP/Overview/fetching_a_page.png" alt="客户端—服务器（client-server）协议" :inline="false"/>
+<!-- <Image src="https://developer.mozilla.org/zh-CN/docs/Web/HTTP/Overview/fetching_a_page.png" alt="客户端—服务器（client-server）协议" :inline="false"/> -->
 
 客户端与服务端之间通过交换一个个独立的消息（而非数据流）进行通信。
 
 - 由客户端——通常是个浏览器——发出的消息被称作请求（`request`）
 - 由服务端发出的应答消息被称作响应（`response`）。
 
-<Image src="https://developer.mozilla.org/zh-CN/docs/Web/HTTP/Overview/http-layers.png" alt="HTTP 客户端—服务器（client-server）协议" :inline="false"/>
+<!-- <Image src="https://developer.mozilla.org/zh-CN/docs/Web/HTTP/Overview/http-layers.png" alt="HTTP 客户端—服务器（client-server）协议" :inline="false"/> -->
 
 ### 基于 HTTP 的组件系统
 
 HTTP 是一个客户端—服务器协议：`请求由一个实体发出`，即`用户代理（user agent）`，或是一个可以代表它的`代理方（proxy）`
 
-<Image src="https://developer.mozilla.org/zh-CN/docs/Web/HTTP/Overview/client-server-chain.png" alt="请求由一个实体发出" :inline="false"/>
+<!-- <Image src="https://developer.mozilla.org/zh-CN/docs/Web/HTTP/Overview/client-server-chain.png" alt="请求由一个实体发出" :inline="false"/> -->
 
 ### 客户端：用户代理
 
@@ -130,7 +130,7 @@ HTTP/1.1 以及更早的 HTTP `协议报文都是语义可读`的。在 HTTP/2 �
 
 ### 请求
 
-<Image src="https://developer.mozilla.org/zh-CN/docs/Web/HTTP/Overview/http_request.png" alt="一个http请求" :inline="false"/>
+<!-- <Image src="https://developer.mozilla.org/zh-CN/docs/Web/HTTP/Overview/http_request.png" alt="一个http请求" :inline="false"/> -->
 
 请求由以下元素组成：
 
@@ -142,7 +142,7 @@ HTTP/1.1 以及更早的 HTTP `协议报文都是语义可读`的。在 HTTP/2 �
 
 ### 响应
 
-<Image src="https://developer.mozilla.org/zh-CN/docs/Web/HTTP/Overview/http_response.png" alt="一个http响应" :inline="false"/>
+<!-- <Image src="https://developer.mozilla.org/zh-CN/docs/Web/HTTP/Overview/http_response.png" alt="一个http响应" :inline="false"/> -->
 
 响应报文包含了下面的元素：
 
