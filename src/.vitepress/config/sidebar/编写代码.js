@@ -49,6 +49,11 @@ export default [
     ],
   },
   {
+    text: '具体场景',
+    collapsed: true,
+    items: [useCodingItem('JS API应用', 'slt', 1, 'js')],
+  },
+  {
     text: '源码分析',
     collapsed: false,
     items: [useCodingItem('了解 Axios', 'axios', 1, 'axios')],
@@ -58,7 +63,6 @@ export default [
     collapsed: true,
     items: [useCodingItem('Vue响应式原理', 'vue', 1, 'reactive')],
   },
-
   {
     text: 'VueUse',
     collapsed: true,

@@ -21,7 +21,7 @@ export default [
     items: [
       useStraightItem('变量，声明、类型、判断等', 'js', 1, 'base'),
       useStraightItem('闭包', 'js', 2, 'closure'),
-      useStraightItem('对象、原型、继承', 'js', 3, 'object'),
+      useStraightItem('数组、对象、原型、继承', 'js', 3, 'object'),
       useStraightItem('this 相关', 'js', 4, 'this'),
       useStraightItem('事件 Event', 'js', 5, 'event'),
       useStraightItem('ES6（2015）', 'esnext', 1, 'es6'),

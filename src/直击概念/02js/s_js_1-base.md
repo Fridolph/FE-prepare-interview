@@ -70,7 +70,7 @@ JavaScript 有三种声明方式：
 ### 七种基本数据类型
 
 - `布尔值（Boolean）`有 2 个值分别是：true 和 false。
-- `null`，一个表明 null 值的特殊关键字。JavaScript 是大小写敏感的，因此 null 与 Null、NULL完全不同。
+- `null`，一个表明 null 值的特殊关键字。JavaScript 是大小写敏感的，因此 null 与 Null、NULL 完全不同。
 - `undefined`，和 null 一样是一个特殊的关键字，undefined 表示变量未赋值时的属性。
 - `数字（Number）`，整数或浮点数，例如： 42 或者 3.14159。
 - `任意精度的整数（BigInt）`，可以安全地存储和操作大整数，甚至可以超过数字的安全整数限制。
@@ -106,39 +106,40 @@ JavaScript 提供三种不同的值比较运算：
 使用 == 执行宽松相等的行为如下
 
 ::: details 1. 如果操作数具有相同的类型，则按以下方式进行比较
+
 - Object：仅当两个操作数引用相同的对象时，才返回 true。
 - String：仅当两个操作数具有相同的字符并且顺序相同，才返回 true。
 - Number：仅当两个操作数具有相同的值时，才返回 true。+0 和 -0 被视为相同的值。如果任一操作数为 NaN，则返回 false；因此 NaN 永远不等于 NaN。
 - Boolean：仅当操作数都是 true 或 false 时，才返回 true。
 - BigInt：仅当两个操作数具有相同的值时，才返回 true。
 - Symbol：仅当两个操作数引用相同的 symbol 时，才返回 true。
-:::
-
+  :::
 
 2. 如果操作数之一为 null 或 undefined，则另一个操作数必须为 null 或 undefined 才返回 true。否则返回 false
 
 3. 如果操作数之一是对象，而另一个是原始值，则将对象转换为原始值
 
 ::: details 4. 在下面的步骤中，两个操作数都被转换为原始值（String、Number、Boolean、Symbol 和 BigInt 之一）。剩余的转换将分情况完成
+
 - 如果它们是相同类型的，则使用步骤 1 进行比较。
 - 如果操作数中有一个是 Symbol，但另一个不是，则返回 false。
 - 如果操作数之一是 Boolean，而另一个不是，则将 Boolean 转换为 Number：true 转换为 1，false 转换为 0。然后再次对两个操作数进行宽松比较。
 - Number 转 String：将 String 转换为 Number。转换失败会得到 NaN，这将确保相等性为 false。
 - Number 转 BigInt：按照其数值进行比较。如果 Number 是 ±Infinity 或 NaN，返回 false。
 - String 转 BigInt: 使用与 BigInt() 构造函数相同的算法将字符串转换为 BigInt。如果转换失败，则返回 false。
-:::
+  :::
 
 ## 类型显示/隐式转换
 
-在JavaScript中，类型转换是将一个数据类型的值转换为另一个数据类型的过程。类型转换可以分为显式（强制）类型转换和隐式（自动）类型转换。
+在 JavaScript 中，类型转换是将一个数据类型的值转换为另一个数据类型的过程。类型转换可以分为显式（强制）类型转换和隐式（自动）类型转换。
 
 - 显式类型转换是通过特定的方法或操作符来强制将一个数据类型转换为另一个数据类型。
 
-- 隐式类型转换是在运行时自动发生的类型转换，不需要明确的代码进行转换。JavaScript会根据上下文自动进行类型转换，以便进行操作或比较。
+- 隐式类型转换是在运行时自动发生的类型转换，不需要明确的代码进行转换。JavaScript 会根据上下文自动进行类型转换，以便进行操作或比较。
 
-具体看推荐这篇文章 
+具体看推荐这篇文章
 
-- JS中显式隐式类型转换,你真的弄懂了吗 <https://juejin.cn/post/7304265842953420837>
+- JS 中显式隐式类型转换,你真的弄懂了吗 <https://juejin.cn/post/7304265842953420837>
 
 # 闭包
 
@@ -222,21 +223,24 @@ setupHelp()
   <input
     type="text"
     id="email"
-    name="email" />
+    name="email"
+  />
 </p>
 <p>
   Name:
   <input
     type="text"
     id="name"
-    name="name" />
+    name="name"
+  />
 </p>
 <p>
   Age:
   <input
     type="text"
     id="age"
-    name="age" />
+    name="age"
+  />
 </p>
 ```
 

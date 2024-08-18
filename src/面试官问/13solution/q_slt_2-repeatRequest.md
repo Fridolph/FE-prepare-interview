@@ -1,17 +1,19 @@
-# 如何阻止阻止重复请求
+# 实际请求优化相关场景
 
-## 背景
+## 如何处理重复请求
+
+- 背景
 
 项目当中前端代码会遇到同一个请求向服务器发了多次的情况，我们要避免服务器资源浪费，同一个请求一定时间只允许发一次请求
 
-## 思路
+- 思路
 
 - 如果业务简单,例如同一个按钮防止多次点击,我们可以用定时器做防抖处理
 - 如果业务复杂,例如多个组件通过代码,同一个请求发多次,这个时候防抖已经不好处理了,最好是对重复的 ajax 请求统一做取消操作
 - 封装统一的请求函数，如 之前提到的 Promise 并发控制
 - VueUse - useRequest()
 
-## 实现
+- 实现
 
 ### 1. 通过定时器做防抖处理
 
@@ -99,12 +101,14 @@ axios.interceptors.request.use(
 <template>
   <button
     @click="onClick1"
-    ref="btn1">
+    ref="btn1"
+  >
     请求1
   </button>
   <button
     @click="onClick2"
-    ref="btn2">
+    ref="btn2"
+  >
     请求2
   </button>
 </template>
@@ -274,6 +278,81 @@ let cache = {
 ```
 
 这里重在学习思路，完整代码请点击链接跳转原文查看
+
+## 如何解决页面请求时，接口大规模并发问题
+
+实际开发时，比如大屏项目等场景，同时会有大量接口请求，或者在下面资源时的请求并发，都可以囊括在其中：
+
+::: details
+
+个人认为可从以下几个方面来考虑：
+
+1. 后端优化
+
+- 可对接口进行优化，采用缓存技术，对数据进行预处理，减少数据库操作；
+- 使用集群技术，将请求分散到不同的服务器上，提高并发量；
+- 可以使用方向代理、负载均衡等技术，分散服务器压力
+- 做 BFF 聚合：把所有首屏需要加载的接口，利用服务中间层给聚合为一个接口
+
+2. 使用 CDN 加速：CDN 缓存可以将接口的数据存储在服务器中，减少对原始服务器的访问，加速数据传输速度；
+3. 使用 WebSocket：建立持久连接，避免反复连接请求；通过 ws 的双向通信，降低服务器响应时间；
+4. 使用 HTTP2 及以上版本实现多路复用；
+5. 运用浏览器缓存：强缓存、协商缓存、离线缓存，Service Worker 等
+
+上述方法结合项目实际需求优化，当然根据实际，还可在架构设计，资源调整上下功夫，比如：
+
+当前资源是否是首屏资源，是否可以延迟加载，是否可以预加载，是否可以按需加载等，按这个方向来优化从而达到减少请求数的目的。
+
+:::
+
+## 网页加载进度条
+
+监听静态资源加载情况：可以通过 window.performance 对象来监听资源加载进度。performance.getEntries() 方法可获取页面上所有资源的加载信息，使用该方法检测每个资源的状态，计算加载时间，从二实现一个资源加载进度条
+
+::: details
+
+```js
+const resources = window.performance.getEntriesByType('resource')
+const totalResources = resources.length
+let leadedResources = 0
+resources.forEach(resource => {
+  // 排除ajax请求
+  if (resource.initiatorType !== 'xmlhttprequest') {
+    resource.onload = () => {
+      loadedResources++
+      const progress = Math.round((loadedResources / totalResources) * 100)
+      updateProgress(progress)
+    }
+  }
+})
+// 更新进度条
+function updateProgress(progress) {
+  // ...
+}
+```
+
+在页面加载时，可以使用进度条来显示加载进度，提升用户体验。可以使用第三方库，如 NProgress，来快速实现进度条功能。
+
+```js
+// 初始化NProgress
+NProgress.configure({ showSpinner: false })
+
+// 监听页面加载事件
+window.addEventListener('load', () => {
+  NProgress.done()
+})
+
+// 监听资源加载事件
+document.addEventListener('readystatechange', () => {
+  if (document.readyState === 'interactive') {
+    NProgress.start()
+  } else if (document.readyState === 'complete') {
+    NProgress.done()
+  }
+})
+```
+
+:::
 
 ## 参考
 

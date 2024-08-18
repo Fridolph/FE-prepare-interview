@@ -1,5 +1,9 @@
 import { useQuestionItem, useQuestionIntro } from './usePath'
 
+// ::: details
+
+// :::
+
 export default [
   {
     text: '面试官问',
@@ -122,8 +126,10 @@ export default [
     collapsed: true,
     link: useQuestionIntro('solution'),
     items: [
-      useQuestionItem('特定场景的某些解决方案', 'slt', 1, 'solution'),
-      useQuestionItem('如何阻止重复请求', 'slt', 2, 'repeatRequest'),
+      useQuestionItem('登录场景相关', 'slt', 1, 'solution'),
+      useQuestionItem('请求优化相关场景', 'slt', 2, 'repeatRequest'),
+      useQuestionItem('一些具体业务', 'slt', 3, 'buz'),
+      useQuestionItem('移动开发相关', 'slt', 4, 'app'),
     ],
   },
   {
