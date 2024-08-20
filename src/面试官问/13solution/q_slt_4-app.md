@@ -66,6 +66,7 @@ document.documentElement.style.setProperty('--el-color-primary', 'blue')
 
 ```js
 document.getElementByTagName('html')[0].className = theme
+// 或者设置 html 的 data-theme 属性
 ```
 
 在 assets/css 中新建 theme.css
@@ -84,7 +85,12 @@ document.getElementByTagName('html')[0].className = theme
 }
 ```
 
-主题持久化：pinia 加 persist，或者使用 localStorage
+也可以使用 CSS 类来做切换：
+
+- 为每个主题创建不同的 CSS 类
+- 手动切换 CSS 类
+- 主题持久化：pinia 加 persist，或者使用 localStorage 记录当前的主题
+- 使用媒体查询自动应用 prefers-color-scheme
 
 :::
 
@@ -122,7 +128,7 @@ let colors = reactive({
 }
 ```
 
-当我们选择了自定义配色后，把 html 上的 className 改为‘’，去除配色方案的影响。
+当我们选择了自定义配色后，把 html 上的 className 改为空 ''，去除配色方案的影响。
 
 两种方案并行的处理逻辑大体如此
 
@@ -142,50 +148,15 @@ let colors = reactive({
 
 2. 自定义实现 - 使用原生事件 touchstart、touchmove、touchend 和 scroll 等检测用户手势和滚动行为，根据这些事件触发相应加载和刷新逻辑
 
-```html
-<body>
-  <div class="loading">loading...</div>
-  <div class="content"></div>
-  <div id="refresh">下拉刷新</div>
-</body>
-<script>
-  const content = document.querySelector('.content')
-  const loading = document.querySelector('.loading')
-  const refresh = document.querySelector('#refresh')
-  let isRefreshing = false
-  let isLoading = false
-  // 监听触摸事件
-  let startY = 0
-  let moveY = 0
+## 如何判断 DOM 元素是否在可视区域内
 
-  content.addEventListener('touchstart', event => {
-    startY = event.touches[0].pageY
-  })
+1. getBoundingCilentRect()
 
-  content.addEventListener('touchmove', event => {
-    moveY = event.touches[0].pageY
-    // 下拉刷新
-    if (moveY - startY > 200 && !isRefreshing) {
-      refresh.innerHTML = '释放刷新'
-    }
-    // 上拉加载
-    let scrollTop = content.scrollTop
-    let scrollHeight = content.scrollHeight
-    let offsetHeight = content.offsetHeight
-    if (scrollTop + offsetHeight >= scrollHeight && !isLoading) {
-      loading.style.display = 'block'
-    }
-  })
+该放昂发返回元素大小及其相对于视口的位置
 
-  content.addEventListener('touchend', event => {
-    // 下拉刷新
-    if (moveY - startY > 200 && !isRefreshing) {
-      refresh.innerHTML = '刷新中...'
-      simulateRefresh()
-    }
-    // 上拉加载
-    let scrollTop = content.scrollTop
-    let scrollHeight = content.scrollHeight
-  })
+2. IntersectionObserver API
+
+该 API 可以观察元素与其祖先元素或视口交叉的情况，并且可以设置回调函数，当元素的可见性发生变化时会调用该回调函数
+
 </script>
 ```

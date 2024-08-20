@@ -51,7 +51,11 @@ export default [
   {
     text: '具体场景',
     collapsed: true,
-    items: [useCodingItem('JS API应用', 'slt', 1, 'js')],
+    items: [
+      useCodingItem('JS API应用', 'slt', 1, 'js'),
+      useCodingItem('虚拟列表', 'slt', 2, 'virtualList'),
+      useCodingItem('大屏适配', 'slt', 3, 'largescreen'),
+    ],
   },
   {
     text: '源码分析',

@@ -1,5 +1,86 @@
 # 具体业务场景
 
+## 虚拟列表的实现原理
+
+背景：大量的渲染列表数据问题，将增加浏览器开销，导致页面卡顿等性能问题。因此可以使用虚拟列表
+
+实现原理：
+
+1. 通过传入组件每条数据的高度，计算整个列表的高度，从而得到滚动列表的总高度，并将总高度赋值给列表
+2. 监听滚动事件，监听外层容器的滚动事件，并确定可视区域起止数据在总数据的索引值，这可以通过 scrollTop 来实现
+3. 设置数据对应的元素，为每条数据设置一个绝对定位，其中 top 等于索引值乘以每条数据的高度
+4. 考虑缓冲条数，为了避免滑动过快产生空白，可以设置缓冲条数：具体的，如果滚动到底部，可以只显示最后 N 条数据，如果滚动到顶部，可以只显示前 N 条数据
+5. 综上，实现一个固定高度的虚拟列表
+
+::: details
+
+主要代码实现 -> 模版部分
+
+showItemList 循环可视区域内的数据 + 缓冲区的数据
+
+```vue
+<template>
+  <div
+    class="virtual-wrap"
+    ref="virtualWrap"
+    :style="{ width: width + 'px', height: height + 'px' }"
+    @scroll="handleScroll"
+  >
+    <div
+      class="virtual-content"
+      :style="{ height: totalEstimatedHeight + 'px' }"
+    >
+      <list-item
+        v-for="(item, index) in showItemList"
+        :key="item.dataIndex + index"
+        :index="item.dataIndex"
+        :data="item.data"
+        :style="item.style"
+        @onSizeChange="handleChangeSize"
+      >
+        <template #slot-scope="slotProps">
+          <slot
+            name="slot-scope"
+            :slotProps="slotProps"
+          ></slot>
+        </template>
+      </list-item>
+    </div>
+  </div>
+</template>
+```
+
+获取需要渲染的数据：通过可视区域内的开始和结束索引，获取需要渲染的列表数据
+
+```js
+const getCurrentChildren = () => {
+  // 重新计算高度
+  estimatedHeight(props.itemEstimatedSize, props.itemCount)
+  const [startIndex, endIndex] = getRangeToRender(props, scrollOffset.value)
+  const items = []
+  for (let i = startIndex; i <= endIndex; i++) {
+    const item = getItemMetaData(i)
+    const itemStyle = {
+      position: 'absolute',
+      height: item.size + 'px',
+      width: '100%',
+      top: item.offset + 'px',
+    }
+    items.push({
+      style: itemStyle,
+      data: props.data[i],
+      dataIndex: i,
+    })
+  }
+
+  showItemList.value = items
+}
+```
+
+获取需要渲染的数据：
+
+:::
+
 ## 图片懒加载的实现方式
 
 图片懒加载可以延迟图片的加载，只有当图片即将进入视口范围时才进行加载，这样可加快页面加载事件，提高用户体验
