@@ -24,7 +24,10 @@ export default [
     collapsed: true,
     link: useQuestionIntro('nestjs'),
     items: [
-      // useQuestionItem('NestJS 基础', 'nestjs', 1, 'base'),
+      useQuestionItem('生产场景实战', 'nestjs', 1, 'scenarios'),
+      useQuestionItem('模块与 DI 实战', 'nestjs', 2, 'module_di'),
+      useQuestionItem('AOP & 数据库实战', 'nestjs', 3, 'aop'),
+      useQuestionItem('全栈 & 部署实战', 'nestjs', 4, 'fullstack'),
     ],
   },
   {
@@ -43,6 +46,7 @@ export default [
       useQuestionItem('8-状态管理', 'vue', 8, 'store'),
       useQuestionItem('9-路由', 'vue', 9, 'router'),
       useQuestionItem('10-其他', 'vue', 10, 'other'),
+      useQuestionItem('生产场景实战', 'vue', 11, 'scenarios'),
     ],
   },
   {
@@ -51,7 +55,11 @@ export default [
     link: useQuestionIntro('react'),
     items: [
       useQuestionItem('React 44 个面试问题', 'react', 1, 'dev44'),
-      // useQuestionItem('VirtualDOM 和 Diff 算法', 'vue', 2, 'VirtualDOM 和 Diff 算法'),
+      useQuestionItem('生产场景实战', 'react', 2, 'scenarios'),
+      useQuestionItem('性能优化实战', 'react', 3, 'performance'),
+      useQuestionItem('状态管理实战', 'react', 4, 'state'),
+      useQuestionItem('进阶实战', 'react', 5, 'advanced'),
+      useQuestionItem('SSR & Next.js 实战', 'react', 6, 'ssr_next'),
     ],
   },
   {
