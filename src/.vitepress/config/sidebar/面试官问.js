@@ -1,9 +1,5 @@
 import { useQuestionItem, useQuestionIntro } from './usePath'
 
-// ::: details
-
-// :::
-
 export default [
   {
     text: '面试官问',
@@ -16,82 +12,19 @@ export default [
     ],
   },
   {
-    text: 'HTML & CSS',
+    text: 'AI & 大模型',
     collapsed: true,
-    link: useQuestionIntro('html'),
+    link: useQuestionIntro('ai'),
     items: [
-      useQuestionItem('HTML 基础', 'html', 1, 'base'),
-      useQuestionItem('CSS 基础', 'css', 1, 'base'),
-      useQuestionItem('布局 Layout', 'css', 2, 'layout'),
+      // useQuestionItem('AI 基础', 'ai', 1, 'base'),
     ],
   },
   {
-    text: 'JavaScript',
-    collapsed: false,
-    link: useQuestionIntro('js'),
-    items: [
-      useQuestionItem('基础 Base', 'js', 1, 'base'),
-      useQuestionItem('函数 Function', 'js', 2, 'function'),
-      useQuestionItem('面向对象 Object', 'js', 3, 'object'),
-      useQuestionItem('核心 API', 'js', 4, 'api'),
-      useQuestionItem('事件 Event', 'js', 5, 'event'),
-      useQuestionItem('ES6 (2015)', 'es6', 1, 'base'),
-      useQuestionItem('Promise', 'es6', 2, 'promise'),
-      useQuestionItem('ESNext', 'es6', 3, 'esnext'),
-    ],
-  },
-  {
-    text: 'HTTP',
-    collapsed: false,
-    link: useQuestionIntro('http'),
-    items: [
-      useQuestionItem('http 基础', 'http', 1, 'base'),
-      useQuestionItem('http 常考察点', 'http', 2, 'http'),
-      useQuestionItem('缓存机制', 'http', 3, 'cache'),
-      useQuestionItem('为什么使用 https', 'http', 4, 'https'),
-      // useQuestionItem('websocket', 'http', 4, 'websocket'),
-    ],
-  },
-  {
-    text: 'Broswer',
-    link: useQuestionIntro('bw'),
-    collapsed: false,
-    items: [
-      useQuestionItem('从浏览器输入 url 到页面渲染', 'bw', 1, 'fromurl'),
-      useQuestionItem('事件循环 Event Loop', 'bw', 2, 'eventloop'),
-      useQuestionItem('其他', 'bw', 3, 'other'),
-    ],
-  },
-  {
-    text: '移动端 & 小程序',
-    // link: useQuestionIntro('bw'),
+    text: 'NestJS',
     collapsed: true,
+    link: useQuestionIntro('nestjs'),
     items: [
-      useQuestionItem('微信小程序', 'app', 1, 'mini'),
-      useQuestionItem('uniapp相关', 'app', 2, 'uniapp'),
-    ],
-  },
-  {
-    text: '前端工程化',
-    link: useQuestionIntro('build'),
-    collapsed: true,
-    items: [
-      useQuestionItem('Vite', 'vite', 1, 'vite'),
-      useQuestionItem('Webpack', 'webpack', 1, 'webpack'),
-      useQuestionItem('组件', 'webpack', 2, 'component'),
-    ],
-  },
-  // 前端工程化 和 性能优化是两个大类，但性能相关很多是交杂在一起的
-  // 这里 sidebar 分开了，但目录里是一个大类需注意下
-  // 记得看 typeMap，别搞错目录了
-  {
-    text: '性能优化',
-    link: useQuestionIntro('opt'),
-    collapsed: true,
-    items: [
-      useQuestionItem('基本性能优化策略', 'opt', 1, 'base'),
-      useQuestionItem('图片 Image', 'opt', 2, 'image'),
-      useQuestionItem('其他综合', 'opt', 3, 'other'),
+      // useQuestionItem('NestJS 基础', 'nestjs', 1, 'base'),
     ],
   },
   {
@@ -122,25 +55,52 @@ export default [
     ],
   },
   {
-    text: '解决方案',
+    text: '性能优化',
+    link: useQuestionIntro('opt'),
     collapsed: true,
-    link: useQuestionIntro('solution'),
     items: [
-      useQuestionItem('登录场景相关', 'slt', 1, 'solution'),
-      useQuestionItem('请求优化相关场景', 'slt', 2, 'repeatRequest'),
-      useQuestionItem('一些具体业务', 'slt', 3, 'buz'),
-      useQuestionItem('移动开发相关', 'slt', 4, 'app'),
+      useQuestionItem('基本性能优化策略', 'opt', 1, 'base'),
+      useQuestionItem('图片 Image', 'opt', 2, 'image'),
+      useQuestionItem('其他综合', 'opt', 3, 'other'),
     ],
   },
   {
-    text: '算法相关',
-    collapsed: true,
-    link: useQuestionIntro('algo'),
+    text: '网络 & 浏览器',
+    link: useQuestionIntro('http'),
+    collapsed: false,
     items: [
-      // items: [
-      // useQuestionItem('堆栈', 'algo', 1, '堆栈'),
-      // useQuestionItem('队列', 'algo', 2, '队列'),
-      // useQuestionItem('链表', 'algo', 3, '链表'),
+      useQuestionItem('http 基础', 'http', 1, 'base'),
+      useQuestionItem('http 常考察点', 'http', 2, 'http'),
+      useQuestionItem('缓存机制', 'http', 3, 'cache'),
+      useQuestionItem('为什么使用 https', 'http', 4, 'https'),
+      useQuestionItem('从浏览器输入 url 到页面渲染', 'bw', 1, 'fromurl'),
+      useQuestionItem('事件循环 Event Loop', 'bw', 2, 'eventloop'),
+      useQuestionItem('其他', 'bw', 3, 'other'),
+    ],
+  },
+  {
+    text: 'HTML & CSS',
+    collapsed: true,
+    link: useQuestionIntro('html'),
+    items: [
+      useQuestionItem('HTML 基础', 'html', 1, 'base'),
+      useQuestionItem('CSS 基础', 'css', 1, 'base'),
+      useQuestionItem('布局 Layout', 'css', 2, 'layout'),
+    ],
+  },
+  {
+    text: 'JavaScript',
+    collapsed: false,
+    link: useQuestionIntro('js'),
+    items: [
+      useQuestionItem('基础 Base', 'js', 1, 'base'),
+      useQuestionItem('函数 Function', 'js', 2, 'function'),
+      useQuestionItem('面向对象 Object', 'js', 3, 'object'),
+      useQuestionItem('核心 API', 'js', 4, 'api'),
+      useQuestionItem('事件 Event', 'js', 5, 'event'),
+      useQuestionItem('ES6 (2015)', 'es6', 1, 'base'),
+      useQuestionItem('Promise', 'es6', 2, 'promise'),
+      useQuestionItem('ESNext', 'es6', 3, 'esnext'),
     ],
   },
   {
@@ -150,6 +110,16 @@ export default [
     items: [
       useQuestionItem('TypeScript 基础考察', 'ts', 1, 'base'),
       // useQuestionItem('VirtualDOM 和 Diff 算法', 'vue', 2, 'VirtualDOM 和 Diff 算法'),
+    ],
+  },
+  {
+    text: '前端工程化',
+    link: useQuestionIntro('build'),
+    collapsed: true,
+    items: [
+      useQuestionItem('Vite', 'vite', 1, 'vite'),
+      useQuestionItem('Webpack', 'webpack', 1, 'webpack'),
+      useQuestionItem('组件', 'webpack', 2, 'component'),
     ],
   },
   {
@@ -169,6 +139,35 @@ export default [
       useQuestionItem('Web 安全', 'safe', 1, 'websafe'),
       useQuestionItem('XSS', 'safe', 2, 'xss'),
       useQuestionItem('CSRF', 'safe', 3, 'csrf'),
+    ],
+  },
+  {
+    text: '解决方案',
+    collapsed: true,
+    link: useQuestionIntro('solution'),
+    items: [
+      useQuestionItem('登录场景相关', 'slt', 1, 'solution'),
+      useQuestionItem('请求优化相关场景', 'slt', 2, 'repeatRequest'),
+      useQuestionItem('一些具体业务', 'slt', 3, 'buz'),
+      useQuestionItem('移动开发相关', 'slt', 4, 'app'),
+    ],
+  },
+  {
+    text: '移动端 & 小程序',
+    collapsed: true,
+    items: [
+      useQuestionItem('微信小程序', 'app', 1, 'mini'),
+      useQuestionItem('uniapp相关', 'app', 2, 'uniapp'),
+    ],
+  },
+  {
+    text: '算法相关',
+    collapsed: true,
+    link: useQuestionIntro('algo'),
+    items: [
+      // useQuestionItem('堆栈', 'algo', 1, '堆栈'),
+      // useQuestionItem('队列', 'algo', 2, '队列'),
+      // useQuestionItem('链表', 'algo', 3, '链表'),
     ],
   },
 ]

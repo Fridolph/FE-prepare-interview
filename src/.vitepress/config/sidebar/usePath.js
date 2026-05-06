@@ -45,6 +45,8 @@ const typeMap = {
   radash: '15radash',
   pn: '16patterns',
   patterns: '16patterns',
+  ai: '17ai',
+  nestjs: '18nestjs',
 }
 
 export function useStraightIntro(type) {

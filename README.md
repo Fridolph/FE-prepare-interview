@@ -1,98 +1,211 @@
-![image](https://github.com/Fridolph/FE-prepare-interview/assets/17010702/2c370ff8-59d1-4f03-a238-50552e0099f9)
+# FE-prepare-interview
 
-# 项目简介
+<p align="center">
+  <img src="https://github.com/Fridolph/FE-prepare-interview/assets/17010702/2c370ff8-59d1-4f03-a238-50552e0099f9" alt="banner" width="800" />
+</p>
 
-这是一个关于面试的开源项目（因为还没完善，或者说我把框架已搭好，它能因您的加入而更美好）
+<p align="center">
+  <a href="https://github.com/Fridolph/FE-prepare-interview/stargazers">
+    <img src="https://img.shields.io/github/stars/Fridolph/FE-prepare-interview?style=flat-square&color=ffcb2c" alt="Stars" />
+  </a>
+  <a href="https://github.com/Fridolph/FE-prepare-interview/blob/main/LICENSE">
+    <img src="https://img.shields.io/github/license/Fridolph/FE-prepare-interview?style=flat-square&color=blue" alt="License" />
+  </a>
+  <img src="https://img.shields.io/badge/VitePress-1.x-10b981?style=flat-square" alt="VitePress" />
+  <img src="https://img.shields.io/badge/Vue-3.4-4fc08d?style=flat-square" alt="Vue 3" />
+  <img src="https://img.shields.io/badge/Node-%3E%3D%2018-339933?style=flat-square" alt="Node" />
+  <img src="https://img.shields.io/badge/pnpm-required-f69220?style=flat-square" alt="pnpm" />
+</p>
 
-欢迎 Fork 参与，和我一起完善该项目
+<p align="center">
+  <strong>📚 前端必备的知识宝典</strong> — 整理搜集自互联网，为前端面试而生
+</p>
 
-在线预览 <https://github.com/Fridolph/FE-prepare-interview>
+---
 
-[【面试加油】使用 VitePress 打造个人专属的前端知识体系](https://juejin.cn/post/7346888998487310390)
+## 🌐 在线预览
 
-如果您稍微产生了一点兴趣，希望您能继续读下去。
+**[fridolph.github.io/FE-prepare-interview](https://fridolph.github.io/FE-prepare-interview)**
 
-## 本地启动
+> 📝 介绍文章：[使用 VitePress 打造个人专属的前端知识体系](https://juejin.cn/post/7346888998487310390)
 
-> 使用 pnpm i ，Node.js 版本需大于 18
+## 💡 制作初衷
+
+作为一个非科班转行的前端开发者，我深知面试准备过程中的痛点：**知识点零散、资料碎片化、缺乏体系**。市面上并不缺优秀的前端教程，但专门为面试场景整理、兼顾概念理解和手写练习、且持续更新的知识库却不多见。
+
+于是我在 2023 年启动了 FE-prepare-interview，希望打造一个 **"开箱即用"的前端面试知识体系**：
+
+- 🎯 **不只是罗列问题**，更注重概念的来龙去脉和知识间的关联
+- 🤝 **开放共建**，每个人的面经和笔记都能帮助后来的小伙伴
+- 🔄 **持续迭代**，跟随前端技术发展不断补充新内容
+
+> 如果这个项目对你有一点点帮助，欢迎 Star ⭐ 支持，也期待你一起参与完善！
+
+## ✨ 特性
+
+- **三大核心版块** — 概念讲解 / 模拟面试 / 手写代码，多维度覆盖面试场景
+- **16+ 技术领域** — HTML/CSS、JavaScript、TypeScript、Vue、React、Node.js、HTTP/浏览器、前端工程化、性能优化、安全、算法、编程模式、AI 大模型、NestJS 等
+- **230+ 篇内容** — 持续迭代完善中
+- **沉浸式阅读** — 基于 VitePress 构建，暗色模式、全文搜索、代码高亮
+- **交互式 Demo** — 支持在 Markdown 中嵌入 Vue 组件，所见即所得
+- **AI 驱动开发** 🤖 — 项目使用 AI Agent 辅助内容生成与代码维护（详见 [AGENTS.md](./AGENTS.md)）
+- **社区共建** — 开放 Fork，欢迎一起完善
+
+## 🚀 快速开始
 
 ```bash
-npm run dev
+# 克隆仓库
+git clone https://github.com/Fridolph/FE-prepare-interview.git
+
+# 进入目录
+cd FE-prepare-interview
+
+# 安装依赖（必须使用 pnpm）
+pnpm install
+
+# 启动开发服务器
+pnpm dev
+
+# 构建生产版本
+pnpm build
+
+# 预览构建结果
+pnpm preview
 ```
 
-觉得有用可以自行修改， `npm run build` 部署到自己的 Github Pages
+> **要求**: Node.js >= 18，使用 pnpm 包管理器
 
-## 直击概念
+## 📖 三大版块
 
-学习一个新知识的过程：
+### 直击概念 — 概念讲解 📘
 
-1. **明确概念** 先了解它是什么，官方怎么定义
-2. **了解背景** 诞生于怎样的背景下
-3. **解决途径** 它解决了什么问题
+学习新知识的正确姿势：**明确概念 → 了解背景 → 解决途径**
 
-面试时会问到一些概念或者新名词，一般能答到上面三点，title 改为“了解”、“熟悉”基本 OK。
+面试被问到概念或新名词时，能答出以上三点，基本 OK。如需深挖，还应思考：**深入原理 → 横向比较 → 发散思维**。
 
-如果不断深挖，还应该有以下思考：
+内容大多整理自 MDN、维基百科及掘金高赞文章，力求清晰简洁。
 
-- **深入原理** 为什么能解决问题
-- **横向比较** 是否有其他替代或更好的方案
-- **发散思维** 等等
+### 面试官问 — 模拟面试 🙋
 
-> 看面经心血来潮，遂有了本项目。初次可能整理得比较简单，若有纰漏之处还望看官们多多包涵。您可通过`联系`我或是提 `issue` 等方式参与修改
+搜集互联网面经，提炼常见面试问题，附上关键点思维导图辅助作答。
 
-### 来源说明
+面试没有绝对标准答案，关键是适当概括、留白给面试官，保持对话的深度与广度。
 
-直击概念部分基本大多整理自 MDN 、维基百科，部分转自掘金高赞文，有转载会在参考标明出处，本站内容皆遵循开源协议，承诺不会商用。`本站可能会存在一些未获得作者同意就粘贴的内容`，若有冒犯非常抱歉，`请联系本人第一时间删除`。
+### 编写代码 — 手写题 & 源码分析 💻
 
-目前只是初次整理提交，该版块的整理会尽量说清楚前三点，以满足基本面试需求，内容搜集整理与互联网，对其正确性不负责，仅供参考。
+直面大厂面试真题，重点不在代码本身，而在于 **解题思路和拆解过程**。
 
-## 面试官问
+每个题目会单独总结思路，并根据情况加入关键提示或思维导图。
 
-建立初衷只是为辅助自己面试，八股文恐惧，工作舒服区呆太久没出来面试了。
+---
 
-通过搜集互联网各种面经，模拟面试，缓解焦虑，提升信心。
+> 🤖 **2024 重磅新增 — AI 大模型专题**：紧跟 AI 浪潮，梳理了 30 个前端开发者必知的大模型核心概念，涵盖基础认知、Transformer 架构、训练机制、推理生成、RAG/Agent/Function Calling 等进阶实践。无论你是想了解 AI 基础知识，还是准备 AI 方向面试，都能在这里找到答案。
+>
+> 🏗️ **2024 重磅新增 — NestJS 专题**：从零开始的 NestJS 学习路线，助你打通前端到全栈的最后一公里。
 
-## 如何运用该版块
+## 🗺️ 项目结构
 
-随意浏览，按兴趣内容或根据自身薄弱处，自行在该区域内浏览、探索。
+```
+FE-prepare-interview/
+├── src/
+│   ├── .vitepress/          # VitePress 配置 & 自定义主题
+│   ├── 直击概念/             # 概念讲解（s_ 前缀）
+│   │   ├── 17ai/            #   AI & 大模型（30 篇，已全部完成）
+│   │   └── 18nestjs/        #   NestJS（建设中）
+│   ├── 面试官问/             # 模拟面试（q_ 前缀）
+│   ├── 编写代码/             # 手写 & 源码练习（c_ 前缀）
+│   ├── 网友面经/             # 社区面经投稿
+│   ├── 相关准备/             # 简历撰写 & 面试工具推荐
+│   ├── 参与贡献/             # 贡献指南 & 写作规范
+│   └── templates/           # 公共 Vue 组件模版
+├── AGENTS.md                # 🤖 AI Agent 项目指引
+└── README.md
+```
 
-## 关于提示
+## 📊 内容覆盖
 
-该模块主要用于提问，所以不会有所谓的标准答案套路模版。
+| 领域 | 状态 | 领域 | 状态 |
+|------|:----:|------|:----:|
+| 🔷 HTML & CSS | ✅ | 🔶 Node.js | 🏗 |
+| 🟨 JavaScript + ES6/Promise | ✅ | 🔧 前端工程化 | ✅ |
+| 🟦 TypeScript | ✅ | 🛡️ 前端安全 | ✅ |
+| 🟢 Vue.js | ✅ | 📦 数据结构 & 算法 | ✅ |
+| ⚛️ React | 🏗 | 🧩 编程模式 | 🏗 |
+| 🌐 HTTP & 浏览器原理 | ✅ | 📱 移动端 / 小程序 | 🏗 |
+| ⚡ 性能优化 | ✅ | 🤖 AI / 大模型 | ✅ |
+| | | 🏠 NestJS | 🏗 |
 
-我会梳理其中一些关键点制作思维导图，辅助作答。
+> ✅ 较完善 · 🏗 建设中 · 🆕 近期新增
 
-面试没有对错标准，但应适当概括，把空间留给面试官，这样可挖掘深度和广度。
+### 🤖 AI & 大模型专题（2024 新增 · 30 篇已全部完成）
 
-### 复盘与反思
+| 分类 | 涵盖内容 |
+|------|----------|
+| 🧠 基础认知 | AI 定义与流派、机器学习、深度学习、神经网络、生成式 AI |
+| 🔬 大模型核心 | LLM、Transformer、Token 分词、Embedding、Attention |
+| 🏋️ 训练机制 | 预训练/微调/LoRA、损失函数、反向传播、RLHF、模型量化 |
+| 💬 推理生成 | Softmax 概率、Temperature 采样、流式输出、幻觉、上下文窗口 |
+| 🚀 进阶实践 | Prompt Engineering、RAG、AI Agent、Function Calling、MCP 协议、Multi-Agent、AI 安全 |
 
-若根据思维导图也无法流畅答出，可点击链接回到“直击概念”，结合MDN文档等反复学习记忆，再尝试作答。
+## 🗓️ 开发计划
 
+| 优先级 | 计划 | 状态 |
+|:------:|------|:----:|
+| 🔴 | **NestJS** — 完善三大版块的基础概念与面试题 | 🏗 进行中 |
+| 🟡 | **AI 面试题** — 补充 AI & 大模型的高频面试问答 | 📋 待整理 |
+| 🟡 | **AI 手写代码** — 添加 AI SDK 调用、RAG 实现等实践 | 📋 待整理 |
+| 🟢 | **React** — 完善 React 概念与面试题 | 📋 规划中 |
+| 🟢 | **Node.js** — 补充服务端相关概念与面试题 | 📋 规划中 |
+| 🟢 | **移动端 & 小程序** — 补充跨端开发相关内容 | 📋 规划中 |
+| 🟢 | **解决方案** — 常见业务场景的技术方案总结 | 📋 规划中 |
 
-## 编写代码
+> 欢迎 Fork 参与共建！你的每一次贡献都在帮助更多人 🎉
 
-直面大厂真题（搜集自互联网）
+## 🎯 学习进度
 
-重要的是`解题思路`，如何拆解慢慢得出结果，`过程是最重要`
+| 版块 | 完成度 | 说明 |
+|------|:------:|------|
+| 直击概念 | ████████░░ 80% | 核心领域概念已覆盖，部分领域持续补充中 |
+| 面试官问 | ██████░░░░ 60% | 常见高频题已整理，AI 面试题待补充 |
+| 编写代码 | █████░░░░░ 50% | JS 手写题较完善，AI/React 等待补充 |
 
-## 关于注释
+整体约 **70%** 完成度，预计 2025 年底完成核心内容的 90% 覆盖。
 
-如果是自写或整理的可适当添加注释，以便阅读。
+## 🤖 AI 辅助开发
 
-当然 `良好命令，和代码编写就是最好的注释`
+本项目在以下环节使用了 AI Agent 进行辅助：
 
-对于这部分，我会把思路单独拎出来，会根据情况，适当加入 `关键提示` 或 `思维导图`
+- 📝 **内容生成** — 借助大模型完成部分概念文章的初稿起草与知识梳理
+- 🔍 **代码审查** — AI Agent 辅助检查代码质量与内容一致性
+- 📐 **配置管理** — VitePress 配置、侧边栏生成等重复性工作由 AI 协助完成
+- 📄 **文档维护** — README、AGENTS.md 等项目文档的更新由 AI 辅助
 
-## 关于demo
+> ⚠️ 所有 AI 生成的内容均经过人工审核与校对，确保准确性和质量。
 
-选择 VitePress 也是因其还支持 md 里写vue组件，demo便得更容易。
+欢迎 AI Agent 开发者参考 [AGENTS.md](./AGENTS.md) 了解如何接入本项目。
 
-但毕竟是个体力和细心活儿，后续慢慢完善，还请见谅。
+## 🤝 贡献指南
 
-### 关于 TypeScript
+欢迎 Fork 参与共建！在开始前请先阅读 [参与贡献](./src/参与贡献/index.md)：
 
-TypeScript 可以有，但非必须，后面有时间能加就加吧。
-考虑到工作量可能会较大，也欢迎你的加入，和我一起完善。
+- 新增文章请遵循 [文件命名规范](./AGENTS.md#文件命名规范)
+- 外部引用请在文末标注来源
+- 提交信息遵循 `<type>: <description>` 格式
 
-## Recommended IDE Setup
-- [VS Code](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur) + [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin).
+有任何想法也欢迎提 [Issue](https://github.com/Fridolph/FE-prepare-interview/issues) 💬
+
+## 📜 许可证
+
+- **代码** (VitePress 配置、Vue 组件等): [GNU GPL v3](LICENSE)
+- **内容** (Markdown 文档、文章等): [CC BY-NC-ND 4.0](https://creativecommons.org/licenses/by-nc-nd/4.0/deed.zh-hans)
+
+本项目内容皆来自互联网公开资料整理，仅供学习参考，**不用于商业用途**。若有引用未标注或侵权之处，请联系删除。
+
+---
+
+<p align="center">
+  🧑‍💻 由 <a href="https://blog.fridolph.top" target="_blank">Yinsheng Fu（霪霖笙箫）</a> 整理维护 — 若对您有帮助，欢迎 Star ⭐
+</p>
+<p align="center">
+  <sub>Built with ❤️ · Powered by VitePress · Assisted by AI</sub>
+</p>
