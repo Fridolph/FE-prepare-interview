@@ -1,7 +1,7 @@
 {
   "name": "FE-prepare-interview",
   "private": true,
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "前端必备的知识宝典，整理搜索自互联网，by Fridolph 霪霖笙箫。",
   "type": "module",
   "scripts": {

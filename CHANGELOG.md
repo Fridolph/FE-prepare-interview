@@ -1,6 +1,13 @@
 # Changelog
 
 
+## [1.1.0](https://github.com/Fridolph/FE-prepare-interview/compare/v1.0.0...v1.1.0) (2026-05-08)
+
+
+### ✨ Features
+
+* 版本控制配置 + AI侧边栏三分类 + 首页图标更新 ([a369ea8](https://github.com/Fridolph/FE-prepare-interview/commit/a369ea80f7bf8aaee119c3caab5a894af0a5780c))
+
 ## 1.0.0 (2026-05-08)
 
 
