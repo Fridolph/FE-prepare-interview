@@ -3,7 +3,7 @@ export default [
   // 如果贡献了 想加自己的 博客，主页之类的，按下面的改就好
   // 更多配置自行搜索文档啦
   {
-    avatar: 'https://blog.fridolph.top/img/avatar.jpg',
+    avatar: 'https://www.fridolph.top/static/dao/avatar.jpg',
     name: 'Yinsheng Fu',
     title: 'Creator. FE developer, in Chengdu.',
     links: [
@@ -23,7 +23,7 @@ export default [
     ],
   },
   {
-    avatar: 'https://blog.fridolph.top/img/avatar.jpg',
+    avatar: 'https://www.fridolph.top/static/dao/avatar.jpg',
     name: '屏幕前的你',
     title: '参与开源，和我一起完善吧',
     links: [

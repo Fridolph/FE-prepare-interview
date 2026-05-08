@@ -1,4 +1,5 @@
 import { defineConfig } from 'vitepress'
+import { withMermaid } from 'vitepress-plugin-mermaid'
 import { basename } from 'node:path'
 // todo:fix 由于 npm run build 报错，暂时把该插件去掉，解决后加回来
 // import { postcssIsolateStyles } from 'vitepress'
@@ -14,7 +15,8 @@ import sidebar from './config/sidebar'
 
 let base = process.env.NODE_ENV === 'production' ? '/FE-prepare-interview/' : '/'
 
-export default defineConfig({
+export default withMermaid(
+  defineConfig({
   // base: '/FE-prepare-interview/',
   base,
   outDir: '../dist',
@@ -117,4 +119,5 @@ export default defineConfig({
   sitemap: {
     hostname: 'https://github.com/Fridolph/FE-prepare-interview',
   },
-})
+}),
+)

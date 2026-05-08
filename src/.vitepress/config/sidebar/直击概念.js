@@ -2,7 +2,7 @@ import { useStraightIntro, useStraightItem } from './usePath'
 
 export default [
   {
-    text: 'AI & 大模型',
+    text: 'AI & 大模型基础',
     link: useStraightIntro('ai'),
     collapsed: false,
     items: [
@@ -21,20 +21,32 @@ export default [
       useStraightItem('反向传播', 'ai', 13, 'backpropagation'),
       useStraightItem('过拟合与正则化', 'ai', 14, 'overfitting_regularization'),
       useStraightItem('RLHF 与对齐训练', 'ai', 15, 'rlhf'),
-      useStraightItem('模型量化', 'ai', 16, 'quantization'),
-      useStraightItem('概率分布与 Softmax', 'ai', 17, 'probability_softmax'),
-      useStraightItem('Temperature 与采样策略', 'ai', 18, 'temperature'),
-      useStraightItem('流式输出 Streaming', 'ai', 19, 'streaming'),
-      useStraightItem('模型幻觉', 'ai', 20, 'hallucination'),
-      useStraightItem('上下文窗口', 'ai', 21, 'context_window'),
+    ],
+  },
+  {
+    text: 'AI Agent 开发',
+    collapsed: true,
+    items: [
       useStraightItem('Prompt Engineering', 'ai', 22, 'prompt_engineering'),
-      useStraightItem('RAG 检索增强生成', 'ai', 23, 'rag'),
+      useStraightItem('流式输出 Streaming', 'ai', 19, 'streaming'),
       useStraightItem('AI Agent 智能体', 'ai', 24, 'agent'),
       useStraightItem('Function Calling', 'ai', 25, 'function_calling'),
-      useStraightItem('向量数据库', 'ai', 26, 'vector_database'),
       useStraightItem('MCP 协议', 'ai', 27, 'mcp'),
       useStraightItem('LangChain & AI SDK', 'ai', 28, 'langchain'),
       useStraightItem('Multi-Agent 系统', 'ai', 29, 'multi_agent'),
+    ],
+  },
+  {
+    text: 'AI 工程化 & 前瞻',
+    collapsed: true,
+    items: [
+      useStraightItem('模型量化', 'ai', 16, 'quantization'),
+      useStraightItem('概率分布与 Softmax', 'ai', 17, 'probability_softmax'),
+      useStraightItem('Temperature 与采样策略', 'ai', 18, 'temperature'),
+      useStraightItem('模型幻觉', 'ai', 20, 'hallucination'),
+      useStraightItem('上下文窗口', 'ai', 21, 'context_window'),
+      useStraightItem('RAG 检索增强生成', 'ai', 23, 'rag'),
+      useStraightItem('向量数据库', 'ai', 26, 'vector_database'),
       useStraightItem('AI 安全与护栏', 'ai', 30, 'safety'),
     ],
   },
@@ -206,7 +218,59 @@ export default [
     link: useStraightIntro('pn'),
     collapsed: true,
     items: [
-      useStraightItem('JS设计模式', 'pn', 1, 'design'),
+      {
+        text: '创建型模式',
+        collapsed: true,
+        items: [
+          useStraightItem('单例模式 Singleton', 'pn', 1, 'singleton'),
+          useStraightItem('工厂模式 Factory', 'pn', 2, 'factory'),
+          useStraightItem('建造者模式 Builder', 'pn', 3, 'builder'),
+          useStraightItem('原型模式 Prototype', 'pn', 4, 'prototype'),
+        ],
+      },
+      {
+        text: '结构型模式',
+        collapsed: true,
+        items: [
+          useStraightItem('适配器模式 Adapter', 'pn', 5, 'adapter'),
+          useStraightItem('装饰器模式 Decorator', 'pn', 6, 'decorator'),
+          useStraightItem('代理模式 Proxy', 'pn', 7, 'proxy'),
+          useStraightItem('外观模式 Facade', 'pn', 8, 'facade'),
+          useStraightItem('组合模式 Composite', 'pn', 9, 'composite'),
+        ],
+      },
+      {
+        text: '行为型模式',
+        collapsed: true,
+        items: [
+          useStraightItem('观察者模式 Observer', 'pn', 10, 'observer'),
+          useStraightItem('发布-订阅模式 PubSub', 'pn', 11, 'pubsub'),
+          useStraightItem('策略模式 Strategy', 'pn', 12, 'strategy'),
+          useStraightItem('命令模式 Command', 'pn', 13, 'command'),
+          useStraightItem('状态模式 State', 'pn', 14, 'state'),
+          useStraightItem('迭代器模式 Iterator', 'pn', 15, 'iterator'),
+          useStraightItem('责任链模式 Chain of Resp', 'pn', 16, 'chain_of_responsibility'),
+        ],
+      },
+      {
+        text: '扩展模式',
+        collapsed: true,
+        items: [
+          useStraightItem('享元模式 Flyweight', 'pn', 17, 'flyweight'),
+          useStraightItem('中介者模式 Mediator', 'pn', 18, 'mediator'),
+          useStraightItem('模板方法模式 Template Method', 'pn', 19, 'template_method'),
+          useStraightItem('模块模式 Module', 'pn', 20, 'module'),
+          useStraightItem('混合模式 Mixin', 'pn', 21, 'mixin'),
+        ],
+      },
+      {
+        text: '框架模式',
+        collapsed: true,
+        items: [
+          useStraightItem('React + TypeScript 组件模式', 'pn', 22, 'react_ts'),
+          useStraightItem('Vue 设计模式', 'pn', 23, 'vue'),
+        ],
+      },
     ],
   },
   // {

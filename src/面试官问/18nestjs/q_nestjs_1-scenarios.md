@@ -1,5 +1,12 @@
 # NestJS 生产场景实战
 
+> 📚 **参考文档索引**（建议先掌握概念再来看实战）：
+> - [NestJS 概览](/直击概念/18nestjs/s_nestjs_1-overview) — 框架核心设计与项目结构
+> - [中间件与守卫](/直击概念/18nestjs/s_nestjs_5-middleware_guard) — 请求拦截与权限验证
+> - [拦截器与管道](/直击概念/18nestjs/s_nestjs_6-interceptor_pipe) — 日志/缓存/参数校验
+> - [异常过滤器](/直击概念/18nestjs/s_nestjs_7-exception_filter) — 统一错误码与异常处理
+> - [全栈实践](/直击概念/18nestjs/s_nestjs_10-fullstack) — 前后端协作与部署
+>
 > 以下问题模拟真实项目中 NestJS 开发会遇到的实际需求。
 
 ## 1. 设计多租户 SaaS 后端如何进行数据隔离？

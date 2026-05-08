@@ -12,11 +12,44 @@ export default [
     ],
   },
   {
-    text: 'AI & 大模型',
-    collapsed: true,
-    link: useQuestionIntro('ai'),
+    text: 'AI & LLM',
+    collapsed: false,
     items: [
-      // useQuestionItem('AI 基础', 'ai', 1, 'base'),
+      useQuestionItem('什么是 AI', 'ai', 1, 'what_is_ai'),
+      useQuestionItem('机器学习三范式', 'ai', 2, 'machine_learning'),
+      useQuestionItem('深度学习 vs 传统 ML', 'ai', 3, 'deep_learning'),
+      useQuestionItem('生成式 AI vs 传统 AI', 'ai', 4, 'generative_ai'),
+      useQuestionItem('LLM 与 GPT 演进', 'ai', 5, 'llm'),
+      useQuestionItem('Transformer 革命性', 'ai', 6, 'transformer'),
+      useQuestionItem('Token 与分词', 'ai', 7, 'tokenization'),
+      useQuestionItem('Embedding 向量嵌入', 'ai', 8, 'embedding'),
+      useQuestionItem('预训练与微调', 'ai', 9, 'pretraining_finetuning'),
+      useQuestionItem('RLHF 对齐训练', 'ai', 10, 'rlhf'),
+      useQuestionItem('Prompt Engineering', 'ai', 14, 'prompt_engineering'),
+      useQuestionItem('流式输出 SSE', 'ai', 11, 'streaming'),
+      useQuestionItem('模型幻觉与缓解', 'ai', 12, 'hallucination'),
+      useQuestionItem('上下文窗口限制', 'ai', 13, 'context_window'),
+    ],
+  },
+  {
+    text: 'Agent Dev',
+    collapsed: true,
+    items: [
+      useQuestionItem('AI Agent 智能体', 'ai', 16, 'agent'),
+      useQuestionItem('Function Calling', 'ai', 17, 'function_calling'),
+      useQuestionItem('MCP 协议', 'ai', 18, 'mcp'),
+      useQuestionItem('Multi-Agent 系统', 'ai', 19, 'multi_agent'),
+    ],
+  },
+  {
+    text: 'AI 相关',
+    collapsed: true,
+    items: [
+      useQuestionItem('RAG 检索增强生成', 'ai', 15, 'rag'),
+      useQuestionItem('向量数据库与搜索', 'ai', 20, 'vector_database'),
+      // TODO: AI 安全与护栏
+      // TODO: LangChain / AI SDK
+      // TODO: 模型部署与优化
     ],
   },
   {
@@ -176,6 +209,23 @@ export default [
       // useQuestionItem('堆栈', 'algo', 1, '堆栈'),
       // useQuestionItem('队列', 'algo', 2, '队列'),
       // useQuestionItem('链表', 'algo', 3, '链表'),
+    ],
+  },
+  {
+    text: '编程模式',
+    collapsed: true,
+    link: useQuestionIntro('pn'),
+    items: [
+      useQuestionItem('观察者 vs 发布订阅', 'pn', 1, 'observer_vs_pubsub'),
+      useQuestionItem('单例模式', 'pn', 2, 'singleton'),
+      useQuestionItem('工厂模式', 'pn', 3, 'factory'),
+      useQuestionItem('策略模式', 'pn', 4, 'strategy'),
+      useQuestionItem('ES6 Proxy 代理模式', 'pn', 5, 'proxy'),
+      useQuestionItem('装饰器模式', 'pn', 6, 'decorator'),
+      useQuestionItem('命令模式 & 撤销重做', 'pn', 7, 'command'),
+      useQuestionItem('状态 vs 策略模式', 'pn', 8, 'state_vs_strategy'),
+      useQuestionItem('中间件/责任链', 'pn', 9, 'middleware'),
+      useQuestionItem('适配器模式', 'pn', 10, 'adapter'),
     ],
   },
 ]

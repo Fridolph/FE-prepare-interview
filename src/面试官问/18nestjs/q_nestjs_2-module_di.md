@@ -1,5 +1,11 @@
 # NestJS 模块与依赖注入实战
 
+> 📚 **参考文档索引**（建议先掌握概念再来看实战）：
+> - [模块系统](/直击概念/18nestjs/s_nestjs_2-module) — Module 的五大类型与依赖规则
+> - [提供者与 DI](/直击概念/18nestjs/s_nestjs_4-provider) — 注入方式、作用域、循环依赖
+> - [控制器](/直击概念/18nestjs/s_nestjs_3-controller) — 路由、DTO 校验、请求参数
+> - [NestJS 概览](/直击概念/18nestjs/s_nestjs_1-overview) — IoC 容器设计思想
+>
 > 以下问题考察对 NestJS DI 和模块系统的深入理解。
 
 ## 1. Default Scope 和 Request Scope 的区别与性能影响？

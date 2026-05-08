@@ -1,5 +1,12 @@
 # NestJS AOP & 数据库实战
 
+> 📚 **参考文档索引**（建议先掌握概念再来看实战）：
+> - [中间件与守卫](/直击概念/18nestjs/s_nestjs_5-middleware_guard) — 请求拦截与权限验证
+> - [拦截器与管道](/直击概念/18nestjs/s_nestjs_6-interceptor_pipe) — 响应转换与参数校验
+> - [异常过滤器](/直击概念/18nestjs/s_nestjs_7-exception_filter) — 统一异常处理
+> - [TypeORM & Prisma](/直击概念/18nestjs/s_nestjs_8-orm) — ORM 选型与实践
+> - [控制器](/直击概念/18nestjs/s_nestjs_3-controller) — 请求参数与 DTO 校验
+>
 > 以下问题考察 AOP 机制和数据库在生产环境中的实践。
 
 ## 1. 不同接口需要不同认证方式如何设计？

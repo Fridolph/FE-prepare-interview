@@ -1,5 +1,12 @@
 # NestJS 全栈 & 部署实战
 
+> 📚 **参考文档索引**（建议先掌握概念再来看实战）：
+> - [全栈实践](/直击概念/18nestjs/s_nestjs_10-fullstack) — 前后端协作、Swagger、WebSocket、部署
+> - [测试](/直击概念/18nestjs/s_nestjs_9-testing) — 单元测试/E2E 测试最佳实践
+> - [TypeORM & Prisma](/直击概念/18nestjs/s_nestjs_8-orm) — 数据库连接池与性能调优
+> - [提供者与 DI](/直击概念/18nestjs/s_nestjs_4-provider) — Provider 作用域与注入模式
+> - [NestJS 概览](/直击概念/18nestjs/s_nestjs_1-overview) — 项目结构与框架设计
+>
 > 以下问题考察 NestJS 在前后端协作和部署中的实践。
 
 ## 1. 前后端共享 DTO 类型的最佳实践？
