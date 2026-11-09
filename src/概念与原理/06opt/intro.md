@@ -1,35 +1,18 @@
-> 由于个人时间有限，这部分目前还没有来得及整理，我会在后续慢慢完善，请您谅解。
-> 我暂时列出一个简单的待整理大纲。欢迎 Fork 本项目，和我一起来完善
-
 # 前端性能优化
 
-> 性能优化一直是高频考点，~~雅虎军规显得有些过时了~~，雅虎那几十条在现今已显得不够，翻了下 MDN 发现内容有了很大的更新。可能很多朋友也没细细看过最新版，这里继续按 MDN 来整理。
+建议先读测量，再按瓶颈进入资源、渲染和缓存。历史专题保留，新整理的实践文章补充现代 API 与适用边界。
 
-## Web 性能
+## 阅读目录
 
-:white_check_mark:
-
-## 多媒体（图片、视频）
-
-:white_check_mark:
-
-## JavaScript 性能优化
-
-:white_check_mark:
-
-## HTML 性能优化
-
-:white_check_mark:
-
-## CSS 性能优化
-
-:white_check_mark:
-
-## 其他更多
-
-:x: 期待您共同参与完善
-
-## 参考资料
-
-- MDN <https://developer.mozilla.org/zh-CN/docs/Learn/Performance>
-- 前端性能优化 24 条建议<https://juejin.cn/post/6892994632968306702?searchId=20240207120339E0972019DB24A98908E8>
+- [性能测量与真实用户指标](./s_opt_10-measurement)
+- [资源加载、图片与渲染优化](./s_opt_11-loading_rendering)
+- [浏览器存储与离线缓存](./s_opt_12-storage_cache)
+- [Web 性能基础](./s_opt_1-Web性能)
+- [多媒体](./s_opt_2-多媒体)
+- [JavaScript 性能](./s_opt_3-JavaScript性能优化)
+- [HTML 性能](./s_opt_4-HTML性能优化)
+- [CSS 性能](./s_opt_5-CSS性能优化)
+- [JS 性能模式](./s_opt_6-性能模式_js)
+- [import 性能模式](./s_opt_7-性能模式_import)
+- [load 性能模式](./s_opt_8-性能模式_load)
+- [list 性能模式](./s_opt_9-性能模式_list)

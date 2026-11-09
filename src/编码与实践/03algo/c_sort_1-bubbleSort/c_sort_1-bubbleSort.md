@@ -1,42 +1,24 @@
 # 冒泡排序 Bubble Sort
 
-具体算法描述如下：[冒泡排序](../../../概念与原理/03algo/s_sort_1-bubbleSort.md)
-
-1. 比较相邻的元素。如果第一个比第二个大，就`交换`它们两个；
-2. `对每一对相邻元素做同样的工作`，从开始第一对到结尾的最后一对，这样在最后的元素应该会是最大的数；
-3. 针对所有的元素重复以上的步骤，除了最后一个；
-4. 重复步骤 1~3，直到排序完成。
+每轮比较相邻元素并交换逆序项，将当前最大值放到未排序区的末端。已归位的末端不再比较；如果一轮没有交换，说明已经有序，可以提前退出。
 
 ## JavaScript 代码实现
 
-::: details 代码实现
-::: code-group
+<<< ./bubbleSort.js
 
 ```js
-function bubbleSort(array) {
-  let length = array.length
-  for (let i = 0; i < length; i++) {
-    for (let j = 0; j < length - 1 - i; j++) {
-      if (array[j] > array[j + 1]) {
-        let temp = array[j + 1]
-        array[j + 1] = array[j]
-        array[j] = temp
-      }
-    }
-  }
-  return array
-}
+bubbleSort([3, 1, 2, 1]) // [1, 1, 2, 3]，会修改输入数组
 ```
 
-:::
+## 复杂度与边界
 
-```js
-console.time('🚢 ~ 冒泡排序耗时')
-var arr = [3, 44, 38, 5, 47, 15, 36, 26, 27, 2, 46, 4, 19, 50, 48]
-console.log(bubbleSort(arr)) //[2, 3, 4, 5, 15, 19, 26, 27, 36, 38, 44, 46, 47, 48, 50]
-console.timeEnd('🚢 ~ 冒泡排序耗时')
-```
+最坏与平均时间 O(n²)，已有序时通过提前退出达到 O(n)，额外空间 O(1)。只交换严格大于的相邻项，因此相等元素不会互相越过，是稳定排序。空数组和单元素数组无需交换。
+
+旧笔记有基础版与优化版，这里保留提前退出和缩小右边界两个有效改进。单次 console.time 不是可靠算法基准，需要考虑输入分布、预热与重复测量。
+
+关联：[冒泡排序原理](/概念与原理/03algo/s_sort_1-bubbleSort)。
 
 ## 参考
 
-- [十大经典排序算法总结（JavaScript 描述）](https://juejin.cn/post/6844903444365443080)
+- [个人排序笔记](https://github.com/Fridolph/Fridolph/tree/c3a1eda8e0f7fe08d8ec54e07d07db514cbfc5d7/算法相关/十大经典算法)（归并、纠错后重写）。
+- [十大经典排序算法总结（JavaScript 描述）](https://juejin.cn/post/6844903444365443080)（原文档参考来源，保留归属）。

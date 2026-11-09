@@ -31,6 +31,7 @@ export const learningDomains: LearningDomain[] = [
     topics: [
       { title: 'Node.js', icon: { src: '/icons/skills/nodejs.svg' }, description: '从运行时与异步 I/O 入门，理解并发、资源管理和服务端应用的运行边界。', link: '/概念与原理/05node/intro' },
       { title: 'NestJS', icon: { src: '/icons/skills/nestjs.svg' }, description: '从模块与依赖管理起步，走向业务建模、工程治理与可测试、可演进的后端应用。', link: '/概念与原理/18nestjs/intro' },
+      { title: '开发与部署', icon: { emoji: '🛠️' }, description: '从 Git 协作与 Linux 入门，理解代理、进程与容器，逐步建立可验证、可观测、可回退的交付流程。', link: '/概念与原理/20deploy/intro' },
       { title: '数据库 · PostgreSQL', icon: { emoji: '🗄️' }, description: '从数据建模与 SQL 出发，深入事务、并发和索引，在业务约束中理解数据的可靠性。', link: '/学习自测/19database/intro' },
     ],
   },

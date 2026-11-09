@@ -4,3 +4,7 @@ cache
 dist
 
 00me
+
+.playwright-mcp
+.opencode
+.vitepress

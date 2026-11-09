@@ -1,6 +1,6 @@
 const domains = [
   { text: '前端开发', directories: ['01htmlcss', '02js', '07vue', '08react', '09build', '11ts', '14app', '15radash'] },
-  { text: '后端开发', directories: ['05node', '18nestjs', '19database'] },
+  { text: '后端开发', directories: ['05node', '18nestjs', '19database', '20deploy'] },
   { text: 'AI 应用开发', directories: ['17ai'] },
   { text: '通用基础', directories: ['03algo', '04http', '10safe', '12broswer', '13solution', '16patterns'] },
   { text: '性能优化', directories: ['06opt'] },

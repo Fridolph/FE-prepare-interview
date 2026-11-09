@@ -1,47 +1,24 @@
 # 希尔排序 Shell Sort
 
-具体算法描述如下：[希尔排序](../../../概念与原理/03algo/s_sort_4-shellSort.md)
-
-1. 选择一个增量序列 t1，t2，…，tk，其中 ti>tj，tk=1；
-2. 按增量序列个数 k，对序列进行 k 趟排序；
-3. 每趟排序，根据对应的增量 ti，将待排序列分割成若干长度为 m 的子序列，分别对各子表进行直接插入排序。仅增量因子为 1 时，整个序列作为一个表来处理，表长度即为整个序列的长度。
+将相距 gap 的元素组成逻辑子序列，对每组做插入排序，再逐步缩小 gap，最后 gap=1 完成全数组插入排序。这些子序列是交错分布的，不需要拆成连续的小数组。
 
 ## JavaScript 代码实现
 
-::: details 代码实现
-::: code-group
+<<< ./shell.js
 
 ```js
-function shellSort(array, divide = 5) {
-  let length = array.length
-  let gap = 1
-  let temp, i, j
-  // 动态定义间隔序列
-  while (gap < length / divide) {
-    gap = gap * divide + 1
-  }
-  for (gap; gap > 0; gap = Math.floor(gap / divide)) {
-    for (i = gap; i < length; i++) {
-      temp = array[i]
-      for (j = i - gap; j >= 0 && array[j] > temp; j -= gap) {
-        array[j + gap] = array[j]
-      }
-      array[j + gap] = temp
-    }
-  }
-  return array
-}
+shellSort([3, 1, 2, 1]) // [1, 1, 2, 3]，原地修改
 ```
 
-:::
+## 步长与复杂度
 
-```js
-console.time('🚢 ~ 希尔排序耗时')
-let arr = [3, 44, 38, 5, 47, 15, 36, 26, 27, 2, 46, 4, 19, 50, 48]
-console.log(shellSort(arr)) //[2, 3, 4, 5, 15, 19, 26, 27, 36, 38, 44, 46, 47, 48, 50]
-console.timeEnd('🚢 ~ 希尔排序耗时')
-```
+步长序列影响实际表现，不能不说明序列就给出一个固定的“希尔排序时间复杂度”。本例默认用5倍增长、整除缩小，最后经过1；额外空间 O(1)，不是稳定排序。
+
+divide 必须为至少2的安全整数，否则步长可能不收敛。测试覆盖空数组、重复值、逆序与不同缩减因子；业务规模很大时，需比较内置排序与更合适的算法，而不是仅调这个参数。
+
+关联：[希尔排序原理](/概念与原理/03algo/s_sort_4-shellSort)。
 
 ## 参考
 
-- [十大经典排序算法总结（JavaScript 描述）](https://juejin.cn/post/6844903444365443080)
+- [个人排序笔记](https://github.com/Fridolph/Fridolph/tree/c3a1eda8e0f7fe08d8ec54e07d07db514cbfc5d7/算法相关/十大经典算法)（归并、纠错后重写）。
+- [十大经典排序算法总结（JavaScript 描述）](https://juejin.cn/post/6844903444365443080)（原文档参考来源，保留归属）。

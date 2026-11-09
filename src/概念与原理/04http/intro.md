@@ -1,35 +1,16 @@
-> HTTP 前端重点考察。可能问得不多，但一定不会少。我在整理时也是作为重点整理了一番。
-> 由于个人时间有限，这部分目前还没有来得及整理，我会在后续慢慢完善，请您谅解。
-> 我暂时列出一个简单的待整理大纲。欢迎 Fork 本项目，和我一起来完善
+# HTTP 与网络
 
-## OSI 七层模型
+沿协议、请求响应、身份与缓存逐步学习。先理解概念，再通过浏览器 Network 和自己的本地服务验证。
 
-:white_check_mark:
+## 阅读目录
 
-## 浏览器的工作原理
-
-:white_check_mark:
-
-## HTTP
-
-:white_check_mark:
-
-### status code
-
-:white_check_mark:
-
-### request headers
-
-:white_check_mark:
-
-### response headers
-
-:white_check_mark:
-
-## HTTPS
-
-:white_check_mark:
-
-## HTTP 缓存
-
-:white_check_mark:
+- [OSI 模型](./s_http_0-osi)
+- [HTTP 概述](./s_http_1-http)
+- [状态码](./s_http_2-http_status_code)
+- [Header](./s_http_3-http_header)
+- [缓存详解](./s_http_4-cache)
+- [HTTPS](./s_http_5-https)
+- [WebSocket](./s_http_6-websocket)
+- [HTTP 版本、报文与协商](./s_http_7-protocol_practice)
+- [跨域、Cookie、Session 与 Token](./s_http_8-cors_identity)
+- [HTTP 缓存发布策略](./s_http_9-cache_strategy)

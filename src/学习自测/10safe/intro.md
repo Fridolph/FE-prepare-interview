@@ -10,3 +10,7 @@
 - :white_check_mark: [中间人攻击](../../概念与原理/10safe/s_safe_4-%E4%B8%AD%E9%97%B4%E4%BA%BA%E6%94%BB%E5%87%BB.md)
 
 - :white_check_mark: [旁观者攻击](../../概念与原理/10safe/s_safe_5-%E6%97%81%E8%A7%82%E8%80%85%E6%94%BB%E5%87%BB.md)
+
+## 安全场景复习
+
+- [XSS、CSRF 与认证安全](./q_safe_4-security_review)

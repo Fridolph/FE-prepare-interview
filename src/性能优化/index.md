@@ -6,7 +6,7 @@
 
 已有[前端性能笔记](/概念与原理/06opt/intro)，覆盖资源加载、渲染、缓存和常见性能模式。
 
-实践时关注加载与交互体验，记录环境、测量工具与优化前后的数据。
+建议从[性能测量](/概念与原理/06opt/s_opt_10-measurement)入手，再学习[资源与渲染](/概念与原理/06opt/s_opt_11-loading_rendering)、[存储与离线缓存](/概念与原理/06opt/s_opt_12-storage_cache)，最后通过[诊断自测](/学习自测/06opt/q_opt_4-performance_review)复盘。
 
 ## 后端性能
 

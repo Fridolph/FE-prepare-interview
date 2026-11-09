@@ -2,6 +2,19 @@ import { useConceptIntro, useConceptItem } from './usePath.js'
 
 export default [
   {
+    text: '开发与部署',
+    link: useConceptIntro('deploy'),
+    collapsed: true,
+    items: [
+      useConceptItem('Linux、SSH 与运行环境', 'deploy', 1, 'linux_ssh'),
+      useConceptItem('Git 工作区与团队协作', 'deploy', 2, 'git'),
+      useConceptItem('Nginx、反向代理与 HTTPS', 'deploy', 3, 'nginx'),
+      useConceptItem('Node 进程管理与优雅停机', 'deploy', 4, 'node_process'),
+      useConceptItem('发布、验证与回滚', 'deploy', 5, 'release'),
+      useConceptItem('Docker 与部署边界', 'deploy', 6, 'docker'),
+    ],
+  },
+  {
     text: 'AI & 大模型基础',
     link: useConceptIntro('ai'),
     collapsed: false,
@@ -119,6 +132,9 @@ export default [
       useConceptItem('性能模式 import', 'opt', 7, '性能模式_import'),
       useConceptItem('性能模式 load', 'opt', 8, '性能模式_load'),
       useConceptItem('性能模式 list', 'opt', 9, '性能模式_list'),
+      useConceptItem('性能测量与指标', 'opt', 10, 'measurement'),
+      useConceptItem('资源加载与渲染优化', 'opt', 11, 'loading_rendering'),
+      useConceptItem('浏览器存储与离线缓存', 'opt', 12, 'storage_cache'),
     ],
   },
   {
@@ -133,6 +149,9 @@ export default [
       useConceptItem('HTTP 缓存', 'http', 4, 'cache'),
       useConceptItem('HTTPS', 'http', 5, 'https'),
       useConceptItem('WebSocket', 'http', 6, 'websocket'),
+      useConceptItem('HTTP 版本、报文与协商', 'http', 7, 'protocol_practice'),
+      useConceptItem('跨域与身份机制', 'http', 8, 'cors_identity'),
+      useConceptItem('HTTP 缓存发布策略', 'http', 9, 'cache_strategy'),
       useConceptItem('浏览器工作原理', 'bw', 1, 'broswer'),
       useConceptItem('浏览器进程模型', 'bw', 4, 'process'),
       useConceptItem('浏览器渲染原理', 'bw', 5, 'render'),
@@ -159,6 +178,7 @@ export default [
       useConceptItem('数组、对象、原型、继承', 'js', 3, 'object'),
       useConceptItem('this 相关', 'js', 4, 'this'),
       useConceptItem('事件 Event', 'js', 5, 'event'),
+      useConceptItem('正则表达式：规则与边界', 'js', 6, 'regexp'),
       useConceptItem('ES6（2015）', 'esnext', 1, 'es6'),
       useConceptItem('Promise - 设计', 'promise', 1, 'design'),
       useConceptItem('Promise - 基础', 'promise', 2, 'base'),

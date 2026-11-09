@@ -163,3 +163,8 @@ CMD ["node", "dist/main.js"]
 
 - [NestJS: OpenAPI](https://docs.nestjs.com/openapi/introduction)
 - [NestJS: WebSockets](https://docs.nestjs.com/websockets/gateways)
+
+
+## 部署知识延伸
+
+通用的 Nginx、Docker、进程管理与发布回滚统一整理在[开发与部署](/概念与原理/20deploy/intro)；本篇保留 NestJS 业务上下文中的示例。
