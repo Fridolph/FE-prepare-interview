@@ -323,3 +323,8 @@ setInterval(() => {
 :::
 
 > 参考：NestJS WebSocket 文档，Socket.IO 文档，PM2 文档
+
+
+## 部署知识延伸
+
+通用的 Nginx、Docker、进程管理与发布回滚统一整理在[开发与部署](/概念与原理/20deploy/intro)；本篇保留 NestJS 业务上下文中的示例。

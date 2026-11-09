@@ -48,6 +48,7 @@ const typeMap = {
   ai: '17ai',
   nestjs: '18nestjs',
   database: '19database',
+  deploy: '20deploy',
 }
 
 export function useConceptIntro(type) {

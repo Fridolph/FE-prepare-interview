@@ -66,7 +66,10 @@ export default [
   {
     text: 'JavaScript',
     collapsed: false,
-    items: [usePracticeItem('写个 deepCopy 实现深拷贝', 'js', 2, 'deepcopy')],
+    items: [
+      usePracticeItem('写个 deepCopy 实现深拷贝', 'js', 2, 'deepcopy'),
+      usePracticeItem('模板、字符串与 DOM 小工具', 'js', 3, 'small_utilities'),
+    ],
   },
   {
     text: 'Promise',
@@ -97,6 +100,10 @@ export default [
       usePracticeItem('栈 stack', 'algo', 1, 'stack'),
       usePracticeItem('队列 queue', 'algo', 2, 'queue'),
       usePracticeItem('链表 linked list', 'algo', 3, 'linkedlist'),
+      usePracticeItem('二分查找与插入位置', 'algo', 4, 'search'),
+      usePracticeItem('随机数组与均匀洗牌', 'algo', 5, 'random'),
+      usePracticeItem('数组与字符串练习', 'algo', 6, 'arrays_strings'),
+      usePracticeItem('阶乘与斐波那契', 'algo', 7, 'sequences'),
       usePracticeItem('1-冒泡排序', 'sort', 1, 'bubbleSort'),
       usePracticeItem('2-选择排序', 'sort', 2, 'selectionSort'),
       usePracticeItem('3-插入排序', 'sort', 3, 'insertionSort'),

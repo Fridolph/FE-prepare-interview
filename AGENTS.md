@@ -111,6 +111,7 @@ FE-prepare-interview/
 | 17ai | AI / 大模型 | 2024 新增 |
 | 18nestjs | NestJS | |
 | 19database | 数据库 / PostgreSQL | |
+| 20deploy | 开发与部署 | Linux / Git / Nginx / Node 进程 / Docker |
 
 ### 文件命名格式
 
@@ -156,7 +157,7 @@ intro.md: 在 概念与原理/17ai/intro.md 目录列表中添加条目
 **场景**: 需要新增一个完整的技术领域。
 
 **步骤**:
-1. 在 `usePath.js` 的 `typeMap` 中添加新映射（如 `rust: '20rust'`；先检查现有编号）
+1. 在 `usePath.js` 的 `typeMap` 中添加新映射（如 `rust: '21rust'`；先检查现有编号）
 2. 只在已有实际内容的版块创建对应目录和 `intro.md`，不批量创建空目录
 3. 在对应 sidebar 配置文件添加菜单项，并在 `groupSidebar.js` 中归入学习领域
 4. 在 `src/.vitepress/data/learning.ts` 中添加对应领域的首页入口

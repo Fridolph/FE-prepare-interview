@@ -197,7 +197,7 @@ Cache-Control: no-cache
 如果具有个性化内容的响应意外地对缓存的其他用户可见，那将是有问题的。
 在这种情况下，使用 private 指令将导致个性化响应仅与特定客户端一起存储，而不会泄露给缓存的任何其他用户。
 
-在这种情况下，即使设置了 no-store，也必须设置 private。
+在这种情况下，如果允许浏览器缓存、但不允许共享缓存存储，应设置 private；no-store 本身已禁止存储。
 
 #### 每次都提供最新的内容
 
@@ -341,3 +341,8 @@ Cache-Control 规范中有很多指令，可能很难全部理解。但是大多
 ## 参考资料
 
 <https://developer.mozilla.org/zh-CN/docs/Web/HTTP/Caching>
+
+
+## 实践补充
+
+字段语义、条件请求与发布时的资源缓存组合，见[HTTP 缓存：从字段到发布策略](./s_http_9-cache_strategy)。

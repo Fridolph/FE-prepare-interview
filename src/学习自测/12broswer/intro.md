@@ -8,3 +8,7 @@
 - :white_check_mark: 事件循环
   
 - :white_check_mark: 垃圾回收
+
+## 串联复习
+
+- [浏览器机制自测](./q_bw_4-browser_review)

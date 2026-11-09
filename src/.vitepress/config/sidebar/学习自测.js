@@ -114,6 +114,7 @@ export default [
       useSelfTestItem('基本性能优化策略', 'opt', 1, 'base'),
       useSelfTestItem('图片 Image', 'opt', 2, 'image'),
       useSelfTestItem('其他综合', 'opt', 3, 'other'),
+      useSelfTestItem('前端性能诊断自测', 'opt', 4, 'performance_review'),
     ],
   },
   {
@@ -128,6 +129,7 @@ export default [
       useSelfTestItem('从浏览器输入 url 到页面渲染', 'bw', 1, 'fromurl'),
       useSelfTestItem('事件循环 Event Loop', 'bw', 2, 'eventloop'),
       useSelfTestItem('其他', 'bw', 3, 'other'),
+      useSelfTestItem('浏览器机制串联自测', 'bw', 4, 'browser_review'),
     ],
   },
   {
@@ -150,6 +152,8 @@ export default [
       useSelfTestItem('面向对象 Object', 'js', 3, 'object'),
       useSelfTestItem('核心 API', 'js', 4, 'api'),
       useSelfTestItem('事件 Event', 'js', 5, 'event'),
+      useSelfTestItem('JS 基础串联自测', 'js', 6, 'foundations_review'),
+      useSelfTestItem('异步与控制流自测', 'js', 7, 'async_review'),
       useSelfTestItem('ES6 (2015)', 'es6', 1, 'base'),
       useSelfTestItem('Promise', 'es6', 2, 'promise'),
       useSelfTestItem('ESNext', 'es6', 3, 'esnext'),
@@ -191,6 +195,7 @@ export default [
       useSelfTestItem('Web 安全', 'safe', 1, 'websafe'),
       useSelfTestItem('XSS', 'safe', 2, 'xss'),
       useSelfTestItem('CSRF', 'safe', 3, 'csrf'),
+      useSelfTestItem('Web 安全串联自测', 'safe', 4, 'security_review'),
     ],
   },
   {
@@ -237,6 +242,7 @@ export default [
       useSelfTestItem('状态 vs 策略模式', 'pn', 8, 'state_vs_strategy'),
       useSelfTestItem('中间件/责任链', 'pn', 9, 'middleware'),
       useSelfTestItem('适配器模式', 'pn', 10, 'adapter'),
+      useSelfTestItem('MVVM、响应式与数据流', 'pn', 11, 'mvvm'),
     ],
   },
 ]

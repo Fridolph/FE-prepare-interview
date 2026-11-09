@@ -13,7 +13,7 @@
 ## 按方向浏览
 
 - **前端开发**：HTML/CSS、JavaScript、TypeScript、Vue、React 与前端工程化。
-- **后端开发**：Node.js、NestJS 与数据库。
+- **后端开发**：Node.js、NestJS、数据库与[开发部署](/概念与原理/20deploy/intro)。
 - **AI 应用开发**：大模型、Prompt、RAG、Agent 与工具调用。
 - **通用基础**：网络、浏览器、安全、数据结构与设计模式。
 - **性能优化**：[跨领域专题](/性能优化/index)。
