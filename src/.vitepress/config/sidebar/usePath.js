@@ -1,6 +1,6 @@
-const STRAIGHT = '直击概念'
-const QUESTION = '面试官问'
-const CODING = '编写代码'
+const CONCEPT = '概念与原理'
+const SELF_TEST = '学习自测'
+const PRACTICE = '编码与实践'
 // const CONTRIBUTION = '参与贡献'
 
 const typeMap = {
@@ -50,38 +50,38 @@ const typeMap = {
   database: '19database',
 }
 
-export function useStraightIntro(type) {
-  return `/直击概念/${typeMap[type]}/intro`
+export function useConceptIntro(type) {
+  return `/概念与原理/${typeMap[type]}/intro`
 }
 
-export function useQuestionIntro(type) {
-  return `/面试官问/${typeMap[type]}/intro`
+export function useSelfTestIntro(type) {
+  return `/学习自测/${typeMap[type]}/intro`
 }
 
-export function useCodingIntro(type, intro = 'intro') {
-  return `/编写代码/${typeMap[type]}/${intro}`
+export function usePracticeIntro(type, intro = 'intro') {
+  return `/编码与实践/${typeMap[type]}/${intro}`
 }
 
-export function useStraightItem(title, type, index = 0, fileName, options = {}) {
+export function useConceptItem(title, type, index = 0, fileName, options = {}) {
   return {
     text: title,
-    link: `/${STRAIGHT}/${typeMap[type]}/s_${type}_${index}-${fileName}`,
+    link: `/${CONCEPT}/${typeMap[type]}/s_${type}_${index}-${fileName}`,
     ...options,
   }
 }
 
-export function useQuestionItem(title, type, index = 0, fileName, options = {}) {
+export function useSelfTestItem(title, type, index = 0, fileName, options = {}) {
   return {
     text: title,
-    link: `/${QUESTION}/${typeMap[type]}/q_${type}_${index}-${fileName}`,
+    link: `/${SELF_TEST}/${typeMap[type]}/q_${type}_${index}-${fileName}`,
     ...options,
   }
 }
 
-export function useCodingItem(title, type, index = 0, fileName, options = {}) {
+export function usePracticeItem(title, type, index = 0, fileName, options = {}) {
   return {
     text: title,
-    link: `/${CODING}/${typeMap[type]}/c_${type}_${index}-${fileName}/c_${type}_${index}-${fileName}`,
+    link: `/${PRACTICE}/${typeMap[type]}/c_${type}_${index}-${fileName}/c_${type}_${index}-${fileName}`,
     ...options,
   }
 }

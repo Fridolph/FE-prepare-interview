@@ -1,24 +1,19 @@
 import DefaultTheme from 'vitepress/theme'
-import TwoslashFloatingVue from '@shikijs/vitepress-twoslash/client'
-import { ElementPlusContainer } from '@vitepress-demo-preview/component'
-import '@vitepress-demo-preview/component/dist/style.css'
-import './theme.css'
-import 'viewerjs/dist/viewer.min.css'
-import imageViewer from 'vitepress-plugin-image-viewer'
-import vImageViewer from 'vitepress-plugin-image-viewer/lib/vImageViewer.vue'
+import type { Theme } from 'vitepress'
 import { useRoute } from 'vitepress'
+import imageViewer from 'vitepress-plugin-image-viewer'
+import SiteImage from './components/SiteImage.vue'
+import 'viewerjs/dist/viewer.min.css'
+import './theme.css'
 
 export default {
-  ...DefaultTheme,
+  extends: DefaultTheme,
   enhanceApp({ app }) {
-    app.use(TwoslashFloatingVue)
-    app.component('Image', vImageViewer)
-    app.component('demo-preview', ElementPlusContainer)
+    // 保留现有文章的 <Image> 组件接口。
+    // eslint-disable-next-line vue/multi-word-component-names, vue/no-reserved-component-names
+    app.component('Image', SiteImage)
   },
   setup() {
-    // 获取路由
-    const route = useRoute()
-    // 使用
-    imageViewer(route)
+    imageViewer(useRoute())
   },
-}
+} satisfies Theme

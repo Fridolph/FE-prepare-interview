@@ -9,7 +9,7 @@ export default [
   },
   {
     text: '2024',
-    items: [{ text: '祝大家 2024 新春大吉', link: '/网友面经/三月后再删.md' }],
+    items: [{ text: '祝大家 2024 新春大吉', link: '/相关准备/三月后再删' }],
   },
   {
     text: '2021',
