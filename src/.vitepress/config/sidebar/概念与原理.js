@@ -132,7 +132,7 @@ export default [
       useConceptItem('HTTP Header', 'http', 3, 'http_header'),
       useConceptItem('HTTP 缓存', 'http', 4, 'cache'),
       useConceptItem('HTTPS', 'http', 5, 'https'),
-      useConceptItem('WebSocket', 'http', 6, 'WebSocket'),
+      useConceptItem('WebSocket', 'http', 6, 'websocket'),
       useConceptItem('浏览器工作原理', 'bw', 1, 'broswer'),
       useConceptItem('浏览器进程模型', 'bw', 4, 'process'),
       useConceptItem('浏览器渲染原理', 'bw', 5, 'render'),

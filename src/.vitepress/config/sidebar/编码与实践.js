@@ -35,7 +35,7 @@ export default [
     collapsed: true,
     link: usePracticeIntro('vueuse', 'vueuse.intro'),
     items: [
-      usePracticeItem('State', 'vueuse', 1, 'State'),
+      usePracticeItem('State', 'vueuse', 1, 'state'),
       usePracticeItem('Browser', 'vueuse', 3, 'Browser'),
       usePracticeItem('Sensors', 'vueuse', 4, 'Sensors'),
       // usePracticeItem('Elements', 'vueuse', 2, 'Elements'),
