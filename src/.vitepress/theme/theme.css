@@ -1,5 +1,18 @@
-.VPHome h1 {
-  white-space: nowrap !important;
+.VPHome .VPHero .name,
+.VPHome .VPHero .text {
+  white-space: normal;
+}
+
+.VPHome .VPHero .text {
+  max-width: 820px;
+  font-size: clamp(30px, 4vw, 52px);
+  line-height: 1.18;
+}
+
+.VPHome .VPHomeContent {
+  max-width: 1152px;
+  margin: 0 auto;
+  padding-bottom: 64px;
 }
 
 .vp-doc h1 {
@@ -52,15 +65,7 @@
   padding: 2px;
   border: 1px dashed #dedede;
   overflow: hidden;
-  .wp {
-    width: 100%;
-    height: 300px;
-  }
-  .box {
-    background: rgb(147, 233, 147);
-  }
-  .box.size {
-    width: 200px;
-    height: 120px;
-  }
 }
+.center-wrapper .wp { width: 100%; height: 300px; }
+.center-wrapper .box { background: rgb(147, 233, 147); }
+.center-wrapper .box.size { width: 200px; height: 120px; }
