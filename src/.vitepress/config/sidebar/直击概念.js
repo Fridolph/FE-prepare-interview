@@ -68,6 +68,14 @@ export default [
     ],
   },
   {
+    text: '数据库 Database',
+    collapsed: true,
+    link: useStraightIntro('database'),
+    items: [
+      { text: '数据库学习入口', link: useStraightIntro('database') },
+    ],
+  },
+  {
     text: 'Vue',
     link: useStraightIntro('vue'),
     collapsed: false,

@@ -18,6 +18,14 @@ export default [
     ],
   },
   {
+    text: '数据库 Database',
+    collapsed: true,
+    link: useCodingIntro('database'),
+    items: [
+      { text: '数据库实践入口', link: useCodingIntro('database') },
+    ],
+  },
+  {
     text: 'Vue',
     collapsed: true,
     items: [useCodingItem('Vue响应式原理', 'vue', 1, 'reactive')],

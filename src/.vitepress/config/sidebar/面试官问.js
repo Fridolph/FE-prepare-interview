@@ -57,10 +57,21 @@ export default [
     collapsed: true,
     link: useQuestionIntro('nestjs'),
     items: [
+      useQuestionItem('基础认知与选型', 'nestjs', 5, 'basics'),
+      useQuestionItem('应用生命周期', 'nestjs', 6, 'app_lifecycle'),
+      useQuestionItem('请求生命周期', 'nestjs', 7, 'request_lifecycle'),
       useQuestionItem('生产场景实战', 'nestjs', 1, 'scenarios'),
       useQuestionItem('模块与 DI 实战', 'nestjs', 2, 'module_di'),
       useQuestionItem('AOP & 数据库实战', 'nestjs', 3, 'aop'),
       useQuestionItem('全栈 & 部署实战', 'nestjs', 4, 'fullstack'),
+    ],
+  },
+  {
+    text: '数据库 Database',
+    collapsed: true,
+    link: useQuestionIntro('database'),
+    items: [
+      useQuestionItem('PostgreSQL 与 MySQL 对比及选型', 'database', 1, 'postgresql_vs_mysql'),
     ],
   },
   {

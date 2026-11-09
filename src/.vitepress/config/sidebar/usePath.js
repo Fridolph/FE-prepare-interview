@@ -47,6 +47,7 @@ const typeMap = {
   patterns: '16patterns',
   ai: '17ai',
   nestjs: '18nestjs',
+  database: '19database',
 }
 
 export function useStraightIntro(type) {
