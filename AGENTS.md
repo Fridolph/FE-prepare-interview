@@ -4,11 +4,11 @@
 
 ## 项目简介
 
-**Web 开发学习宝典** 从前端知识库演进而来，基于 [VitePress](https://vitepress.dev) 构建。面向前端、后端与 AI 应用开发，连接概念原理、编码实践、学习自测与博客复盘。仓库与 Pages 地址继续使用 `FE-prepare-interview`。
+**Web 开发学习宝典** 从前端知识库演进而来，基于 [VitePress](https://vitepress.dev) 构建。面向前端、后端与 AI 应用开发，连接概念原理、编码实践、学习自测与博客复盘。仓库名与本地目录为 `web-dev-handbook`，生产 Pages 子路径为 `/web-dev-handbook/`。
 
 首页与侧边栏按前端开发、后端开发、AI 应用开发、通用基础、性能优化分组；内容按学习方式存储。面试复习只是学习自测的一种使用场景。
 
-- 🌐 在线预览：[GitHub Pages](https://fridolph.github.io/FE-prepare-interview)
+- 🌐 在线预览：[GitHub Pages](https://fridolph.github.io/web-dev-handbook)
 - 📝 掘金介绍：[使用 VitePress 打造个人专属的前端知识体系](https://juejin.cn/post/7346888998487310390)
 
 ## 技术栈
@@ -44,7 +44,7 @@ pnpm preview
 ## 项目结构
 
 ```
-FE-prepare-interview/
+web-dev-handbook/
 ├── src/                          # VitePress 源文件
 │   ├── .vitepress/
 │   │   ├── config.js             # VitePress 主配置

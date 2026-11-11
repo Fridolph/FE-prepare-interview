@@ -107,7 +107,7 @@ export default [
     ],
   },
   {
-    text: '性能优化',
+    text: '前端性能优化',
     link: useSelfTestIntro('opt'),
     collapsed: true,
     items: [

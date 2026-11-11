@@ -74,6 +74,7 @@ export default [
       useConceptItem('MVC 与 DTO / DAO 分层', 'nestjs', 11, 'layering_dto_dao'),
       useConceptItem('提供者与 DI', 'nestjs', 4, 'provider'),
       useConceptItem('中间件与守卫', 'nestjs', 5, 'middleware_guard'),
+      useConceptItem('认证、授权与 JWT', 'nestjs', 12, 'authentication_jwt'),
       useConceptItem('拦截器与管道', 'nestjs', 6, 'interceptor_pipe'),
       useConceptItem('异常过滤器', 'nestjs', 7, 'exception_filter'),
       useConceptItem('TypeORM & Prisma', 'nestjs', 8, 'orm'),
@@ -119,7 +120,7 @@ export default [
     ],
   },
   {
-    text: '性能优化',
+    text: '前端性能优化',
     link: useConceptIntro('opt'),
     collapsed: false,
     items: [
@@ -206,7 +207,10 @@ export default [
     link: useConceptIntro('nodejs'),
     collapsed: true,
     items: [
-      // useConceptItem('网络七层协议', 'http', 1, '网络七层协议'),
+      useConceptItem('常用模块与资源管理', 'node', 1, 'core_modules'),
+      useConceptItem('事件循环与异步并发', 'node', 2, 'event_loop'),
+      useConceptItem('HTTP 服务与 Koa 洋葱模型', 'node', 3, 'http_koa'),
+      useConceptItem('npm、Yarn、pnpm 与依赖管理', 'node', 4, 'package_management'),
     ],
   },
   {
