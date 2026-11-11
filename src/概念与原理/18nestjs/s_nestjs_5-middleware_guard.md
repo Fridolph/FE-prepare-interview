@@ -59,8 +59,10 @@ export class AppModule implements NestModule {
 
 实现 `CanActivate` 接口，做权限验证：
 
+以下为最小流程示意；JWT 的验证约束、刷新、撤销及 CSRF 边界见[认证、授权与 JWT](./s_nestjs_12-authentication_jwt)。
+
 ```typescript
-import { Injectable, CanActivate, ExecutionContext } from '@nestjs/common'
+import { Injectable, CanActivate, ExecutionContext, UnauthorizedException } from '@nestjs/common'
 import { JwtService } from '@nestjs/jwt'
 
 @Injectable()
